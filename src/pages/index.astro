@@ -9,6 +9,6 @@ console.log(allVPS);
 <Layout>
   <h1>VPS</h1>
   <div class="grid grid-flow-col-dense md:grid-flow-col-dense">
-    {allVPS.map((post) => <Card title={post.data.name} />)}
+    {allVPS.map((post) => <Card name={post.data.name} />)}
   </div>
 </Layout>

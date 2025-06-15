@@ -1,15 +1,300 @@
 
 ---
 export interface Props {
-  title: string;
+  name: string;
+  logoUrl?: string;
+  locations?: string[];
+  services?: string[];
+  features?: string[];
+  bgpFee?: string;
+  pricing?: string;
+  visitUrl?: string;
 }
-const { title } = Astro.props;
+const {
+  name,
+  logoUrl,
+  locations = [
+    'Amsterdam', 'Atlanta', 'Frankfurt', 'Fujairah', 'Lagos', 'Los Angeles', 'Madrid', 'Moscow', 'Mumbai', 'Palermo', 'Riga', 'Singapore', 'Sofia', 'Vilnius', 'Warsaw'
+  ],
+  services = ['Baremetal', 'DNS', 'VPS'],
+  features = ['BGP Community Passthrough'],
+  bgpFee = '5 EUR/mo with 10 EUR setup fee (per session per protocol)',
+  pricing = 'Starting at 3.9 EUR',
+  visitUrl = '#',
+} = Astro.props;
 ---
 
-<div class="card card-border bg-base-100 w-96">
-  <div class="card-body">
-    <h2 class="card-title">{title}</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
- 
+<div class="provider-card">
+  <div class="card-header">
+    {logoUrl ? (
+      <img src={logoUrl} alt={name + ' logo'} class="provider-logo" />
+    ) : (
+      <h2 class="provider-title">{name }</h2>
+    )}
+  </div>
+  <div class="card-section">
+    <div class="badges">
+      <span class="badge asn">AS8849</span>
+      <span class="badge table">Full table</span>
+      <span class="badge status">🔄</span>
+    </div>
+    <div class="section-title">LOCATIONS</div>
+    <div class="locations">
+      {locations.map(loc => <span class="location-badge">{loc}</span>)}
+    </div>
+  </div>
+  <div class="card-section">
+    <div class="section-title">SERVICES</div>
+    <div class="services">
+      {services.map(svc => <span class="service-badge">{svc}</span>)}
+    </div>
+  </div>
+  <div class="card-section">
+    <div class="section-title">FEATURES</div>
+    <div class="features">
+      {features.map(f => <span class="feature-badge">{f}</span>)}
+    </div>
+  </div>
+  <div class="card-section">
+    <div class="section-title">BGP FEE</div>
+    <div class="bgp-fee">{bgpFee}</div>
+  </div>
+  <div class="card-section">
+    <div class="section-title">PRICING</div>
+    <div class="pricing">{pricing}</div>
+  </div>
+  <div class="card-footer">
+    <a href={visitUrl} class="visit-btn" target="_blank" rel="noopener">Visit</a>
   </div>
 </div>
+
+<style>
+
+  .provider-card {
+    background: #181c20;
+    color: #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.32);
+    padding: 1.2rem 1rem 1rem 1rem;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-family: system-ui, sans-serif;
+  }
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+}
+.badges {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.2rem;
+  justify-content: flex-start;
+}
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 8px;
+    background: #23272e;
+    color: #cbd5e1;
+    font-weight: 500;
+    border: 1px solid #2d323a;
+  }
+  .badge.asn { background: #0e7490; color: #e0f2fe; border: none; }
+  .badge.table { background: #166534; color: #dcfce7; border: none; }
+  .badge.status { background: #a16207; color: #fef9c3; border: none; }
+.provider-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 0.2rem;
+}
+.provider-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+.card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+  .section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 0.1rem;
+  }
+.locations, .services, .features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+  .location-badge {
+    background: #23272e;
+    border-radius: 8px;
+    padding: 0.18rem 0.7rem;
+    font-size: 0.92rem;
+    color: #e5e7eb;
+    border: 1px solid #2d323a;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .service-badge {
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 0.18rem 0.7rem;
+    font-size: 0.92rem;
+    color: #60a5fa;
+    border: 1px solid #334155;
+  }
+  .feature-badge {
+    background: #14532d;
+    border-radius: 8px;
+    padding: 0.18rem 0.7rem;
+    font-size: 0.92rem;
+    color: #bbf7d0;
+    border: 1px solid #166534;
+  }
+  .bgp-fee, .pricing {
+    font-size: 0.98rem;
+    color: #e5e7eb;
+  }
+.card-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+  .visit-btn {
+    background: #23272e;
+    color: #60a5fa;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 0.6rem 2.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .visit-btn:hover {
+    background: #60a5fa;
+    color: #181c20;
+  }
+</style>
+
+<style>
+.provider-card {
+  background: #181c20;
+  color: #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.32);
+  padding: 1.2rem 1rem 1rem 1rem;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-family: system-ui, sans-serif;
+}
+.card-header,
+.card-section,
+.card-footer {
+  color: #e5e7eb;
+}
+.badge {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 8px;
+  background: #23272e;
+  color: #cbd5e1;
+  font-weight: 500;
+  border: 1px solid #2d323a;
+}
+.badge.asn { background: #0e7490; color: #e0f2fe; border: none; }
+.badge.table { background: #166534; color: #dcfce7; border: none; }
+.badge.status { background: #a16207; color: #fef9c3; border: none; }
+.provider-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 0.2rem;
+}
+.provider-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+.card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 0.1rem;
+}
+.locations, .services, .features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.location-badge {
+  background: #23272e;
+  border-radius: 8px;
+  padding: 0.18rem 0.7rem;
+  font-size: 0.92rem;
+  color: #e5e7eb;
+  border: 1px solid #2d323a;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.service-badge {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 0.18rem 0.7rem;
+  font-size: 0.92rem;
+  color: #60a5fa;
+  border: 1px solid #334155;
+}
+.feature-badge {
+  background: #14532d;
+  border-radius: 8px;
+  padding: 0.18rem 0.7rem;
+  font-size: 0.92rem;
+  color: #bbf7d0;
+  border: 1px solid #166534;
+}
+.bgp-fee, .pricing {
+  font-size: 0.98rem;
+  color: #e5e7eb;
+}
+.card-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.visit-btn {
+  background: #23272e;
+  color: #60a5fa;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 0.6rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.visit-btn:hover {
+  background: #60a5fa;
+  color: #181c20;
+}
+</style>
