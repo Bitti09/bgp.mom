@@ -1,0 +1,15 @@
+
+---
+export interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="card card-border bg-base-100 w-96">
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+ 
+  </div>
+</div>
