@@ -28,325 +28,82 @@ const {
 } = Astro.props;
 ---
 
-<div class="provider-card">
-  <div class="card-header">
+<div class="card bg-[#181c20] w-80 p-5 text-gray-200 shadow-xl rounded-2xl">
+  <div class="flex flex-col items-center gap-2">
     {logoUrl ? (
-      <img src={logoUrl} alt={name + ' logo'} class="provider-logo" />
+      <img src={logoUrl} alt={name + ' logo'} class="w-12 h-12 object-contain mb-1" />
     ) : (
-      <h2 class="provider-title">{name }</h2>
+      <h2 class="text-xl font-semibold text-center">{name}</h2>
     )}
   </div>
-  <div class="card-section">
-    <div class="badges">
-      <span class="badge asn">AS8849</span>
-      <span class="badge table">Full table</span>
-      <span class="badge status">🔄</span>
+  <div class="flex flex-col gap-3">
+    <div class="flex flex-wrap gap-1.5 mt-2">      <span class="badge bg-[#0e7490] text-[#e0f2fe] border-none">AS8849</span>
+      <span class="badge bg-[#166534] text-[#dcfce7] border-none">Full table</span>
+      <span class="badge bg-[#a16207] text-[#fef9c3] border-none">🔄</span>
       {rpkiStatus === 'valid' && (
-        <div class="rpki-badge positive" title="RPKI valid">
-          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+        <div title="RPKI valid">
+          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#14532d] text-[#bbf7d0] border border-[#166534] shadow-[0_0_0_1.5px_#166534]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
           </span>
         </div>
       )}
       {rpkiStatus === 'invalid' && (
-        <div class="rpki-badge negative" title="RPKI invalid">
-          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+        <div title="RPKI invalid">
+          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#3b1111] text-[#fecaca] border border-[#dc2626] shadow-[0_0_0_1.5px_#dc2626]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
           </span>
         </div>
       )}
       {prefixUpdateStatus === 'positive' && (
-        <div class="prefixupdate-badge positive" title="Prefix update positive">
-          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+        <div title="Prefix update positive">
+          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#14532d] text-[#bbf7d0] border border-[#166534] shadow-[0_0_0_1.5px_#166534]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </span>
         </div>
       )}
       {prefixUpdateStatus === 'negative' && (
-        <div class="prefixupdate-badge negative" title="Prefix update negative">
-          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+        <div title="Prefix update negative">
+          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#3b1111] text-[#fecaca] border border-[#dc2626] shadow-[0_0_0_1.5px_#dc2626]">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </span>
         </div>
       )}
     </div>
-    <div class="section-title">LOCATIONS</div>
-    <div class="locations">
-      {locations.map(loc => <span class="location-badge">{loc}</span>)}
+    <div class="space-y-1">
+      <div class="text-sm font-semibold text-[#94a3b8]">LOCATIONS</div>
+      <div class="flex flex-wrap gap-1.5">
+        {locations.map(loc => <span class="inline-flex items-center rounded-lg px-3 py-0.5 text-sm bg-[#23272e] text-[#e5e7eb] border border-[#2d323a]">{loc}</span>)}
+      </div>
+    </div>
+    <div class="space-y-1">
+      <div class="text-sm font-semibold text-[#94a3b8]">SERVICES</div>
+      <div class="flex flex-wrap gap-1.5">
+        {services.map(svc => <span class="inline-flex items-center rounded-lg px-3 py-0.5 text-sm bg-[#1e293b] text-[#60a5fa] border border-[#334155]">{svc}</span>)}
+      </div>
+    </div>
+    <div class="space-y-1">
+      <div class="text-sm font-semibold text-[#94a3b8]">FEATURES</div>
+      <div class="flex flex-wrap gap-1.5">
+        {features.map(f => <span class="inline-flex items-center rounded-lg px-3 py-0.5 text-sm bg-[#14532d] text-[#bbf7d0] border border-[#166534]">{f}</span>)}
+      </div>
+    </div>
+    <div class="space-y-1">
+      <div class="text-sm font-semibold text-[#94a3b8]">BGP FEE</div>
+      <div class="text-[0.98rem] text-[#e5e7eb]">{bgpFee}</div>
+    </div>
+    <div class="space-y-1">
+      <div class="text-sm font-semibold text-[#94a3b8]">PRICING</div>
+      <div class="text-[0.98rem] text-[#e5e7eb]">{pricing}</div>
     </div>
   </div>
-  <div class="card-section">
-    <div class="section-title">SERVICES</div>
-    <div class="services">
-      {services.map(svc => <span class="service-badge">{svc}</span>)}
-    </div>
-  </div>
-  <div class="card-section">
-    <div class="section-title">FEATURES</div>
-    <div class="features">
-      {features.map(f => <span class="feature-badge">{f}</span>)}
-    </div>
-  </div>
-  <div class="card-section">
-    <div class="section-title">BGP FEE</div>
-    <div class="bgp-fee">{bgpFee}</div>
-  </div>
-  <div class="card-section">
-    <div class="section-title">PRICING</div>
-    <div class="pricing">{pricing}</div>
-  </div>
-  <div class="card-footer">
-    <a href={visitUrl} class="visit-btn" target="_blank" rel="noopener">Visit</a>
+  <div class="flex justify-center mt-4">
+    <a href={visitUrl} 
+      class="inline-flex items-center px-8 py-2 text-base font-medium rounded-lg bg-[#23272e] text-[#60a5fa] border border-[#334155] hover:bg-[#60a5fa] hover:text-[#181c20] transition-colors" 
+      target="_blank" 
+      rel="noopener"
+    >
+      Visit
+    </a>
   </div>
 </div>
 
-<style>
-
-  .provider-card {
-    background: #181c20;
-    color: #e5e7eb;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.32);
-    padding: 1.2rem 1rem 1rem 1rem;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-    font-family: system-ui, sans-serif;
-  }
-.card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 48px;
-}
-.badges {
-  display: flex;
-  gap: 0.4rem;
-  margin-bottom: 0.2rem;
-  justify-content: flex-start;
-}
-  .badge {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.7rem;
-    border-radius: 8px;
-    background: #23272e;
-    color: #cbd5e1;
-    font-weight: 500;
-    border: 1px solid #2d323a;
-  }
-  .badge.asn { background: #0e7490; color: #e0f2fe; border: none; }
-  .badge.table { background: #166534; color: #dcfce7; border: none; }
-  .badge.status { background: #a16207; color: #fef9c3; border: none; }
-.provider-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  margin-bottom: 0.2rem;
-}
-.provider-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0;
-  text-align: center;
-}
-.card-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-  .section-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #94a3b8;
-    margin-bottom: 0.1rem;
-  }
-.locations, .services, .features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-  .location-badge {
-    background: #23272e;
-    border-radius: 8px;
-    padding: 0.18rem 0.7rem;
-    font-size: 0.92rem;
-    color: #e5e7eb;
-    border: 1px solid #2d323a;
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-  }
-  .service-badge {
-    background: #1e293b;
-    border-radius: 8px;
-    padding: 0.18rem 0.7rem;
-    font-size: 0.92rem;
-    color: #60a5fa;
-    border: 1px solid #334155;
-  }
-  .feature-badge {
-    background: #14532d;
-    border-radius: 8px;
-    padding: 0.18rem 0.7rem;
-    font-size: 0.92rem;
-    color: #bbf7d0;
-    border: 1px solid #166534;
-  }
-  .bgp-fee, .pricing {
-    font-size: 0.98rem;
-    color: #e5e7eb;
-  }
-.card-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-  .visit-btn {
-    background: #23272e;
-    color: #60a5fa;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    padding: 0.6rem 2.2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background 0.15s, color 0.15s;
-  }
-  .visit-btn:hover {
-    background: #60a5fa;
-    color: #181c20;
-  }
-</style>
-
-<style>
-.provider-card {
-  background: #181c20;
-  color: #e5e7eb;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.32);
-  padding: 1.2rem 1rem 1rem 1rem;
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  font-family: system-ui, sans-serif;
-}
-.card-header,
-.card-section,
-.card-footer {
-  color: #e5e7eb;
-}
-.badge {
-  font-size: 0.8rem;
-  padding: 0.2rem 0.7rem;
-  border-radius: 8px;
-  background: #23272e;
-  color: #cbd5e1;
-  font-weight: 500;
-  border: 1px solid #2d323a;
-}
-.badge.asn { background: #0e7490; color: #e0f2fe; border: none; }
-.badge.table { background: #166534; color: #dcfce7; border: none; }
-.badge.status { background: #a16207; color: #fef9c3; border: none; }
-.provider-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  margin-bottom: 0.2rem;
-}
-.provider-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0;
-  text-align: center;
-}
-.card-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.section-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #94a3b8;
-  margin-bottom: 0.1rem;
-}
-.locations, .services, .features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-.location-badge {
-  background: #23272e;
-  border-radius: 8px;
-  padding: 0.18rem 0.7rem;
-  font-size: 0.92rem;
-  color: #e5e7eb;
-  border: 1px solid #2d323a;
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-.service-badge {
-  background: #1e293b;
-  border-radius: 8px;
-  padding: 0.18rem 0.7rem;
-  font-size: 0.92rem;
-  color: #60a5fa;
-  border: 1px solid #334155;
-}
-.feature-badge {
-  background: #14532d;
-  border-radius: 8px;
-  padding: 0.18rem 0.7rem;
-  font-size: 0.92rem;
-  color: #bbf7d0;
-  border: 1px solid #166534;
-}
-.bgp-fee, .pricing {
-  font-size: 0.98rem;
-  color: #e5e7eb;
-}
-.card-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-.visit-btn {
-  background: #23272e;
-  color: #60a5fa;
-  border: 1px solid #334155;
-  border-radius: 8px;
-  padding: 0.6rem 2.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-}
-.visit-btn:hover {
-  background: #60a5fa;
-  color: #181c20;
-}
-  .rpki-badge.positive span,
-  .prefixupdate-badge.positive span {
-    background: #14532d;
-    color: #bbf7d0;
-    border: 1px solid #166534;
-    box-shadow: 0 0 0 1.5px #166534;
-  }
-  .rpki-badge.negative span,
-  .prefixupdate-badge.negative span {
-    background: #3b1111;
-    color: #fecaca;
-    border: 1px solid #dc2626;
-    box-shadow: 0 0 0 1.5px #dc2626;
-  }
-  .rpki-badge svg,
-  .prefixupdate-badge svg {
-    display: inline;
-    margin-left: 0.2em;
-    color: inherit;
-  }
-</style>
