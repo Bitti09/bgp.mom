@@ -3,6 +3,12 @@
   "name": "bgp-momp",
   // Update to today's date
   "compatibility_date": "2025-03-25",
+      "routes": [
+    {
+      "pattern": "bgp.mom",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./dist"
   }
