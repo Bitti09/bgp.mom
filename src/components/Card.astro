@@ -1,4 +1,3 @@
-
 ---
 export interface Props {
   name: string;
@@ -12,6 +11,7 @@ export interface Props {
   rpkiStatus?: 'valid' | 'invalid';
   prefixUpdateStatus?: 'positive' | 'negative';
 }
+
 const {
   name,
   logoUrl,
@@ -28,7 +28,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="card bg-[#181c20] w-80 p-5 text-gray-200 shadow-xl rounded-2xl">
+<div class="card bg-base-300 w-80 p-5 text-base-content shadow-xl rounded-2xl">
   <div class="flex flex-col items-center gap-2">
     {logoUrl ? (
       <img src={logoUrl} alt={name + ' logo'} class="w-12 h-12 object-contain mb-1" />
@@ -37,68 +37,69 @@ const {
     )}
   </div>
   <div class="flex flex-col gap-3">
-    <div class="flex flex-wrap gap-1.5 mt-2">      <span class="badge bg-[#0e7490] text-[#e0f2fe] border-none">AS8849</span>
-      <span class="badge bg-[#166534] text-[#dcfce7] border-none">Full table</span>
-      <span class="badge bg-[#a16207] text-[#fef9c3] border-none">🔄</span>
+    <div class="flex flex-wrap gap-1.5 mt-2">
+      <span class="badge badge-info border-none">AS8849</span>
+      <span class="badge badge-success border-none">Full table</span>
+      <span class="badge badge-warning border-none">🔄</span>
       {rpkiStatus === 'valid' && (
         <div title="RPKI valid">
-          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#14532d] text-[#bbf7d0] border border-[#166534] shadow-[0_0_0_1.5px_#166534]">
+          <span class="badge badge-success gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
           </span>
         </div>
       )}
       {rpkiStatus === 'invalid' && (
         <div title="RPKI invalid">
-          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#3b1111] text-[#fecaca] border border-[#dc2626] shadow-[0_0_0_1.5px_#dc2626]">
+          <span class="badge badge-error gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
           </span>
         </div>
       )}
       {prefixUpdateStatus === 'positive' && (
         <div title="Prefix update positive">
-          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#14532d] text-[#bbf7d0] border border-[#166534] shadow-[0_0_0_1.5px_#166534]">
+          <span class="badge badge-success gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </span>
         </div>
       )}
       {prefixUpdateStatus === 'negative' && (
         <div title="Prefix update negative">
-          <span class="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium bg-[#3b1111] text-[#fecaca] border border-[#dc2626] shadow-[0_0_0_1.5px_#dc2626]">
+          <span class="badge badge-error gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </span>
         </div>
       )}
     </div>
     <div class="space-y-1">
-      <div class="text-sm font-semibold text-[#94a3b8]">LOCATIONS</div>
+      <div class="text-sm font-semibold text-base-content/60">LOCATIONS</div>
       <div class="flex flex-wrap gap-1.5">
-        {locations.map(loc => <span class="inline-flex items-center rounded-lg px-3 py-0.5 text-sm bg-[#23272e] text-[#e5e7eb] border border-[#2d323a]">{loc}</span>)}
+        {locations.map(loc => <span class=" text-white badge badge-neutral badge-outline">{loc}</span>)}
       </div>
     </div>
     <div class="space-y-1">
-      <div class="text-sm font-semibold text-[#94a3b8]">SERVICES</div>
+      <div class="text-sm font-semibold text-base-content/60">SERVICES</div>
       <div class="flex flex-wrap gap-1.5">
-        {services.map(svc => <span class="inline-flex items-center rounded-lg px-3 py-0.5 text-sm bg-[#1e293b] text-[#60a5fa] border border-[#334155]">{svc}</span>)}
+        {services.map(svc => <span class="badge badge-primary badge-outline">{svc}</span>)}
       </div>
     </div>
     <div class="space-y-1">
-      <div class="text-sm font-semibold text-[#94a3b8]">FEATURES</div>
+      <div class="text-sm font-semibold text-base-content/60">FEATURES</div>
       <div class="flex flex-wrap gap-1.5">
-        {features.map(f => <span class="inline-flex items-center rounded-lg px-3 py-0.5 text-sm bg-[#14532d] text-[#bbf7d0] border border-[#166534]">{f}</span>)}
+        {features.map(f => <span class="badge badge-success badge-outline">{f}</span>)}
       </div>
     </div>
     <div class="space-y-1">
-      <div class="text-sm font-semibold text-[#94a3b8]">BGP FEE</div>
-      <div class="text-[0.98rem] text-[#e5e7eb]">{bgpFee}</div>
+      <div class="text-sm font-semibold text-base-content/60">BGP FEE</div>
+      <div class="text-base text-base-content">{bgpFee}</div>
     </div>
     <div class="space-y-1">
-      <div class="text-sm font-semibold text-[#94a3b8]">PRICING</div>
-      <div class="text-[0.98rem] text-[#e5e7eb]">{pricing}</div>
+      <div class="text-sm font-semibold text-base-content/60">PRICING</div>
+      <div class="text-base text-base-content">{pricing}</div>
     </div>
   </div>
   <div class="flex justify-center mt-4">
     <a href={visitUrl} 
-      class="inline-flex items-center px-8 py-2 text-base font-medium rounded-lg bg-[#23272e] text-[#60a5fa] border border-[#334155] hover:bg-[#60a5fa] hover:text-[#181c20] transition-colors" 
+      class="btn btn-primary" 
       target="_blank" 
       rel="noopener"
     >
