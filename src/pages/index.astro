@@ -9,6 +9,16 @@ console.log(allVPS);
 <Layout>
   <h1>VPS</h1>
   <div class="grid grid-flow-col-dense md:grid-flow-col-dense">
-    {allVPS.map((post) => <Card name={post.data.name} />)}
+    {
+      allVPS.map((post) => (
+        <Card
+          name={post.data.name}
+          rpkiStatus={post.data.rpki ? "valid" : "invalid"}
+          prefixUpdateStatus={
+            post.data.prefixUpdateStatus ? "positive" : "negative"
+          }
+        />
+      ))
+    }
   </div>
 </Layout>

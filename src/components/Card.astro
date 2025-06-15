@@ -9,6 +9,8 @@ export interface Props {
   bgpFee?: string;
   pricing?: string;
   visitUrl?: string;
+  rpkiStatus?: 'valid' | 'invalid';
+  prefixUpdateStatus?: 'positive' | 'negative';
 }
 const {
   name,
@@ -21,6 +23,8 @@ const {
   bgpFee = '5 EUR/mo with 10 EUR setup fee (per session per protocol)',
   pricing = 'Starting at 3.9 EUR',
   visitUrl = '#',
+  rpkiStatus,
+  prefixUpdateStatus,
 } = Astro.props;
 ---
 
@@ -37,6 +41,34 @@ const {
       <span class="badge asn">AS8849</span>
       <span class="badge table">Full table</span>
       <span class="badge status">🔄</span>
+      {rpkiStatus === 'valid' && (
+        <div class="rpki-badge positive" title="RPKI valid">
+          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
+          </span>
+        </div>
+      )}
+      {rpkiStatus === 'invalid' && (
+        <div class="rpki-badge negative" title="RPKI invalid">
+          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
+          </span>
+        </div>
+      )}
+      {prefixUpdateStatus === 'positive' && (
+        <div class="prefixupdate-badge positive" title="Prefix update positive">
+          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </span>
+        </div>
+      )}
+      {prefixUpdateStatus === 'negative' && (
+        <div class="prefixupdate-badge negative" title="Prefix update negative">
+          <span class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </span>
+        </div>
+      )}
     </div>
     <div class="section-title">LOCATIONS</div>
     <div class="locations">
@@ -297,4 +329,24 @@ const {
   background: #60a5fa;
   color: #181c20;
 }
+  .rpki-badge.positive span,
+  .prefixupdate-badge.positive span {
+    background: #14532d;
+    color: #bbf7d0;
+    border: 1px solid #166534;
+    box-shadow: 0 0 0 1.5px #166534;
+  }
+  .rpki-badge.negative span,
+  .prefixupdate-badge.negative span {
+    background: #3b1111;
+    color: #fecaca;
+    border: 1px solid #dc2626;
+    box-shadow: 0 0 0 1.5px #dc2626;
+  }
+  .rpki-badge svg,
+  .prefixupdate-badge svg {
+    display: inline;
+    margin-left: 0.2em;
+    color: inherit;
+  }
 </style>

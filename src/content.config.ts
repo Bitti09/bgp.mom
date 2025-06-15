@@ -9,7 +9,8 @@ const vps = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/data/vps" }),
   schema: z.object({
     name: z.string(),
-   
+    rpki: z.boolean().optional(),
+    prefixUpdateStatus:z.boolean().optional(),
   }),
 });
 
