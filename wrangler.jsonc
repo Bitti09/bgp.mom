@@ -1,12 +1,24 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "main": "./dist/_worker.js/index.js",
   "name": "bgp-momp",
   // Update to today's date
   "compatibility_date": "2025-03-25",
-      "routes": [
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
     {
       "pattern": "bgp.mom",
       "custom_domain": true
     }
-  ]
+  ],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "placement": {
+    "mode": "smart"
+  }
 }
