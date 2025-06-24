@@ -1,9 +1,9 @@
 {
   "title": "Test VPS",
   "asn": "AS12345",
-  "rpkiStatus": "invalid",
+  "rpkiStatus": "valid",
   "tableType": "full",
-  "prefixUpdateStatus": "negative",
+  "prefixUpdateStatus": "positive",
   "locations": [
     "Singapore, SG",
     "Barcelona, ES",

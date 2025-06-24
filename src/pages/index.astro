@@ -7,27 +7,31 @@ const vpsEntries = await getCollection("vps");
 ---
 
 <Layout title="BGP.mom - List of VPS Providers with BGP support">
-  <div
-    class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8 px-4"
-  >
-    {
-      vpsEntries.map((entry) => (
-        <Card
-          title={entry.data.title}
-          image={entry.data.image}
-          asn={entry.data.asn}
-          tableType={entry.data.tableType}
-          locations={entry.data.locations}
-          services={entry.data.services}
-          features={entry.data.features}
-          rpkiStatus={entry.data.rpkiStatus}
-          prefixUpdateStatus={entry.data.prefixUpdateStatus}
-          bgpFee={entry.data.bgpFee}
-          pricing={entry.data.pricing}
-          currency={entry.data.currency}
-          url={entry.data.url}
-        />
-      ))
-    }
-  </div>
+  <main class="w-full py-8">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/5)))] 2xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/6)))] gap-8 px-4"
+    >
+      {
+        vpsEntries.map((entry) => (
+          <div class="flex justify-center">
+            <Card
+              title={entry.data.title}
+              image={entry.data.image}
+              asn={entry.data.asn}
+              tableType={entry.data.tableType}
+              locations={entry.data.locations}
+              services={entry.data.services}
+              features={entry.data.features}
+              rpkiStatus={entry.data.rpkiStatus}
+              prefixUpdateStatus={entry.data.prefixUpdateStatus}
+              bgpFee={entry.data.bgpFee}
+              pricing={entry.data.pricing}
+              currency={entry.data.currency}
+              url={entry.data.url}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </main>
 </Layout>

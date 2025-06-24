@@ -1,5 +1,4 @@
 ---
-// Card.astro
 import "flag-icons/css/flag-icons.min.css";
 
 interface Props {
@@ -7,7 +6,7 @@ interface Props {
   image?: string;
   asn: string;
   tableType?: "full" | "half";
-  locations?: string[]; // Now just array of country codes
+  locations?: string[];
   services?: string[];
   features?: string[];
   rpkiStatus?: "valid" | "invalid";
@@ -34,27 +33,15 @@ const {
   url,
 } = Astro.props;
 
-const currencySymbols = {
-  USD: "$",
-  EUR: "€",
-  GBP: "£",
-};
-const tableTypeText = tableType === "full" ? "Full Table" : "Half Table";
-const currencySymbol = currencySymbols[currency];
-// Create a function to get country names
-function getCountryName(code: string, lang = "en") {
+function getCountryName(code: string, lang = "en"): string {
   try {
     const displayNames = new Intl.DisplayNames([lang], { type: "region" });
-    return displayNames.of(code.toUpperCase());
+    return displayNames.of(code);
   } catch (error) {
-    return code; // Fallback to code if something goes wrong
+    return code;
   }
 }
-function getFlagClass(code: string): string {
-  return `fi fi-${code.toLowerCase()} mr-1`;
-}
 
-// Function to parse location string
 function parseLocation(location: string): {
   city: string;
   countryCode: string;
@@ -62,15 +49,24 @@ function parseLocation(location: string): {
   const [city, countryCode] = location.split(", ");
   return { city, countryCode };
 }
+
+const currencySymbols = {
+  USD: "$",
+  EUR: "€",
+  GBP: "£",
+};
+
+const tableTypeText = tableType === "full" ? "Full Table" : "Half Table";
+const currencySymbol = currencySymbols[currency];
 ---
 
-<div class="card w-96 bg-base-200 shadow-xl">
+<div class="card w-[340px] bg-base-200">
   <div class="card-body">
     <!-- Card Header -->
     <div class="card-actions justify-between items-center mb-4">
-      <div class="badge badge-outline badge-info">{asn}</div>
-      <div class="flex items-center space-x-2">
-        <button class="btn btn-outline btn-sm">{tableTypeText}</button>
+      <div class="text-info">{asn}</div>
+      <div class="flex items-center gap-2">
+        <button class="btn btn-sm btn-outline">{tableTypeText}</button>
         {
           rpkiStatus && (
             <button
@@ -119,105 +115,108 @@ function parseLocation(location: string): {
     </div>
 
     <!-- Logo and Company Name -->
-    <div class="flex items-center mb-4">
-      {
-        image ? (
-          <div class="avatar mr-4">
-            <div class="w-12 rounded-lg">
-              <img src={image} alt={`${title} Logo`} />
-            </div>
-          </div>
-        ) : null
-      }
-      <h1 class="card-title text-3xl">{title}</h1>
+    <div class="flex items-center gap-4 mb-4">
+      <div class="w-12 h-12 rounded-lg bg-base-100 flex items-center justify-center ">
+        {image ? (
+          <img src={image} alt={`${title} logo`} class="max-w-full max-h-full" />
+        ) : (
+          <div class="text-2xl font-bold text-base-content/20">{title.charAt(0)}</div>
+        )}
+      </div>
+      <div>
+        <h2 class="card-title">{title}</h2>
+      </div>
     </div>
 
-    <!-- Sections -->
-    <div class="space-y-6">
-      <!-- Locations -->
-      {
-        locations.length > 0 && (
-          <div>
-            <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
-              Locations
-            </h2>
-            <div class="flex flex-wrap gap-2">
-              {locations.map((location) => {
-                const { city, countryCode } = parseLocation(location);
-                return (
-                  <div class="badge badge-outline">
-                    <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
-                    {city}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )
-      }
-
-      <!-- Services -->
-      {
-        services.length > 0 && (
-          <div>
-            <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
-              Services
-            </h2>
-            <div class="flex flex-wrap gap-2">
-              {services.map((service) => (
-                <div class="badge badge-outline">{service}</div>
-              ))}
-            </div>
-          </div>
-        )
-      }
-
-      <!-- Features -->
-      {
-        features.length > 0 && (
-          <div>
-            <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
-              Features
-            </h2>
-            <div class="flex flex-wrap gap-2">
-              {features.map((feature) => (
-                <div class="badge badge-outline">{feature}</div>
-              ))}
-            </div>
-          </div>
-        )
-      }
-
-      <!-- Pricing & Fee -->
-      <div class="grid grid-cols-2 gap-4 pt-2">
+    <!-- Locations -->
+    {
+      locations.length > 0 && (
         <div>
-          <h2
-            class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
-          >
-            BGP Fee
+          <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+            Locations
           </h2>
-          <p class="font-semibold text-base-content">
-            {currencySymbol}
-            {bgpFee} setup fee
-          </p>
+          <div class="flex flex-wrap gap-2">
+            {locations.map((location) => {
+              const { city, countryCode } = parseLocation(location);
+              return (
+                <div class="badge badge-outline">
+                  <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
+                  {city}
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div>
-          <h2
-            class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
-          >
-            Pricing
-          </h2>
-          <p class="font-semibold text-base-content">
-            Starting at {currencySymbol}
-            {pricing}/mo
-          </p>
-        </div>
-      </div>
+      )
+    }
 
-      <!-- Visit Button -->
-      <div class="card-actions justify-center mt-6">
-        <a href={url} class="btn btn-primary w-full">Visit</a>
+    <!-- Services -->
+    {
+      services.length > 0 && (
+        <div>
+          <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+            Services
+          </h2>
+          <div class="flex flex-wrap gap-2">
+            {services.map((service) => (
+              <div class="badge badge-outline">{service}</div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Features -->
+    {
+      features.length > 0 && (
+        <div>
+          <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+            Features
+          </h2>
+          <div class="flex flex-wrap gap-2">
+            {features.map((feature) => (
+              <div class="badge badge-outline">{feature}</div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Pricing & Fee -->
+    <div class="grid grid-cols-2 gap-4 pt-2">
+      <div>
+        <h2
+          class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+        >
+          BGP Fee
+        </h2>
+        <p class="font-semibold text-base-content">
+          {currencySymbol}
+          {bgpFee}
+          {currency} setup fee
+        </p>
       </div>
+      <div>
+        <h2
+          class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+        >
+          Pricing
+        </h2>
+        <p class="font-semibold text-base-content">
+          Starting at {currencySymbol}
+          {pricing}/mo {currency}
+        </p>
+      </div>
+    </div>
+
+    <!-- View Button -->
+    <div class="card-actions justify-end mt-4">
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary">View Provider</a
+      >
     </div>
   </div>
 </div>

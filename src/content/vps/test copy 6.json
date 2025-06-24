@@ -1,6 +1,5 @@
 {
   "title": "Test VPS",
-  "image": "https://placehold.co/60x60",
   "asn": "AS12345",
   "rpkiStatus": "invalid",
   "tableType": "full",
