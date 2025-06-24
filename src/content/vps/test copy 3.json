@@ -1,0 +1,14 @@
+{
+  "title": "Test VPS",
+  "asn": "AS12345",
+  "rpkiStatus": "invalid",
+  "tableType": "full",
+  "prefixUpdateStatus": "negative",
+  "locations": ["NL", "US", "HK", "GB"],
+  "services": ["VPS"],
+  "features": ["BGP Community Passthrough", "Downstream Support"],
+  "bgpFee": "10",
+  "pricing": "4",
+  "currency": "USD",
+  "url": "https://example.com"
+}

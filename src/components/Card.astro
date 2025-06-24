@@ -1,110 +1,209 @@
 ---
-export interface Props {
-  name: string;
-  logoUrl?: string;
-  locations?: string[];
+// Card.astro
+import "flag-icons/css/flag-icons.min.css";
+
+interface Props {
+  title: string;
+  image?: string;
+  asn: string;
+  tableType?: "full" | "half";
+  locations?: string[]; // Now just array of country codes
   services?: string[];
   features?: string[];
-  bgpFee?: string;
-  pricing?: string;
-  visitUrl?: string;
-  rpkiStatus?: 'valid' | 'invalid';
-  prefixUpdateStatus?: 'positive' | 'negative';
+  rpkiStatus?: "valid" | "invalid";
+  prefixUpdateStatus?: "positive" | "negative";
+  bgpFee: string;
+  pricing: string;
+  currency: "USD" | "EUR" | "GBP";
+  url: string;
 }
 
 const {
-  name,
-  logoUrl,
-  locations = [
-    'Amsterdam', 'Atlanta', 'Frankfurt', 'Fujairah', 'Lagos', 'Los Angeles', 'Madrid', 'Moscow', 'Mumbai', 'Palermo', 'Riga', 'Singapore', 'Sofia', 'Vilnius', 'Warsaw'
-  ],
-  services = ['Baremetal', 'DNS', 'VPS'],
-  features = ['BGP Community Passthrough'],
-  bgpFee = '5 EUR/mo with 10 EUR setup fee (per session per protocol)',
-  pricing = 'Starting at 3.9 EUR',
-  visitUrl = '#',
+  title,
+  image,
+  asn,
+  tableType = "full",
+  locations = [],
+  services = [],
+  features = [],
   rpkiStatus,
   prefixUpdateStatus,
+  bgpFee,
+  pricing,
+  currency = "USD",
+  url,
 } = Astro.props;
+
+const currencySymbols = {
+  USD: "$",
+  EUR: "€",
+  GBP: "£",
+};
+const tableTypeText = tableType === "full" ? "Full Table" : "Half Table";
+const currencySymbol = currencySymbols[currency];
+// Create a function to get country names
+function getCountryName(code: string, lang = "en") {
+  try {
+    const displayNames = new Intl.DisplayNames([lang], { type: "region" });
+    return displayNames.of(code.toUpperCase());
+  } catch (error) {
+    return code; // Fallback to code if something goes wrong
+  }
+}
+function getFlagClass(code: string): string {
+    return `fi fi-${code.toLowerCase()} mr-1`;
+}
 ---
 
-<div class="card bg-base-300 w-80 p-5 text-base-content shadow-xl rounded-2xl">
-  <div class="flex flex-col items-center gap-2">
-    {logoUrl ? (
-      <img src={logoUrl} alt={name + ' logo'} class="w-12 h-12 object-contain mb-1" />
-    ) : (
-      <h2 class="text-xl font-semibold text-center">{name}</h2>
-    )}
-  </div>
-  <div class="flex flex-col gap-3">
-    <div class="flex flex-wrap gap-1.5 mt-2">
-      <span class="badge badge-info border-none">AS8849</span>
-      <span class="badge badge-success border-none">Full table</span>
-      <span class="badge badge-warning border-none">🔄</span>
-      {rpkiStatus === 'valid' && (
-        <div title="RPKI valid">
-          <span class="badge badge-success gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
-          </span>
-        </div>
-      )}
-      {rpkiStatus === 'invalid' && (
-        <div title="RPKI invalid">
-          <span class="badge badge-error gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>
-          </span>
-        </div>
-      )}
-      {prefixUpdateStatus === 'positive' && (
-        <div title="Prefix update positive">
-          <span class="badge badge-success gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </span>
-        </div>
-      )}
-      {prefixUpdateStatus === 'negative' && (
-        <div title="Prefix update negative">
-          <span class="badge badge-error gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </span>
-        </div>
-      )}
-    </div>
-    <div class="space-y-1">
-      <div class="text-sm font-semibold text-base-content/60">LOCATIONS</div>
-      <div class="flex flex-wrap gap-1.5">
-        {locations.map(loc => <span class=" text-white badge badge-neutral badge-outline">{loc}</span>)}
+<div class="card w-96 bg-base-200 shadow-xl">
+  <div class="card-body">
+    <!-- Card Header -->
+    <div class="card-actions justify-between items-center mb-4">
+      <div class="badge badge-outline badge-info">{asn}</div>
+      <div class="flex items-center space-x-2">
+        <button class="btn btn-outline btn-sm">{tableTypeText}</button>
+        {
+          rpkiStatus && (
+            <button
+              class={`btn btn-sm btn-square btn-outline ${rpkiStatus === "valid" ? "btn-success" : "btn-error"}`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </button>
+          )
+        }
+        {
+          prefixUpdateStatus && (
+            <button
+              class={`btn btn-sm btn-square btn-outline ${prefixUpdateStatus === "positive" ? "btn-success" : "btn-error"}`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </button>
+          )
+        }
       </div>
     </div>
-    <div class="space-y-1">
-      <div class="text-sm font-semibold text-base-content/60">SERVICES</div>
-      <div class="flex flex-wrap gap-1.5">
-        {services.map(svc => <span class="badge badge-primary badge-outline">{svc}</span>)}
+
+    <!-- Logo and Company Name -->
+    <div class="flex items-center mb-4">
+      {
+        image ? (
+          <div class="avatar mr-4">
+            <div class="w-12 rounded-lg">
+              <img src={image} alt={`${title} Logo`} />
+            </div>
+          </div>
+        ) : null
+      }
+      <h1 class="card-title text-3xl">{title}</h1>
+    </div>
+
+    <!-- Sections -->
+    <div class="space-y-6">
+      <!-- Locations -->
+{locations.length > 0 && (
+    <div>
+        <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+            Locations
+        </h2>
+        <div class="flex flex-wrap gap-2">
+            {locations.map((code) => (
+                <div class="badge badge-outline">
+                    <span class={getFlagClass(code)}></span>
+                    {getCountryName(code)}
+                </div>
+            ))}
+        </div>
+    </div>
+)}
+
+      <!-- Services -->
+      {
+        services.length > 0 && (
+          <div>
+            <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              Services
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              {services.map((service) => (
+                <div class="badge badge-outline">{service}</div>
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      <!-- Features -->
+      {
+        features.length > 0 && (
+          <div>
+            <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              Features
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              {features.map((feature) => (
+                <div class="badge badge-outline">{feature}</div>
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      <!-- Pricing & Fee -->
+      <div class="grid grid-cols-2 gap-4 pt-2">
+        <div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+          >
+            BGP Fee
+          </h2>
+          <p class="font-semibold text-base-content">
+            {currencySymbol}
+            {bgpFee} setup fee
+          </p>
+        </div>
+        <div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+          >
+            Pricing
+          </h2>
+          <p class="font-semibold text-base-content">
+            Starting at {currencySymbol}
+            {pricing}/mo
+          </p>
+        </div>
+      </div>
+
+      <!-- Visit Button -->
+      <div class="card-actions justify-center mt-6">
+        <a href={url} class="btn btn-primary w-full">Visit</a>
       </div>
     </div>
-    <div class="space-y-1">
-      <div class="text-sm font-semibold text-base-content/60">FEATURES</div>
-      <div class="flex flex-wrap gap-1.5">
-        {features.map(f => <span class="badge badge-success badge-outline">{f}</span>)}
-      </div>
-    </div>
-    <div class="space-y-1">
-      <div class="text-sm font-semibold text-base-content/60">BGP FEE</div>
-      <div class="text-base text-base-content">{bgpFee}</div>
-    </div>
-    <div class="space-y-1">
-      <div class="text-sm font-semibold text-base-content/60">PRICING</div>
-      <div class="text-base text-base-content">{pricing}</div>
-    </div>
-  </div>
-  <div class="flex justify-center mt-4">
-    <a href={visitUrl} 
-      class="btn btn-primary" 
-      target="_blank" 
-      rel="noopener"
-    >
-      Visit
-    </a>
   </div>
 </div>
-

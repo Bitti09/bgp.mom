@@ -1,22 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { getCollection, getEntry } from "astro:content";
-const allVPS = await getCollection("vps");
-console.log(allVPS);
+import { getCollection } from "astro:content";
+
+const vpsEntries = await getCollection("vps");
 ---
 
-<Layout>
-  <h1>VPS</h1>
-  <div class="grid gap-4 p-4 place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
+<Layout title="BGP.mom - List of VPS Providers with BGP support">
+  <div
+    class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8 px-4"
+  >
     {
-      allVPS.map((post) => (
+      vpsEntries.map((entry) => (
         <Card
-          name={post.data.name}
-          rpkiStatus={post.data.rpki ? "valid" : "invalid"}
-          prefixUpdateStatus={
-            post.data.prefixUpdateStatus ? "positive" : "negative"
-          }
+          title={entry.data.title}
+          image={entry.data.image}
+          asn={entry.data.asn}
+          tableType={entry.data.tableType}
+          locations={entry.data.locations}
+          services={entry.data.services}
+          features={entry.data.features}
+          rpkiStatus={entry.data.rpkiStatus}
+          prefixUpdateStatus={entry.data.prefixUpdateStatus}
+          bgpFee={entry.data.bgpFee}
+          pricing={entry.data.pricing}
+          currency={entry.data.currency}
+          url={entry.data.url}
         />
       ))
     }

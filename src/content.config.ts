@@ -1,18 +1,24 @@
-// 1. Import utilities from `astro:content`
 import { defineCollection, z } from "astro:content";
 
-// 2. Import loader(s)
-import { glob, file } from "astro/loaders";
-
-// 3. Define your collection(s)
 const vps = defineCollection({
-  loader: glob({ pattern: "**/*.json", base: "./src/data/vps" }),
+  type: "data",
   schema: z.object({
-    name: z.string(),
-    rpki: z.boolean().optional(),
-    prefixUpdateStatus:z.boolean().optional(),
+    title: z.string(),
+    image: z.string().optional(),
+    asn: z.string(),
+    tableType: z.enum(["full", "half"]).default("full"),
+    locations: z.array(z.string()).default([]), // Now just an array of country codes
+    services: z.array(z.string()).default([]),
+    features: z.array(z.string()).default([]),
+    rpkiStatus: z.enum(["valid", "invalid"]).optional(),
+    prefixUpdateStatus: z.enum(["positive", "negative"]).optional(),
+    bgpFee: z.string(),
+    pricing: z.string(),
+    currency: z.enum(["USD", "EUR", "GBP"]).default("USD"),
+    url: z.string(),
   }),
 });
 
-// 4. Export a single `collections` object to register your collection(s)
-export const collections = { vps };
+export const collections = {
+  vps: vps,
+};

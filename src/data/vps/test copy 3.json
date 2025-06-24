@@ -1,7 +1,0 @@
-{
-  "name": "Test VPS 4",
-  "rpki": false,
-  "prefixUpdateStatus": false,
-  "description": "This is a test VPS with RPKI disabled."
-}
-

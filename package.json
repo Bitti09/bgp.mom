@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
-    "astro": "^5.9.3",
+    "astro": "^5.10.1",
     "daisyui": "^5.0.43",
+    "flag-icons": "^7.5.0",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
-    "wrangler": "^4.20.0"
+    "wrangler": "^4.21.0"
   }
 }
