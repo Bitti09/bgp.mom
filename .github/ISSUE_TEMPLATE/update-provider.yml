@@ -1,0 +1,161 @@
+name: Update Provider Information
+description: Update information for an existing VPS provider
+title: "Update: "
+labels: ["provider-update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep our provider information up-to-date! Please fill out only the fields that need to be updated.
+
+  - type: input
+    id: provider-name
+    attributes:
+      label: Provider Name
+      description: The name of the VPS provider to be updated
+      placeholder: "Example: Test VPS"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update-type
+    attributes:
+      label: Type of Update
+      description: What kind of update is this?
+      multiple: true
+      options:
+        - Pricing Change
+        - Location Change
+        - Feature Change
+        - Service Change
+        - ASN Change
+        - URL Change
+        - RPKI Status Change
+        - Table Type Change
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: asn
+    attributes:
+      label: ASN
+      description: Updated Autonomous System Number (if changing)
+      placeholder: "AS12345"
+
+  - type: dropdown
+    id: table-type
+    attributes:
+      label: BGP Table Type
+      description: Updated BGP table type (if changing)
+      options:
+        - Full Table
+        - Half Table
+
+  - type: dropdown
+    id: rpki-status
+    attributes:
+      label: RPKI Status
+      description: Updated RPKI validation status (if changing)
+      options:
+        - Valid
+        - Invalid
+
+  - type: dropdown
+    id: prefix-status
+    attributes:
+      label: Prefix Update Status
+      description: Updated prefix update status (if changing)
+      options:
+        - Positive
+        - Negative
+
+  - type: input
+    id: locations
+    attributes:
+      label: Locations
+      description: Updated list of country codes (if changing, comma-separated)
+      placeholder: "NL, US, HK, GB"
+
+  - type: input
+    id: services
+    attributes:
+      label: Services
+      description: Updated list of services (if changing, comma-separated)
+      placeholder: "VPS, Dedicated Servers"
+
+  - type: input
+    id: features
+    attributes:
+      label: BGP Features
+      description: Updated BGP-related features (if changing, comma-separated)
+      placeholder: "BGP Community Passthrough, Downstream Support"
+
+  - type: input
+    id: bgp-fee
+    attributes:
+      label: BGP Setup Fee
+      description: Updated setup fee for BGP (numbers only, if changing)
+      placeholder: "10"
+
+  - type: input
+    id: pricing
+    attributes:
+      label: Monthly Pricing
+      description: Updated starting monthly price (numbers only, if changing)
+      placeholder: "4"
+
+  - type: dropdown
+    id: currency
+    attributes:
+      label: Currency
+      description: Updated currency for pricing (if changing)
+      options:
+        - USD
+        - EUR
+        - GBP
+
+  - type: input
+    id: url
+    attributes:
+      label: Provider URL
+      description: Updated website URL (if changing)
+      placeholder: "https://example.com"
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Update
+      description: Please explain why this information needs to be updated
+      placeholder: "The provider has changed their pricing structure..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification-source
+    attributes:
+      label: Verification Source
+      description: Please provide links or sources that verify these changes
+      placeholder: "Official announcement: https://provider-blog.com/update..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      description: Please confirm the following
+      options:
+        - label: I have verified all updated information is accurate
+          required: true
+        - label: I have provided sources to verify these changes
+          required: true
+        - label: I understand this update will be reviewed before being applied
+          required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any additional context about these changes (optional)
+      placeholder: "Additional details about the changes..."

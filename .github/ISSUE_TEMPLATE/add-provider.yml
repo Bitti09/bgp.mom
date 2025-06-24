@@ -1,0 +1,148 @@
+name: Add VPS Provider
+description: Submit a new VPS provider with BGP support
+title: "Add: "
+labels: ["provider-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to submit a VPS provider! Please fill out the information below.
+
+  - type: input
+    id: provider-name
+    attributes:
+      label: Provider Name
+      description: The name of the VPS provider
+      placeholder: "Example: Test VPS"
+    validations:
+      required: true
+
+  - type: input
+    id: asn
+    attributes:
+      label: ASN
+      description: The provider's Autonomous System Number
+      placeholder: "AS12345"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: table-type
+    attributes:
+      label: BGP Table Type
+      description: What type of BGP table does the provider offer?
+      options:
+        - Full Table
+        - Half Table
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rpki-status
+    attributes:
+      label: RPKI Status
+      description: The provider's RPKI validation status
+      options:
+        - Valid
+        - Invalid
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prefix-status
+    attributes:
+      label: Prefix Update Status
+      description: The provider's prefix update status
+      options:
+        - Positive
+        - Negative
+    validations:
+      required: true
+
+  - type: input
+    id: locations
+    attributes:
+      label: Locations
+      description: List the country codes where the provider has presence (comma-separated)
+      placeholder: "NL, US, HK, GB"
+    validations:
+      required: true
+
+  - type: input
+    id: services
+    attributes:
+      label: Services
+      description: List the services offered (comma-separated)
+      placeholder: "VPS, Dedicated Servers"
+    validations:
+      required: true
+
+  - type: input
+    id: features
+    attributes:
+      label: BGP Features
+      description: List the BGP-related features (comma-separated)
+      placeholder: "BGP Community Passthrough, Downstream Support"
+    validations:
+      required: true
+
+  - type: input
+    id: bgp-fee
+    attributes:
+      label: BGP Setup Fee
+      description: The setup fee for BGP (numbers only)
+      placeholder: "10"
+    validations:
+      required: true
+
+  - type: input
+    id: pricing
+    attributes:
+      label: Monthly Pricing
+      description: The starting monthly price (numbers only)
+      placeholder: "4"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: currency
+    attributes:
+      label: Currency
+      description: The currency for pricing
+      options:
+        - USD
+        - EUR
+        - GBP
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Provider URL
+      description: The website URL of the provider
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      description: Please confirm the following
+      options:
+        - label: I have verified all information is accurate and up-to-date
+          required: true
+        - label: I have confirmed the provider actively supports BGP
+          required: true
+        - label: I understand this submission will be reviewed before being added
+          required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any additional information about the provider (optional)
+      placeholder: "Additional details about the provider's BGP offering..."
+    validations:
+      required: false
