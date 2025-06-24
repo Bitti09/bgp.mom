@@ -112,6 +112,24 @@ pnpm preview
 - Keep code clean and well-documented
 - Follow the existing code style
 
+## License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+This means you are free to:
+- Use this software for any purpose
+- Change the software to suit your needs
+- Share the software and your changes with others
+
+Under the following conditions:
+- Share any changes you make under the same license
+- Keep all copyright notices intact
+- Include the original source code when you share the software
+- State changes you made to the software
+- Include the full license text with the software
+
+For more information, visit [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
 ## Support
 
 For support, questions, or suggestions:
