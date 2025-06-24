@@ -51,7 +51,16 @@ function getCountryName(code: string, lang = "en") {
   }
 }
 function getFlagClass(code: string): string {
-    return `fi fi-${code.toLowerCase()} mr-1`;
+  return `fi fi-${code.toLowerCase()} mr-1`;
+}
+
+// Function to parse location string
+function parseLocation(location: string): {
+  city: string;
+  countryCode: string;
+} {
+  const [city, countryCode] = location.split(", ");
+  return { city, countryCode };
 }
 ---
 
@@ -126,21 +135,26 @@ function getFlagClass(code: string): string {
     <!-- Sections -->
     <div class="space-y-6">
       <!-- Locations -->
-{locations.length > 0 && (
-    <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
-            Locations
-        </h2>
-        <div class="flex flex-wrap gap-2">
-            {locations.map((code) => (
-                <div class="badge badge-outline">
-                    <span class={getFlagClass(code)}></span>
-                    {getCountryName(code)}
-                </div>
-            ))}
-        </div>
-    </div>
-)}
+      {
+        locations.length > 0 && (
+          <div>
+            <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              Locations
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              {locations.map((location) => {
+                const { city, countryCode } = parseLocation(location);
+                return (
+                  <div class="badge badge-outline">
+                    <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
+                    {city}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )
+      }
 
       <!-- Services -->
       {
