@@ -17,30 +17,24 @@ BGP.mom is a community-driven platform that lists VPS providers offering BGP sup
 - [Astro](https://astro.build/) - Static Site Generator
 - [daisyUI](https://daisyui.com/) - Component Library
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 22 or higher
-- pnpm (recommended) or npm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/BitB0y/bgp.mom.git
-cd bgp.mom
-
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-```
+## Contributing
 
 ### Adding a VPS Provider
 
-Create a new JSON file in `src/content/vps/` with the following structure:
+1. Go to the [New Provider Issue](https://github.com/BitB0y/bgp.mom/issues/new?template=add-provider.yml) page
+2. Fill out the provider information form
+3. Submit the issue
+4. Our team will review and add the provider
+
+### Updating Provider Information
+
+1. Go to the [Update Provider Issue](https://github.com/BitB0y/bgp.mom/issues/new?template=update-provider.yml) page
+2. Fill out the update form with the changed information
+3. Provide verification sources for the changes
+4. Submit the issue
+5. Our team will review and apply the updates
+
+For reference, here's the provider data structure:
 
 ```json
 {
@@ -64,7 +58,24 @@ Create a new JSON file in `src/content/vps/` with the following structure:
 
 ## Development
 
-The project uses Astro's content collections for data management. Provider data is stored in JSON format and validated through TypeScript schemas.
+### Prerequisites
+
+- Node.js 22 or higher
+- pnpm (recommended) or npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/BitB0y/bgp.mom.git
+cd bgp.mom
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
 
 ### Key Files
 
@@ -84,31 +95,27 @@ pnpm build
 pnpm preview
 ```
 
-## Contributing
+## Developer Guidelines
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Add/update provider information
+3. Make your changes
 4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 5. Push to the branch (`git push origin feature/AmazingFeature`)
 6. Open a Pull Request
 
 ### Contribution Guidelines
 
-- Ensure provider information is accurate and up-to-date
-- Follow the JSON schema for provider data
+- Follow the TypeScript schema for data validation
 - Use standard country codes for locations
-- Keep pricing information current
-- Verify ASN information
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Test your changes locally before submitting
+- Keep code clean and well-documented
+- Follow the existing code style
 
 ## Support
 
 For support, questions, or suggestions:
-- Open an [issue](https://github.com/Bitti09/bgp.mom/issues)
+- Open an [issue](https://github.com/BitB0y/bgp.mom/issues)
 - Join our [Discord community](#) (coming soon)
 - Follow updates on [Twitter](#) (coming soon)
 
