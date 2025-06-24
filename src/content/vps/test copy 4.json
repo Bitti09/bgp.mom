@@ -1,6 +1,6 @@
 {
-  "title": "Test VPS",
-  "asn": "AS12345",
+  "title": "ATest VPS",
+  "asn": "AS1234511",
   "rpkiStatus": "valid",
   "tableType": "full",
   "prefixUpdateStatus": "negative",
