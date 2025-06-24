@@ -8,8 +8,5 @@
       "pattern": "bgp.mom",
       "custom_domain": true
     }
-  ],
-  "assets": {
-    "directory": "./dist"
-  }
+  ]
 }
