@@ -17,8 +17,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "no",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "Filters updated daily. Route origin communities available.",
   "bgpFee": "5",
   "pricing": "2.50",

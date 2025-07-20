@@ -15,8 +15,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "Can provide access to IX exchanges Speed-IX",
   "bgpFee": "10",
   "pricing": "10",

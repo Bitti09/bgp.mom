@@ -18,8 +18,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "AS-SET must be reasonable size. BGP Session on VPS cannot be used for commercial purposes.",
   "bgpFee": "0",
   "pricing": "4.20",

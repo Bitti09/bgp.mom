@@ -15,8 +15,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "Fully automated BGP pipeline from sign up to announcement.",
   "bgpFee": "0",
   "pricing": "8",

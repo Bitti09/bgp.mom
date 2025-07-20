@@ -20,8 +20,8 @@
     "BGP Community Passthrough"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "Can offer access to France-IX and DE-CIX",
   "bgpFee": "0",
   "pricing": "3",

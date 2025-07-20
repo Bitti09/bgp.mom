@@ -19,8 +19,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "negative",
-  "loaRequired": "required",
+  "prefixUpdateStatus": "manual",
+  "loaRequired": "yes",
   "notes": "VPS starting at $5/mo USD, dedicated servers starting at $70/mo. All BGP sessions are DDoS protected, no setup fee.",
   "bgpFee": "0",
   "pricing": "5",

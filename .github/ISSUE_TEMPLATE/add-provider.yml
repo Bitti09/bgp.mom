@@ -54,8 +54,8 @@ body:
       label: Prefix Update Status
       description: The provider's prefix update status
       options:
-        - Positive
-        - Negative
+        - Automatic
+        - Manual
     validations:
       required: true
 
@@ -65,8 +65,8 @@ body:
       label: LOA Required
       description: Does the provider require a Letter of Authorization?
       options:
-        - Required
-        - Not Required
+        - Yes
+        - No
     validations:
       required: true
 

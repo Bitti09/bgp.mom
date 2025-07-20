@@ -11,8 +11,8 @@ const vps = defineCollection({
         services: z.array(z.string()).default([]),
         features: z.array(z.string()).default([]),
         rpkiStatus: z.enum(['yes', 'no']).optional(), // 'yes' = RPKI Filtering: Yes, 'no' = RPKI Filtering: No
-        prefixUpdateStatus: z.enum(['positive', 'negative']).optional(),
-        loaRequired: z.enum(['required', 'not-required']).optional(),
+        prefixUpdateStatus: z.enum(['automatic', 'manual']).optional(), // 'automatic' = filters updated automatically, 'manual' = filters updated manually
+        loaRequired: z.enum(['yes', 'no']).optional(), // 'yes' = LOA required, 'no' = LOA not required
         notes: z.string().optional(),
         bgpFee: z.string(),
         pricing: z.string(),

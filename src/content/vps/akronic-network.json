@@ -16,8 +16,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "yes",
   "notes": "Free tier available with 1TB traffic and IPv6 session.",
   "bgpFee": "0",
   "pricing": "0",

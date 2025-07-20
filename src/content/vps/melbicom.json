@@ -29,8 +29,8 @@
     "BGP Community Passthrough"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "negative",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "manual",
+  "loaRequired": "no",
   "notes": "",
   "bgpFee": "5",
   "pricing": "3.9",

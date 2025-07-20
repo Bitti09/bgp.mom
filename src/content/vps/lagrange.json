@@ -18,8 +18,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "£15 for ASN + /48\nLONAP and LINX ports available for VPS and baremetal",
   "bgpFee": "0",
   "pricing": "3",

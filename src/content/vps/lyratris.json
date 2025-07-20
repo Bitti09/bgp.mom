@@ -16,8 +16,8 @@
     "BGP Community Passthrough"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "negative",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "manual",
+  "loaRequired": "no",
   "notes": "Can provide access to LocIX Frankfurt",
   "bgpFee": "10",
   "pricing": "5",

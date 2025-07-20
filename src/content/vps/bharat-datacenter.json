@@ -16,8 +16,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "no",
-  "prefixUpdateStatus": "negative",
-  "loaRequired": "required",
+  "prefixUpdateStatus": "manual",
+  "loaRequired": "yes",
   "notes": "",
   "bgpFee": "0",
   "pricing": "90",

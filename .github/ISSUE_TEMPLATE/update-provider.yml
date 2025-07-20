@@ -69,8 +69,8 @@ body:
       label: Prefix Update Status
       description: Updated prefix update status (if changing)
       options:
-        - Positive
-        - Negative
+        - Automatic
+        - Manual
 
   - type: dropdown
     id: loa-required
@@ -78,8 +78,8 @@ body:
       label: LOA Required
       description: Updated LOA requirement status (if changing)
       options:
-        - Required
-        - Not Required
+        - Yes
+        - No
 
   - type: input
     id: locations

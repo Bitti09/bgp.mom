@@ -17,8 +17,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "Minimum s1.small for VPS. Can also provide access to ONIX",
   "bgpFee": "0",
   "pricing": "3.50",

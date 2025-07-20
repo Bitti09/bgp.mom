@@ -17,8 +17,8 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "positive",
-  "loaRequired": "not-required",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
   "notes": "Open a ticket to request a BGP session with us. Traffic Engineering (Prepends / Do not announce) available via BGP communities.",
   "bgpFee": "0",
   "pricing": "3.50",
