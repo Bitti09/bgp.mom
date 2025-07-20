@@ -182,40 +182,24 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
-    id: logo-permission
-    attributes:
-      label: Logo Permission
-      description: Do you agree that we can use your logo on our site?
-      options:
-        - label: I agree that bgp.mom can use our logo on the website
-          required: true
-
-  - type: checkboxes
-    id: policy-agreement
-    attributes:
-      label: Policy
-      description: By submitting this issue, you have read the policy and the provider falls within the Policy to be added
-      options:
-        - label: I agree that the provider falls within this policy
-          required: true
-
-  - type: checkboxes
-    id: verification
-    attributes:
-      label: Verification
-      description: Please confirm the following
-      options:
-        - label: I have verified all updated information is accurate
-          required: true
-        - label: I have provided sources to verify these changes
-          required: true
-        - label: I understand this update will be reviewed before being applied
-          required: true
-
   - type: textarea
     id: additional-info
     attributes:
       label: Additional Information
       description: Any additional context about these changes (optional)
       placeholder: "Additional details about the changes..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: agreements
+    attributes:
+      label: Agreements & Verification
+      description: Please confirm the following before submitting
+      options:
+        - label: I agree that bgp.mom can use the provider's logo on the website
+          required: true
+        - label: I have verified all updated information is accurate and provided sources
+          required: true
+        - label: I understand this update will be reviewed before being applied
+          required: true
