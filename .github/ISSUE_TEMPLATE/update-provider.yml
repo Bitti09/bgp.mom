@@ -46,42 +46,56 @@ body:
       label: ASN
       description: "Updated Autonomous System Number (numbers only, without 'AS' prefix, if changing). Example: Enter '12345' not 'AS12345'"
       placeholder: "12345"
+    validations:
+      required: false
 
   - type: dropdown
     id: table-type
     attributes:
       label: BGP Table Type
       description: Updated BGP table type (if changing)
+      multiple: false
       options:
         - Full Table
         - Half Table
+    validations:
+      required: false
 
   - type: dropdown
     id: rpki-status
     attributes:
       label: RPKI Filtering
       description: Updated RPKI filtering status (if changing)
+      multiple: false
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
+    validations:
+      required: false
 
   - type: dropdown
     id: prefix-status
     attributes:
       label: Prefix Update Status
       description: Updated prefix update status (if changing)
+      multiple: false
       options:
         - Automatic
         - Manual
+    validations:
+      required: false
 
   - type: dropdown
     id: loa-required
     attributes:
       label: LOA Required
       description: Updated LOA requirement status (if changing)
+      multiple: false
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
+    validations:
+      required: false
 
   - type: input
     id: locations
@@ -117,12 +131,15 @@ body:
       label: Monthly Pricing
       description: Updated starting monthly price (numbers only, if changing)
       placeholder: "4"
+    validations:
+      required: false
 
   - type: dropdown
     id: currency
     attributes:
       label: Currency
       description: Updated currency for pricing (if changing)
+      multiple: false
       options:
         - USD
         - EUR
@@ -130,6 +147,8 @@ body:
         - CHF
         - SEK
         - CZK
+    validations:
+      required: false
 
   - type: input
     id: url
