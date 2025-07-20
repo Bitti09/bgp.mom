@@ -23,7 +23,7 @@
     "BGP Community Passthrough",
     "Downstream Support"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "not-required",
   "notes": "Can provide access to IX exchanges ONIX, DE-CIX, LINX, LONAP and FREMIX.\nCan also provide access to Cogent, GTT and Arelion direct",

@@ -15,7 +15,7 @@
     "BGP Communities",
     "BGP Community Passthrough"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "negative",
   "loaRequired": "not-required",
   "notes": "Can provide access to LocIX Frankfurt",

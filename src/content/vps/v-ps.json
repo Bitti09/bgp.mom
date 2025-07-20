@@ -26,7 +26,7 @@
     "BGP Community Passthrough",
     "Downstream Support"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "not-required",
   "notes": "Can provide access to IX exchanges DE-CIX, LocIX and AMS-IX",

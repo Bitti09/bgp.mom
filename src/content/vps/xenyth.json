@@ -16,7 +16,7 @@
     "BGP Community Passthrough",
     "Downstream Support"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "not-required",
   "notes": "Minimum s1.small for VPS. Can also provide access to ONIX",

@@ -25,7 +25,7 @@
     "BGP Community Passthrough",
     "Downstream Support"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "negative",
   "loaRequired": "required",
   "notes": "",

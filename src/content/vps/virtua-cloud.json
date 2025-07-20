@@ -19,7 +19,7 @@
     "BGP Communities",
     "BGP Community Passthrough"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "not-required",
   "notes": "Can offer access to France-IX and DE-CIX",

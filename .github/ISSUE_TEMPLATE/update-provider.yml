@@ -30,7 +30,7 @@ body:
         - Service Change
         - ASN Change
         - URL Change
-        - RPKI Status Change
+        - RPKI Filtering Change
         - Table Type Change
         - LOA Status Change
         - Notes Update
@@ -57,11 +57,11 @@ body:
   - type: dropdown
     id: rpki-status
     attributes:
-      label: RPKI Status
-      description: Updated RPKI validation status (if changing)
+      label: RPKI Filtering
+      description: Updated RPKI filtering status (if changing)
       options:
-        - Valid
-        - Invalid
+        - Yes
+        - No
 
   - type: dropdown
     id: prefix-status

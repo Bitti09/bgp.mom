@@ -1,28 +1,26 @@
 {
-  "title": "CloudMate",
-  "image": "/img/providers/cloudmate.png",
-  "asn": "214441",
+  "title": "Akronic Network",
+  "asn": "199829",
   "tableType": "full",
   "locations": [
-    "Derby, GB",
-    "Noida, IN"
+    "Sao Paulo, BR",
+    "Miami, US"
   ],
   "services": [
     "VPS",
     "Baremetal",
-    "LIR Services",
-    "IP Transit",
     "Colocation"
   ],
   "features": [
+    "BGP Community Passthrough",
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "required",
-  "notes": "",
-  "bgpFee": "10",
-  "pricing": "5",
+  "notes": "Free tier available with 1TB traffic and IPv6 session.",
+  "bgpFee": "0",
+  "pricing": "0",
   "currency": "USD",
-  "url": "https://cloudmate.in/"
+  "url": "https://akronic.network"
 }

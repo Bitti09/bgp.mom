@@ -15,7 +15,7 @@
   "features": [
     "Downstream Support"
   ],
-  "rpkiStatus": "invalid",
+  "rpkiStatus": "no",
   "prefixUpdateStatus": "negative",
   "loaRequired": "required",
   "notes": "",

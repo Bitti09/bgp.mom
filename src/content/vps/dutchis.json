@@ -14,7 +14,7 @@
   "features": [
     "Downstream Support"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "not-required",
   "notes": "Can provide access to IX exchanges Speed-IX",

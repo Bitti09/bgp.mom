@@ -1,16 +1,15 @@
 {
-  "title": "Skywolf Cloud",
-  "image": "/img/providers/skywolf-cloud.png",
-  "asn": "7720",
+  "title": "LAKENETWORKS.it",
+  "asn": "6517",
   "tableType": "full",
   "locations": [
-    "Hong Kong, HK",
-    "Fremont, US"
+    "Como, IT"
   ],
   "services": [
     "VPS",
+    "Colocation",
     "IP Transit",
-    "Colocation"
+    "Tunnels"
   ],
   "features": [
     "BGP Communities",
@@ -20,9 +19,9 @@
   "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "not-required",
-  "notes": "AS-SET must be reasonable size. BGP Session on VPS cannot be used for commercial purposes.",
+  "notes": "Open a ticket to request a BGP session with us. Traffic Engineering (Prepends / Do not announce) available via BGP communities.",
   "bgpFee": "0",
-  "pricing": "4.20",
+  "pricing": "3.50",
   "currency": "USD",
-  "url": "https://hk.skywolf.cloud/"
+  "url": "https://www.lakenetworks.it"
 }

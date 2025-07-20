@@ -16,7 +16,7 @@
     "IXP Access"
   ],
   "features": [],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "required",
   "notes": "",

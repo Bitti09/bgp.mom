@@ -10,7 +10,7 @@ const vps = defineCollection({
         locations: z.array(z.string().regex(/^[^,]+, [A-Z]{2}$/, 'Must be in format "City, CC"')).default([]),
         services: z.array(z.string()).default([]),
         features: z.array(z.string()).default([]),
-        rpkiStatus: z.enum(['valid', 'invalid']).optional(),
+        rpkiStatus: z.enum(['yes', 'no']).optional(), // 'yes' = RPKI Filtering: Yes, 'no' = RPKI Filtering: No
         prefixUpdateStatus: z.enum(['positive', 'negative']).optional(),
         loaRequired: z.enum(['required', 'not-required']).optional(),
         notes: z.string().optional(),

@@ -29,7 +29,7 @@
     "BGP Community Passthrough",
     "Downstream Support"
   ],
-  "rpkiStatus": "valid",
+  "rpkiStatus": "yes",
   "prefixUpdateStatus": "positive",
   "loaRequired": "not-required",
   "notes": "Can provide access to numerous IXs such as LocIX, DE-CIX, NL-ix, FogIXP and LoNAP\nCan also provide access to RETN, Cogent and Arelion direct",

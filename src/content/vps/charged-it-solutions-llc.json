@@ -1,0 +1,29 @@
+{
+  "title": "Charged IT Solutions LLC",
+  "asn": "40124",
+  "tableType": "half",
+  "locations": [
+    "Phoenix, US",
+    "Miami, US", 
+    "London, GB"
+  ],
+  "services": [
+    "IP Transit",
+    "Tunnels",
+    "Baremetal",
+    "VPS",
+    "Colocation"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "negative",
+  "loaRequired": "required",
+  "notes": "VPS starting at $5/mo USD, dedicated servers starting at $70/mo. All BGP sessions are DDoS protected, no setup fee.",
+  "bgpFee": "0",
+  "pricing": "5",
+  "currency": "USD",
+  "url": "https://chargeditsolutions.com"
+}

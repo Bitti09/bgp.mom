@@ -9,9 +9,9 @@ interface Props {
   locations?: string[];
   services?: string[];
   features?: string[];
-  rpkiStatus?: "valid" | "invalid";
-  prefixUpdateStatus?: "positive" | "negative";
-  loaRequired?: "required" | "not-required";
+  rpkiStatus?: "yes" | "no";
+  prefixUpdateStatus?: "automatic" | "manual";
+  loaRequired?: "yes" | "no";
   notes?: string;
   bgpFee: string;
   pricing: string;
@@ -84,15 +84,15 @@ const currencySymbol = currencySymbols[currency];
         {
           rpkiStatus && (
             <div
-              class={`tooltip tooltip-bottom ${rpkiStatus === "valid" ? "tooltip-success" : "tooltip-error"}`}
+              class={`tooltip tooltip-bottom ${rpkiStatus === "yes" ? "tooltip-success" : "tooltip-error"}`}
               data-tip={
-                rpkiStatus === "valid"
-                  ? "RPKI Validation: Enabled"
-                  : "RPKI Validation: Disabled"
+                rpkiStatus === "yes"
+                  ? "RPKI Filtering: Yes"
+                  : "RPKI Filtering: No"
               }
             >
               <button
-                class={`btn btn-sm btn-square btn-outline ${rpkiStatus === "valid" ? "btn-success" : "btn-error"}`}
+                class={`btn btn-sm btn-square btn-outline ${rpkiStatus === "yes" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -115,15 +115,15 @@ const currencySymbol = currencySymbols[currency];
         {
           prefixUpdateStatus && (
             <div
-              class={`tooltip tooltip-bottom ${prefixUpdateStatus === "positive" ? "tooltip-success" : "tooltip-error"}`}
+              class={`tooltip tooltip-bottom ${prefixUpdateStatus === "automatic" ? "tooltip-success" : "tooltip-error"}`}
               data-tip={
-                prefixUpdateStatus === "positive"
+                prefixUpdateStatus === "automatic"
                   ? "Prefix Updates: Automatic"
                   : "Prefix Updates: Manual"
               }
             >
               <button
-                class={`btn btn-sm btn-square btn-outline ${prefixUpdateStatus === "positive" ? "btn-success" : "btn-error"}`}
+                class={`btn btn-sm btn-square btn-outline ${prefixUpdateStatus === "automatic" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -146,15 +146,15 @@ const currencySymbol = currencySymbols[currency];
         {
           loaRequired && (
             <div
-              class={`tooltip tooltip-bottom ${loaRequired === "not-required" ? "tooltip-success" : "tooltip-error"}`}
+              class={`tooltip tooltip-bottom ${loaRequired === "no" ? "tooltip-success" : "tooltip-error"}`}
               data-tip={
-                loaRequired === "not-required"
+                loaRequired === "no"
                   ? "LOA Required: No"
                   : "LOA Required: Yes"
               }
             >
               <button
-                class={`btn btn-sm btn-square btn-outline ${loaRequired === "not-required" ? "btn-success" : "btn-error"}`}
+                class={`btn btn-sm btn-square btn-outline ${loaRequired === "no" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

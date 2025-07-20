@@ -1,0 +1,27 @@
+{
+  "title": "PawHost",
+  "asn": "214915",
+  "tableType": "full",
+  "locations": [
+    "Düsseldorf, DE"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "Colocation",
+    "Managed Services"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "no",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Filters updated daily. Route origin communities available.",
+  "bgpFee": "5",
+  "pricing": "2.50",
+  "currency": "EUR",
+  "url": "https://pawhost.de"
+}
