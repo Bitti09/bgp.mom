@@ -42,8 +42,8 @@ body:
     id: asn
     attributes:
       label: ASN
-      description: Updated Autonomous System Number (if changing)
-      placeholder: "AS12345"
+      description: "Updated Autonomous System Number (numbers only, without 'AS' prefix, if changing). Example: Enter '12345' not 'AS12345'"
+      placeholder: "12345"
 
   - type: dropdown
     id: table-type

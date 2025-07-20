@@ -21,8 +21,8 @@ body:
     id: asn
     attributes:
       label: ASN
-      description: The provider's Autonomous System Number
-      placeholder: "AS12345"
+      description: "The provider's Autonomous System Number (numbers only, without 'AS' prefix). Example: Enter '12345' not 'AS12345'"
+      placeholder: "12345"
     validations:
       required: true
 

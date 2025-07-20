@@ -1,7 +1,7 @@
 {
   "title": "Neptune Networks",
   "image": "/img/providers/neptune-networks.svg",
-  "asn": "AS21700",
+  "asn": "21700",
   "tableType": "full",
   "locations": [
     "New York, US"

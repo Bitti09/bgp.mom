@@ -1,7 +1,7 @@
 {
   "title": "Lagrange",
   "image": "/img/providers/lagrange.png",
-  "asn": "AS209735",
+  "asn": "209735",
   "tableType": "full",
   "locations": [
     "London, GB"

@@ -1,7 +1,7 @@
 {
   "title": "DutchIS",
   "image": "/img/providers/dutchis.svg",
-  "asn": "AS198468",
+  "asn": "198468",
   "tableType": "full",
   "locations": [
     "Apeldoorn, NL"

@@ -1,7 +1,7 @@
 {
   "title": "Virtua Cloud",
   "image": "/img/providers/virtua-cloud.png",
-  "asn": "AS35661",
+  "asn": "35661",
   "tableType": "full",
   "locations": [
     "Paris, FR",

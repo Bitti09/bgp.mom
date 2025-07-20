@@ -1,7 +1,7 @@
 {
   "title": "GetVPS",
   "image": "/img/providers/getvps.svg",
-  "asn": "AS52025",
+  "asn": "52025",
   "tableType": "full",
   "locations": [
     "Toronto, CA",

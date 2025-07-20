@@ -1,7 +1,7 @@
 {
   "title": "Vultr",
   "image": "/img/providers/vultr.svg",
-  "asn": "AS20473",
+  "asn": "20473",
   "tableType": "full",
   "locations": [
     "Chicago, US",

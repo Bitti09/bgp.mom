@@ -5,7 +5,7 @@ const vps = defineCollection({
     schema: z.object({
         title: z.string(),
         image: z.string().optional(),
-        asn: z.string(),
+        asn: z.string().regex(/^\d+$/, 'ASN must contain only numbers'),
         tableType: z.enum(['full', 'half']).default('full'),
         locations: z.array(z.string().regex(/^[^,]+, [A-Z]{2}$/, 'Must be in format "City, CC"')).default([]),
         services: z.array(z.string()).default([]),

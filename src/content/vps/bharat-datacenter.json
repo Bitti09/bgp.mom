@@ -1,7 +1,7 @@
 {
   "title": "Bharat Datacenter",
   "image": "/img/providers/bharat-datacenter.png",
-  "asn": "AS151704",
+  "asn": "151704",
   "tableType": "full",
   "locations": [
     "New Delhi, IN"

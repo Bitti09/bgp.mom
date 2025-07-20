@@ -1,7 +1,7 @@
 {
   "title": "Skywolf Cloud",
   "image": "/img/providers/skywolf-cloud.png",
-  "asn": "AS7720",
+  "asn": "7720",
   "tableType": "full",
   "locations": [
     "Hong Kong, HK",
