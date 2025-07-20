@@ -59,12 +59,23 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: loa-required
+    attributes:
+      label: LOA Required
+      description: Does the provider require a Letter of Authorization?
+      options:
+        - Required
+        - Not Required
+    validations:
+      required: true
+
   - type: input
     id: locations
     attributes:
       label: Locations
-      description: List the country codes where the provider has presence (comma-separated)
-      placeholder: "NL, US, HK, GB"
+      description: List the locations in "City, CC" format (comma-separated)
+      placeholder: "Amsterdam, NL; New York, US; Hong Kong, HK; London, GB"
     validations:
       required: true
 
@@ -90,7 +101,7 @@ body:
     id: bgp-fee
     attributes:
       label: BGP Setup Fee
-      description: The setup fee for BGP (numbers only)
+      description: The setup fee for BGP (numbers only, enter 0 if there is no fee)
       placeholder: "10"
     validations:
       required: true
@@ -113,8 +124,20 @@ body:
         - USD
         - EUR
         - GBP
+        - CHF
+        - SEK
+        - CZK
     validations:
       required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional notes about the provider's BGP offering (optional)
+      placeholder: "Special features, network access, or other relevant information..."
+    validations:
+      required: false
 
   - type: input
     id: url

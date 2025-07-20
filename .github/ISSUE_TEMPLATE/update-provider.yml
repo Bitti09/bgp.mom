@@ -32,6 +32,8 @@ body:
         - URL Change
         - RPKI Status Change
         - Table Type Change
+        - LOA Status Change
+        - Notes Update
         - Other
     validations:
       required: true
@@ -70,12 +72,21 @@ body:
         - Positive
         - Negative
 
+  - type: dropdown
+    id: loa-required
+    attributes:
+      label: LOA Required
+      description: Updated LOA requirement status (if changing)
+      options:
+        - Required
+        - Not Required
+
   - type: input
     id: locations
     attributes:
       label: Locations
-      description: Updated list of country codes (if changing, comma-separated)
-      placeholder: "NL, US, HK, GB"
+      description: Updated list of locations in "City, CC" format (if changing, semicolon-separated)
+      placeholder: "Amsterdam, NL; New York, US; Hong Kong, HK; London, GB"
 
   - type: input
     id: services
@@ -95,7 +106,7 @@ body:
     id: bgp-fee
     attributes:
       label: BGP Setup Fee
-      description: Updated setup fee for BGP (numbers only, if changing)
+      description: Updated setup fee for BGP (numbers only, enter 0 if there is no fee, if changing)
       placeholder: "10"
 
   - type: input
@@ -114,6 +125,9 @@ body:
         - USD
         - EUR
         - GBP
+        - CHF
+        - SEK
+        - CZK
 
   - type: input
     id: url
@@ -121,6 +135,13 @@ body:
       label: Provider URL
       description: Updated website URL (if changing)
       placeholder: "https://example.com"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Updated notes about the provider (if changing)
+      placeholder: "Updated information about the provider's BGP offering..."
 
   - type: textarea
     id: reason
