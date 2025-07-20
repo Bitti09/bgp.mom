@@ -70,17 +70,22 @@ const currencySymbol = currencySymbols[currency];
 <div class="card w-[340px] bg-base-200 h-full">
   <div class="card-body flex flex-col h-full">
     <!-- Card Header -->
-    <div class="card-actions justify-end items-center mb-4">
+    <div class="card-actions justify-between items-center mb-4">
+      <!-- ASN Badge - Left -->
+      <a 
+        href={`https://bgp.tools/as/${asn}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-sm btn-outline btn-info text-left hover:btn-info transition-colors"
+      >
+        AS{asn}
+      </a>
+
+      <!-- Table Type - Middle -->
+      <button class="btn btn-sm btn-outline">{tableTypeText}</button>
+
+      <!-- Status Badges - Right -->
       <div class="flex items-center gap-2">
-        <a 
-          href={`https://bgp.tools/as/${asn}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-sm btn-outline btn-info text-left hover:btn-info transition-colors"
-        >
-          AS{asn}
-        </a>
-        <button class="btn btn-sm btn-outline">{tableTypeText}</button>
         {
           rpkiStatus && (
             <div
