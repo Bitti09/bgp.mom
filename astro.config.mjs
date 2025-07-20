@@ -19,6 +19,6 @@ export default defineConfig({
 
   adapter: cloudflare({ imageService: "compile" }),
   integrations: [
-    yeskunallumami({ id: "76f95944-8c8c-49e5-accc-025cc8478499" }),
+    yeskunallumami({ id: "76f95944-8c8c-49e5-accc-025cc8478499" ,"endpointUrl":"https://stats.dsl.wiki/"}),
   ],
 });
