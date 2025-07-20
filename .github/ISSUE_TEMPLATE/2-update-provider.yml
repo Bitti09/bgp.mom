@@ -1,4 +1,4 @@
-name: Update Provider Information
+name: 🔄 Update Provider Information
 description: Update information for an existing VPS provider
 title: "[Update]: "
 labels: ["provider-update"]

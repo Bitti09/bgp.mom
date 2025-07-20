@@ -1,4 +1,4 @@
-name: Add VPS Provider
+name: ➕ Add New Provider
 description: Submit a new VPS provider with BGP support
 title: "[Add]: "
 labels: ["new-provider"]
