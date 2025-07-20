@@ -149,6 +149,24 @@ body:
       required: true
 
   - type: checkboxes
+    id: logo-permission
+    attributes:
+      label: Logo Permission
+      description: Do you agree that we can use your logo on our site?
+      options:
+        - label: I agree that bgp.mom can use our logo on the website
+          required: true
+
+  - type: checkboxes
+    id: policy-agreement
+    attributes:
+      label: Policy
+      description: By submitting this issue, you have read the policy and the provider falls within the Policy to be added
+      options:
+        - label: I agree that the provider falls within this policy
+          required: true
+
+  - type: checkboxes
     id: verification
     attributes:
       label: Verification
