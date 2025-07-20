@@ -1,0 +1,26 @@
+{
+  "title": "Elcro Digital",
+  "asn": "62553",
+  "tableType": "full",
+  "locations": [
+    "Dallas, US"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "IP Transit",
+    "Colocation"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "yes",
+  "notes": "Filters updated every 12 hours. Only clean AS-SETs can be added. IPv6 support available. Full Table + Default, Full Table, and Default routing options.",
+  "bgpFee": "0",
+  "pricing": "5.85",
+  "currency": "USD",
+  "url": "https://elcrodigital.com"
+}
