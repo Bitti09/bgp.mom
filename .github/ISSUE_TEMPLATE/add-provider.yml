@@ -1,7 +1,7 @@
 name: Add VPS Provider
 description: Submit a new VPS provider with BGP support
 title: "[Add]: "
-labels: ["provider-submission"]
+labels: ["new-provider"]
 assignees:
   - Bitti09
 body:
