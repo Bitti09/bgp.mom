@@ -14,7 +14,7 @@ const vpsEntries1 = await getCollection("vps");
     >
       {
         sortedPosts.map((entry) => (
-          <div class="flex justify-center">
+          <div class="flex justify-center h-full">
             <Card
               title={entry.data.title}
               image={entry.data.image}
@@ -25,6 +25,8 @@ const vpsEntries1 = await getCollection("vps");
               features={entry.data.features}
               rpkiStatus={entry.data.rpkiStatus}
               prefixUpdateStatus={entry.data.prefixUpdateStatus}
+              loaRequired={entry.data.loaRequired}
+              notes={entry.data.notes}
               bgpFee={entry.data.bgpFee}
               pricing={entry.data.pricing}
               currency={entry.data.currency}

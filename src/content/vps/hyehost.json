@@ -1,0 +1,26 @@
+{
+  "title": "HYEHOST",
+  "image": "/img/providers/hyehost.png",
+  "asn": "AS47272",
+  "tableType": "full",
+  "locations": [
+    "Fremont, US",
+    "Kansas City, US"
+  ],
+  "services": [
+    "VPS",
+    "IXP Access"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can provide access to IX exchanges FREMIX.",
+  "bgpFee": "0",
+  "pricing": "3.99",
+  "currency": "USD",
+  "url": "https://hyehost.org/"
+}

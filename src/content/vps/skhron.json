@@ -1,0 +1,24 @@
+{
+  "title": "Skhron",
+  "image": "/img/providers/skhron.png",
+  "asn": "AS215467",
+  "tableType": "full",
+  "locations": [
+    "Stockholm, SE",
+    "Warsaw, PL"
+  ],
+  "services": [
+    "VPS"
+  ],
+  "features": [
+    "BGP Community Passthrough"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "negative",
+  "loaRequired": "required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "1.16",
+  "currency": "EUR",
+  "url": "https://skhron.eu/"
+}

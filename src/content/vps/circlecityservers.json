@@ -1,0 +1,25 @@
+{
+  "title": "CircleCityServers",
+  "image": "/img/providers/circlecityservers.png",
+  "asn": "AS26006",
+  "tableType": "full",
+  "locations": [
+    "Indianapolis, US"
+  ],
+  "services": [
+    "VPS"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "6",
+  "currency": "USD",
+  "url": "https://circlecityservers.com/"
+}

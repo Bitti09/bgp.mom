@@ -1,0 +1,28 @@
+{
+  "title": "Servperso",
+  "image": "/img/providers/servperso.svg",
+  "asn": "AS34872",
+  "tableType": "full",
+  "locations": [
+    "Meppel, NL",
+    "Dusseldorf, DE"
+  ],
+  "services": [
+    "VPS",
+    "IP Transit",
+    "IXP Access",
+    "Tunnels"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can provide access to IX exchanges LocIX-Fra, LocIX-Dus and LocIX-NL",
+  "bgpFee": "0",
+  "pricing": "4",
+  "currency": "EUR",
+  "url": "https://www.servperso.net/"
+}

@@ -1,0 +1,25 @@
+{
+  "title": "DutchIS",
+  "image": "/img/providers/dutchis.svg",
+  "asn": "AS198468",
+  "tableType": "full",
+  "locations": [
+    "Apeldoorn, NL"
+  ],
+  "services": [
+    "VPS",
+    "IP Transit",
+    "IXP Access"
+  ],
+  "features": [
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can provide access to IX exchanges Speed-IX",
+  "bgpFee": "10",
+  "pricing": "10",
+  "currency": "EUR",
+  "url": "https://dutchis.net"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "iFog GmbH",
+  "image": "/img/providers/ifog-gmbh.png",
+  "asn": "AS34927",
+  "tableType": "full",
+  "locations": [
+    "Singapore, SG",
+    "Barcelona, ES",
+    "Frankfurt, DE",
+    "London, GB",
+    "Zurich, CH",
+    "Sydney, AU",
+    "Oslo, NO",
+    "Amsterdam, NL",
+    "Fremont, US",
+    "Kansas City, US",
+    "Ashburn, US",
+    "Houston, US",
+    "Toronto, CA"
+  ],
+  "services": [
+    "LIR Services",
+    "IXP Access",
+    "VPS",
+    "Baremetal"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can provide access to numerous IXs such as LocIX, DE-CIX, NL-ix, FogIXP and LoNAP\nCan also provide access to RETN, Cogent and Arelion direct",
+  "bgpFee": "0",
+  "pricing": "3.50",
+  "currency": "CHF",
+  "url": "https://my.ifog.ch/order/forms/a/OTM5"
+}

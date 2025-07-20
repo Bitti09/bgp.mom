@@ -1,0 +1,26 @@
+{
+  "title": "Bharat Datacenter",
+  "image": "/img/providers/bharat-datacenter.png",
+  "asn": "AS151704",
+  "tableType": "full",
+  "locations": [
+    "New Delhi, IN"
+  ],
+  "services": [
+    "Baremetal",
+    "IP Transit",
+    "IXP Access",
+    "Colocation"
+  ],
+  "features": [
+    "Downstream Support"
+  ],
+  "rpkiStatus": "invalid",
+  "prefixUpdateStatus": "negative",
+  "loaRequired": "required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "90",
+  "currency": "USD",
+  "url": "https://bharatdatacenter.com/"
+}

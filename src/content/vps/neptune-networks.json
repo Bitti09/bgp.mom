@@ -1,0 +1,25 @@
+{
+  "title": "Neptune Networks",
+  "image": "/img/providers/neptune-networks.svg",
+  "asn": "AS21700",
+  "tableType": "full",
+  "locations": [
+    "New York, US"
+  ],
+  "services": [
+    "VPS"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Fully automated BGP pipeline from sign up to announcement.",
+  "bgpFee": "0",
+  "pricing": "8",
+  "currency": "USD",
+  "url": "https://neptunenetworks.org"
+}

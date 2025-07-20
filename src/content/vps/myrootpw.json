@@ -1,0 +1,27 @@
+{
+  "title": "MyRootPW",
+  "image": "/img/providers/myrootpw.svg",
+  "asn": "AS39409",
+  "tableType": "full",
+  "locations": [
+    "Vienna, AT",
+    "Amsterdam, NL"
+  ],
+  "services": [
+    "LIR Services",
+    "Baremetal",
+    "Tunnels",
+    "IP Transit",
+    "Colocation",
+    "IXP Access"
+  ],
+  "features": [],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "15",
+  "currency": "EUR",
+  "url": "https://myrootpw.com/"
+}

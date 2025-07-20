@@ -1,0 +1,30 @@
+{
+  "title": "Virtua Cloud",
+  "image": "/img/providers/virtua-cloud.png",
+  "asn": "AS35661",
+  "tableType": "full",
+  "locations": [
+    "Paris, FR",
+    "Fremont, US",
+    "Lille, FR",
+    "Frankfurt, DE",
+    "Amsterdam, NL"
+  ],
+  "services": [
+    "VPS",
+    "LIR Services",
+    "IXP Access"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can offer access to France-IX and DE-CIX",
+  "bgpFee": "0",
+  "pricing": "3",
+  "currency": "EUR",
+  "url": "https://www.virtua.cloud/?ref=6uqf3mtl"
+}

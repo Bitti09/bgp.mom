@@ -1,0 +1,25 @@
+{
+  "title": "Karabro AB",
+  "image": "/img/providers/karabro-ab.png",
+  "asn": "AS51519",
+  "tableType": "full",
+  "locations": [
+    "Malmö, SE"
+  ],
+  "services": [
+    "LIR Services",
+    "VPS"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "50",
+  "currency": "SEK",
+  "url": "https://my.karabro.se/aff.php?aff=1"
+}

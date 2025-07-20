@@ -12,9 +12,11 @@ const vps = defineCollection({
         features: z.array(z.string()).default([]),
         rpkiStatus: z.enum(['valid', 'invalid']).optional(),
         prefixUpdateStatus: z.enum(['positive', 'negative']).optional(),
+        loaRequired: z.enum(['required', 'not-required']).optional(),
+        notes: z.string().optional(),
         bgpFee: z.string(),
         pricing: z.string(),
-        currency: z.enum(['USD', 'EUR', 'GBP']).default('USD'),
+        currency: z.enum(['USD', 'EUR', 'GBP', 'CHF', 'SEK', 'CZK']).default('USD'),
         url: z.string()
     })
 });

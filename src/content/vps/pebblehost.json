@@ -1,0 +1,26 @@
+{
+  "title": "PebbleHost",
+  "image": "/img/providers/pebblehost.webp",
+  "asn": "AS212027",
+  "tableType": "full",
+  "locations": [
+    "Coventry, GB"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "10",
+  "currency": "USD",
+  "url": "https://pebblehost.com/"
+}

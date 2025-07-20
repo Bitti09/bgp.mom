@@ -1,0 +1,27 @@
+{
+  "title": "F4 Networks",
+  "image": "/img/providers/f4-networks.png",
+  "asn": "AS21738",
+  "tableType": "full",
+  "locations": [
+    "Kansas City, US"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "Tunnels"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can also provide access to Arelion",
+  "bgpFee": "0",
+  "pricing": "6",
+  "currency": "USD",
+  "url": "https://store.f4.network/"
+}

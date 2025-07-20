@@ -11,9 +11,11 @@ interface Props {
   features?: string[];
   rpkiStatus?: "valid" | "invalid";
   prefixUpdateStatus?: "positive" | "negative";
+  loaRequired?: "required" | "not-required";
+  notes?: string;
   bgpFee: string;
   pricing: string;
-  currency: "USD" | "EUR" | "GBP";
+  currency: "USD" | "EUR" | "GBP" | "CHF" | "SEK" | "CZK";
   url: string;
 }
 
@@ -27,6 +29,8 @@ const {
   features = [],
   rpkiStatus,
   prefixUpdateStatus,
+  loaRequired,
+  notes,
   bgpFee,
   pricing,
   currency = "USD",
@@ -36,7 +40,7 @@ const {
 function getCountryName(code: string, lang = "en"): string {
   try {
     const displayNames = new Intl.DisplayNames([lang], { type: "region" });
-    return displayNames.of(code);
+    return displayNames.of(code) || code;
   } catch (error) {
     return code;
   }
@@ -54,14 +58,17 @@ const currencySymbols = {
   USD: "$",
   EUR: "€",
   GBP: "£",
+  CHF: "CHF",
+  SEK: "SEK",
+  CZK: "CZK",
 };
 
 const tableTypeText = tableType === "full" ? "Full Table" : "Half Table";
 const currencySymbol = currencySymbols[currency];
 ---
 
-<div class="card w-[340px] bg-base-200">
-  <div class="card-body">
+<div class="card w-[340px] bg-base-200 h-full">
+  <div class="card-body flex flex-col h-full">
     <!-- Card Header -->
     <div class="card-actions justify-between items-center mb-4">
       <div class="text-info">{asn}</div>
@@ -69,154 +76,242 @@ const currencySymbol = currencySymbols[currency];
         <button class="btn btn-sm btn-outline">{tableTypeText}</button>
         {
           rpkiStatus && (
-            <button
-              class={`btn btn-sm btn-square btn-outline ${rpkiStatus === "valid" ? "btn-success" : "btn-error"}`}
+            <div
+              class={`tooltip tooltip-bottom ${rpkiStatus === "valid" ? "tooltip-success" : "tooltip-error"}`}
+              data-tip={
+                rpkiStatus === "valid"
+                  ? "RPKI Validation: Enabled"
+                  : "RPKI Validation: Disabled"
+              }
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+              <button
+                class={`btn btn-sm btn-square btn-outline ${rpkiStatus === "valid" ? "btn-success" : "btn-error"}`}
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+              </button>
+            </div>
           )
         }
         {
           prefixUpdateStatus && (
-            <button
-              class={`btn btn-sm btn-square btn-outline ${prefixUpdateStatus === "positive" ? "btn-success" : "btn-error"}`}
+            <div
+              class={`tooltip tooltip-bottom ${prefixUpdateStatus === "positive" ? "tooltip-success" : "tooltip-error"}`}
+              data-tip={
+                prefixUpdateStatus === "positive"
+                  ? "Prefix Updates: Automatic"
+                  : "Prefix Updates: Manual"
+              }
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+              <button
+                class={`btn btn-sm btn-square btn-outline ${prefixUpdateStatus === "positive" ? "btn-success" : "btn-error"}`}
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          )
+        }
+        {
+          loaRequired && (
+            <div
+              class={`tooltip tooltip-bottom ${loaRequired === "not-required" ? "tooltip-success" : "tooltip-error"}`}
+              data-tip={
+                loaRequired === "not-required"
+                  ? "LOA Required: No"
+                  : "LOA Required: Yes"
+              }
+            >
+              <button
+                class={`btn btn-sm btn-square btn-outline ${loaRequired === "not-required" ? "btn-success" : "btn-error"}`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </button>
+            </div>
           )
         }
       </div>
     </div>
 
-    <!-- Logo and Company Name -->
-    <div class="flex items-center gap-4 mb-4">
-      <div class="w-12 h-12 rounded-lg bg-base-100 flex items-center justify-center ">
-        {image ? (
-          <img src={image} alt={`${title} logo`} class="max-w-full max-h-full" />
-        ) : (
-          <div class="text-2xl font-bold text-base-content/20">{title.charAt(0)}</div>
-        )}
-      </div>
+    <!-- Content that can grow -->
+    <div class="flex-1 flex flex-col justify-between">
       <div>
-        <h2 class="card-title">{title}</h2>
-      </div>
-    </div>
-
-    <!-- Locations -->
-    {
-      locations.length > 0 && (
-        <div>
-          <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
-            Locations
-          </h2>
-          <div class="flex flex-wrap gap-2">
-            {locations.map((location) => {
-              const { city, countryCode } = parseLocation(location);
-              return (
-                <div class="badge badge-outline">
-                  <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
-                  {city}
+        <!-- Logo and Company Name -->
+        <div class="flex items-center gap-4 mb-4">
+          <div
+            class="w-12 h-12 rounded-lg bg-base-100 flex items-center justify-center"
+          >
+            {
+              image ? (
+                <img
+                  src={image}
+                  alt={`${title} logo`}
+                  class="max-w-full max-h-full"
+                />
+              ) : (
+                <div class="text-2xl font-bold text-base-content/20">
+                  {title.charAt(0)}
                 </div>
-              );
-            })}
+              )
+            }
+          </div>
+          <div>
+            <h2 class="card-title">{title}</h2>
           </div>
         </div>
-      )
-    }
 
-    <!-- Services -->
-    {
-      services.length > 0 && (
-        <div>
-          <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
-            Services
-          </h2>
-          <div class="flex flex-wrap gap-2">
-            {services.map((service) => (
-              <div class="badge badge-outline">{service}</div>
-            ))}
-          </div>
-        </div>
-      )
-    }
+        <!-- Locations -->
+        {
+          locations.length > 0 && (
+            <div class="mb-2">
+              <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+                Locations
+              </h2>
+              <div class="flex flex-wrap gap-2 items-center">
+                {locations.map((location) => {
+                  const { city, countryCode } = parseLocation(location);
+                  return (
+                    <div class="badge badge-outline">
+                      <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
+                      {city}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )
+        }
 
-    <!-- Features -->
-    {
-      features.length > 0 && (
-        <div>
-          <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
-            Features
-          </h2>
-          <div class="flex flex-wrap gap-2">
-            {features.map((feature) => (
-              <div class="badge badge-outline">{feature}</div>
-            ))}
-          </div>
-        </div>
-      )
-    }
+        <!-- Services -->
+        {
+          services.length > 0 && (
+            <div class="mb-2">
+              <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+                Services
+              </h2>
+              <div class="flex flex-wrap gap-2  items-center">
+                {services.map((service) => (
+                  <div class="badge badge-outline">{service}</div>
+                ))}
+              </div>
+            </div>
+          )
+        }
 
-    <!-- Pricing & Fee -->
-    <div class="grid grid-cols-2 gap-4 pt-2">
-      <div>
-        <h2
-          class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
-        >
-          BGP Fee
-        </h2>
-        <p class="font-semibold text-base-content">
-          {currencySymbol}
-          {bgpFee}
-          {currency} setup fee
-        </p>
+        <!-- Features -->
+        {
+          features.length > 0 && (
+            <div class="mb-2">
+              <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+                Features
+              </h2>
+              <div class="flex flex-wrap gap-2 items-center">
+                {features.map((feature) => (
+                  <div class="badge badge-outline">{feature}</div>
+                ))}
+              </div>
+            </div>
+          )
+        }
+
+        <!-- Notes -->
+        {
+          notes && notes.trim() && (
+            <div class="mb-2">
+              <h2 class="text-sm font-semibold uppercase tracking-wider  text-base-content/70">
+                Notes
+              </h2>
+              <div class="text-sm text-base-content/80 leading-relaxed">
+                {notes.split("\n").map((line, index) => (
+                  <div>{line}</div>
+                ))}
+              </div>
+            </div>
+          )
+        }
       </div>
-      <div>
-        <h2
-          class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
-        >
-          Pricing
-        </h2>
-        <p class="font-semibold text-base-content">
-          Starting at {currencySymbol}
-          {pricing}/mo {currency}
-        </p>
-      </div>
-    </div>
 
-    <!-- View Button -->
-    <div class="card-actions justify-end mt-4">
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-primary">View Provider</a
-      >
+      <!-- Bottom section with pricing and button -->
+      <div>
+        <!-- Pricing & Fee -->
+        <div class="grid grid-cols-2 gap-4 pt-2 mb-4">
+          <div>
+            <h2
+              class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+            >
+              BGP Fee
+            </h2>
+            {
+              bgpFee === "0" ? (
+                <div class="badge badge-success">Free BGP</div>
+              ) : (
+                <p class="font-semibold text-base-content">
+                  {currencySymbol}
+                  {bgpFee} {currency} setup fee
+                </p>
+              )
+            }
+          </div>
+          <div>
+            <h2
+              class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+            >
+              Pricing
+            </h2>
+            <p class="font-semibold text-base-content">
+              Starting at {currencySymbol}
+              {pricing}/mo {currency}
+            </p>
+          </div>
+        </div>
+
+        <!-- View Button -->
+        <div class="card-actions justify-end">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary">View Provider</a
+          >
+        </div>
+      </div>
     </div>
   </div>
 </div>

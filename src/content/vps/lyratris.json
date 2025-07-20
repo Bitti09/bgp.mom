@@ -1,0 +1,26 @@
+{
+  "title": "Lyratris",
+  "image": "/img/providers/lyratris.png",
+  "asn": "AS200950",
+  "tableType": "full",
+  "locations": [
+    "Frankfurt, DE"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "IXP Access"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "negative",
+  "loaRequired": "not-required",
+  "notes": "Can provide access to LocIX Frankfurt",
+  "bgpFee": "10",
+  "pricing": "5",
+  "currency": "USD",
+  "url": "https://lyratris.com/"
+}

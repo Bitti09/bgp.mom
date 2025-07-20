@@ -1,0 +1,36 @@
+{
+  "title": "HostHatch",
+  "image": "/img/providers/hosthatch.svg",
+  "asn": "AS63473",
+  "tableType": "full",
+  "locations": [
+    "Amsterdam, NL",
+    "Vienna, AT",
+    "Stockholm, SE",
+    "Zurich, CH",
+    "Los Angeles, US",
+    "New York, US",
+    "Chicago, US",
+    "Hong Kong, HK",
+    "Tokyo, JP",
+    "Sydney, AU",
+    "Singapore, SG",
+    "London, GB",
+    "Oslo, NO"
+  ],
+  "services": [
+    "VPS"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "negative",
+  "loaRequired": "required",
+  "notes": "",
+  "bgpFee": "10",
+  "pricing": "4",
+  "currency": "USD",
+  "url": "https://hosthatch.com/"
+}

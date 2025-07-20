@@ -1,0 +1,34 @@
+{
+  "title": "GetVPS",
+  "image": "/img/providers/getvps.svg",
+  "asn": "AS52025",
+  "tableType": "full",
+  "locations": [
+    "Toronto, CA",
+    "Fremont, US",
+    "London, GB",
+    "Kansas City, US",
+    "Frankfurt, DE",
+    "Amsterdam, NL",
+    "Zurich, CH"
+  ],
+  "services": [
+    "LIR Services",
+    "VPS",
+    "Transit",
+    "IXP Access",
+    "Baremetal"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can provide access to IX exchanges ONIX, DE-CIX, LINX, LONAP and FREMIX.\nCan also provide access to Cogent, GTT and Arelion direct",
+  "bgpFee": "0",
+  "pricing": "6",
+  "currency": "GBP",
+  "url": "https://getvps.net"
+}

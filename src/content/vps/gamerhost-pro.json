@@ -1,0 +1,29 @@
+{
+  "title": "GamerHost.pro",
+  "image": "/img/providers/gamerhost-pro.svg",
+  "asn": "AS50338",
+  "tableType": "full",
+  "locations": [
+    "Prague, CZ"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "Tunnels",
+    "IP Transit",
+    "Colocation"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "negative",
+  "loaRequired": "required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "139",
+  "currency": "CZK",
+  "url": "https://gamerhost.pro/"
+}

@@ -1,0 +1,29 @@
+{
+  "title": "SweHosting",
+  "image": "/img/providers/swehosting.png",
+  "asn": "AS208453",
+  "tableType": "full",
+  "locations": [
+    "Stockholm, SE"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "IP Transit",
+    "IXP Access",
+    "Colocation"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "49",
+  "currency": "SEK",
+  "url": "https://swehosting.se/"
+}

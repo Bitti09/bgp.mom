@@ -1,0 +1,27 @@
+{
+  "title": "Xenyth",
+  "image": "/img/providers/xenyth.svg",
+  "asn": "AS835",
+  "tableType": "full",
+  "locations": [
+    "Toronto, CA"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "IXP Access"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Minimum s1.small for VPS. Can also provide access to ONIX",
+  "bgpFee": "0",
+  "pricing": "3.50",
+  "currency": "USD",
+  "url": "https://xenyth.net/?affid=455"
+}

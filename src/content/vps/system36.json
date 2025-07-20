@@ -1,0 +1,25 @@
+{
+  "title": "System36",
+  "image": "/img/providers/system36.svg",
+  "asn": "AS59678",
+  "tableType": "full",
+  "locations": [
+    "Piscataway, US"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "6.99",
+  "currency": "USD",
+  "url": "https://36.services/"
+}

@@ -1,0 +1,28 @@
+{
+  "title": "CloudMate",
+  "image": "/img/providers/cloudmate.png",
+  "asn": "AS214441",
+  "tableType": "full",
+  "locations": [
+    "Derby, GB",
+    "Noida, IN"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "LIR Services",
+    "IP Transit",
+    "Colocation"
+  ],
+  "features": [
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "required",
+  "notes": "",
+  "bgpFee": "10",
+  "pricing": "5",
+  "currency": "USD",
+  "url": "https://cloudmate.in/"
+}

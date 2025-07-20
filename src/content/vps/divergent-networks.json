@@ -1,0 +1,26 @@
+{
+  "title": "Divergent Networks",
+  "image": "/img/providers/divergent-networks.png",
+  "asn": "AS50391",
+  "tableType": "full",
+  "locations": [
+    "London, GB"
+  ],
+  "services": [
+    "LIR Services",
+    "VPS",
+    "Tunnels"
+  ],
+  "features": [
+    "BGP Communities",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "5",
+  "currency": "GBP",
+  "url": "https://divergentnetworks.co.uk/"
+}

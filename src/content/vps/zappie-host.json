@@ -1,0 +1,26 @@
+{
+  "title": "Zappie Host",
+  "image": "/img/providers/zappie-host.png",
+  "asn": "AS61138",
+  "tableType": "full",
+  "locations": [
+    "Auckland, NZ"
+  ],
+  "services": [
+    "VPS",
+    "LIR Services"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "4.50",
+  "currency": "USD",
+  "url": "https://zappiehost.com/bgp-peering-with-cloud-vps"
+}

@@ -1,0 +1,37 @@
+{
+  "title": "V.ps",
+  "image": "https://v.ps/assets/img/logo_dark.7d4c766e.svg",
+  "asn": "AS3204",
+  "tableType": "full",
+  "locations": [
+    "London, GB",
+    "Frankfurt, DE",
+    "Amsterdam, NL",
+    "Düsseldorf, DE",
+    "Tallinn, EE",
+    "San Jose, US",
+    "New York, US",
+    "Seattle, US",
+    "Hong Kong, HK",
+    "Osaka, JP",
+    "Tokyo, JP",
+    "Sydney, AU"
+  ],
+  "services": [
+    "VPS",
+    "IXP Access"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "not-required",
+  "notes": "Can provide access to IX exchanges DE-CIX, LocIX and AMS-IX",
+  "bgpFee": "50",
+  "pricing": "5.95",
+  "currency": "EUR",
+  "url": "https://vps.hosting/?affid=1286&affplan=1"
+}

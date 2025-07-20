@@ -1,0 +1,39 @@
+{
+  "title": "Melbicom",
+  "image": "/img/providers/melbicom.svg",
+  "asn": "AS8849",
+  "tableType": "full",
+  "locations": [
+    "Amsterdam, NL",
+    "Moscow, RU",
+    "Frankfurt, DE",
+    "Sofia, BG",
+    "Palermo, IT",
+    "Madrid, ES",
+    "Vilnius, LT",
+    "Riga, LV",
+    "Warsaw, PL",
+    "Singapore, SG",
+    "Lagos, NG",
+    "Atlanta, US",
+    "Los Angeles, US",
+    "Fujairah, AE",
+    "Mumbai, IN"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "DNS"
+  ],
+  "features": [
+    "BGP Community Passthrough"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "negative",
+  "loaRequired": "not-required",
+  "notes": "",
+  "bgpFee": "5",
+  "pricing": "3.9",
+  "currency": "EUR",
+  "url": "https://melbicom.net/"
+}

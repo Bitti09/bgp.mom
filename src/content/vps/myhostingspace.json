@@ -1,0 +1,27 @@
+{
+  "title": "MyHostingSpace",
+  "image": "/img/providers/myhostingspace.png",
+  "asn": "AS48070",
+  "tableType": "full",
+  "locations": [
+    "Peterborough, GB"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "Colocation"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "valid",
+  "prefixUpdateStatus": "positive",
+  "loaRequired": "required",
+  "notes": "",
+  "bgpFee": "0",
+  "pricing": "5.43",
+  "currency": "GBP",
+  "url": "https://myhostingspace.co.uk/"
+}
