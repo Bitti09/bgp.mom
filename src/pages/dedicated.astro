@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+
+const vpsEntries = await getCollection("vps");
+// Filter for providers that have "Baremetal" in their services
+const baremetalProviders = vpsEntries.filter(entry => 
+  entry.data.services.some(service => service.toLowerCase().includes("baremetal"))
+);
+const sortedProviders = baremetalProviders.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<Layout title="BGP.mom - Dedicated Server Providers with BGP support">
+  <main class="w-full py-8">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-base-content mb-2">Dedicated Server Providers</h1>
+      <p class="text-lg text-base-content/70">VPS providers offering dedicated servers and bare metal hosting with BGP support</p>
+      <p class="text-sm text-base-content/50 mt-2">Found {sortedProviders.length} providers</p>
+    </div>
+    
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/5)))] 2xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/6)))] gap-8 px-4"
+    >
+      {
+        sortedProviders.map((entry) => (
+          <div class="flex justify-center h-full">
+            <Card
+              title={entry.data.title}
+              image={entry.data.image}
+              asn={entry.data.asn}
+              tableType={entry.data.tableType}
+              locations={entry.data.locations}
+              services={entry.data.services}
+              features={entry.data.features}
+              rpkiStatus={entry.data.rpkiStatus}
+              prefixUpdateStatus={entry.data.prefixUpdateStatus}
+              loaRequired={entry.data.loaRequired}
+              notes={entry.data.notes}
+              bgpFee={entry.data.bgpFee}
+              pricing={entry.data.pricing}
+              currency={entry.data.currency}
+              url={entry.data.url}
+            />
+          </div>
+        ))
+      }
+    </div>
+    
+    {sortedProviders.length === 0 && (
+      <div class="text-center py-12">
+        <p class="text-xl text-base-content/70">No dedicated server providers found.</p>
+      </div>
+    )}
+  </main>
+</Layout>
