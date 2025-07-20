@@ -1,7 +1,9 @@
 name: Update Provider Information
 description: Update information for an existing VPS provider
-title: "Update: "
+title: "[Update]: "
 labels: ["provider-update"]
+assignees:
+  - Bitti09
 body:
   - type: markdown
     attributes:
