@@ -11,11 +11,13 @@ BGP.mom is a community-driven platform that lists VPS providers offering BGP sup
 - 💰 Clear pricing and BGP setup fee information
 - 🌍 Multiple currency support
 - 🎨 Dark mode by default
+- 🗺️ Automated sitemap generation for better SEO
 
 ## Tech Stack
 
 - [Astro](https://astro.build/) - Static Site Generator
 - [daisyUI](https://daisyui.com/) - Component Library
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) - Automatic sitemap generation
 
 ## Contributing
 
