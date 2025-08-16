@@ -2,8 +2,13 @@
   "name": "tested-trappist",
   "type": "module",
   "version": "0.0.1",
-  "packages": ["."],
-  "onlyBuiltDependencies": ["esbuild", "workerd"],
+  "packages": [
+    "."
+  ],
+  "onlyBuiltDependencies": [
+    "esbuild",
+    "workerd"
+  ],
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,6 +17,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.0",
+    "@astrojs/sitemap": "^3.5.0",
     "@tailwindcss/vite": "^4.1.11",
     "@yeskunall/astro-umami": "^0.0.6",
     "astro": "^5.12.0",
