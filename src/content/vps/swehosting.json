@@ -21,9 +21,9 @@
   "rpkiStatus": "yes",
   "prefixUpdateStatus": "automatic",
   "loaRequired": "no",
-  "notes": "",
+  "notes": "IXP access available for SONIX, STHIX, Netnod and SOL-IX.",
   "bgpFee": "0",
-  "pricing": "49",
+  "pricing": "39",
   "currency": "SEK",
   "url": "https://swehosting.se/"
 }
