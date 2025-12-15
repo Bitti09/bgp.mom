@@ -18,8 +18,8 @@ importers:
         specifier: ^4.1.18
         version: 4.1.18(vite@6.4.1(@types/node@25.0.1)(jiti@2.6.1)(lightningcss@1.30.2))
       '@yeskunall/astro-umami':
-        specifier: ^0.0.6
-        version: 0.0.6(astro@5.16.5(@types/node@25.0.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.8.3))
+        specifier: ^0.0.7
+        version: 0.0.7(astro@5.16.5(@types/node@25.0.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.8.3))
       astro:
         specifier: ^5.16.5
         version: 5.16.5(@types/node@25.0.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.8.3)
@@ -1195,8 +1195,8 @@ packages:
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
 
-  '@yeskunall/astro-umami@0.0.6':
-    resolution: {integrity: sha512-fEp4jwi33CKRGJcAQSoCv61OGwBqYgmxkyVHFPdb4X7H2SOMVSH/u/6u3cfPrYMHVxw8j5NCz+LAqprxaAc1Xw==}
+  '@yeskunall/astro-umami@0.0.7':
+    resolution: {integrity: sha512-8W/At28qKyPGepwvVumgJX0VZ0F9KK4M4zNDQfUZ3iBJpAKUTAkdIXM7i7I+PFsP7rXOo/AVgcDXDOv9L03QhQ==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0 || ^5.0.0
 
@@ -3249,7 +3249,7 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@yeskunall/astro-umami@0.0.6(astro@5.16.5(@types/node@25.0.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.8.3))':
+  '@yeskunall/astro-umami@0.0.7(astro@5.16.5(@types/node@25.0.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.8.3))':
     dependencies:
       astro: 5.16.5(@types/node@25.0.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.8.3)
 

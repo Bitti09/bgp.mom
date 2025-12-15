@@ -19,7 +19,7 @@
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.18",
-    "@yeskunall/astro-umami": "^0.0.6",
+    "@yeskunall/astro-umami": "^0.0.7",
     "astro": "^5.16.5",
     "daisyui": "^5.5.13",
     "flag-icons": "^7.5.0",
