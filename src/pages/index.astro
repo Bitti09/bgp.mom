@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
-
 const vpsEntries1 = await getCollection("vps");
   const sortedPosts = vpsEntries1.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---

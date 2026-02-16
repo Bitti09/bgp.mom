@@ -13,11 +13,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/cloudflare": "13.0.0-beta.8",
+    "@astrojs/sitemap": "3.6.1-beta.3",
     "@tailwindcss/vite": "^4.1.18",
     "@yeskunall/astro-umami": "latest",
-    "astro": "^5.17.2",
+    "astro": "6.0.0-beta.12",
     "daisyui": "^5.5.18",
     "flag-icons": "^7.5.0",
     "tailwindcss": "^4.1.18"
