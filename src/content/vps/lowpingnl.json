@@ -1,0 +1,24 @@
+{
+  "title": "LowPing NL",
+  "asn": "215296",
+  "tableType": "full",
+  "locations": [
+    "Amsterdam, NL"
+  ],
+  "services": [
+    "VPS",
+    "IXP Access"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "BGP Communities"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "manual",
+  "loaRequired": "no",
+  "notes": "Can provide access to all IXP's available in Nikhef, Amsterdam (e.g. AMS-IX, Frys-IX, nine-ix and Piter-IX).",
+  "bgpFee": "10",
+  "pricing": "6.50",
+  "currency": "EUR",
+  "url": "https://lowping.nl"
+}
