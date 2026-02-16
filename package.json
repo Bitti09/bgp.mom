@@ -2,9 +2,6 @@
   "name": "tested-trappist",
   "type": "module",
   "version": "0.0.1",
-  "packages": [
-    "."
-  ],
   "onlyBuiltDependencies": [
     "esbuild",
     "workerd"
