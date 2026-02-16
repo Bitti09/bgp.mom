@@ -26,6 +26,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "undici": "^7.22.0",
     "wrangler": "^4.65.0"
   }
 }
