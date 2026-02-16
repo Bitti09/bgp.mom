@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import "flag-icons/css/flag-icons.min.css";
 
 interface Props {
@@ -37,24 +38,15 @@ const {
   url,
 } = Astro.props;
 
-function getCountryName(code: string, lang = "en"): string {
-  try {
-    const displayNames = new Intl.DisplayNames([lang], { type: "region" });
-    return displayNames.of(code) || code;
-  } catch (error) {
-    return code;
-  }
-}
-
 function parseLocation(location: string): {
   city: string;
   countryCode: string;
 } {
   const [city, countryCode] = location.split(", ");
-  return { city, countryCode };
+  return { city, countryCode: countryCode || "" };
 }
 
-const currencySymbols = {
+const currencySymbols: Record<string, string> = {
   USD: "$",
   EUR: "€",
   GBP: "£",
@@ -64,7 +56,7 @@ const currencySymbols = {
 };
 
 const tableTypeText = tableType === "full" ? "Full Table" : "Half Table";
-const currencySymbol = currencySymbols[currency];
+const currencySymbol = currencySymbols[currency] || currency;
 ---
 
 <div class="card w-[340px] bg-base-200 h-full">
@@ -82,7 +74,7 @@ const currencySymbol = currencySymbols[currency];
       </a>
 
       <!-- Table Type - Middle -->
-      <button class="btn btn-sm btn-outline">{tableTypeText}</button>
+      <button class="btn btn-sm btn-outline no-animation cursor-default">{tableTypeText}</button>
 
       <!-- Status Badges - Right -->
       <div class="flex items-center gap-2">
@@ -96,8 +88,8 @@ const currencySymbol = currencySymbols[currency];
                   : "RPKI Filtering: No"
               }
             >
-              <button
-                class={`btn btn-sm btn-square btn-outline ${rpkiStatus === "yes" ? "btn-success" : "btn-error"}`}
+              <div
+                class={`btn btn-sm btn-square btn-outline cursor-default ${rpkiStatus === "yes" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +105,7 @@ const currencySymbol = currencySymbols[currency];
                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                   />
                 </svg>
-              </button>
+              </div>
             </div>
           )
         }
@@ -127,8 +119,8 @@ const currencySymbol = currencySymbols[currency];
                   : "Prefix Updates: Manual"
               }
             >
-              <button
-                class={`btn btn-sm btn-square btn-outline ${prefixUpdateStatus === "automatic" ? "btn-success" : "btn-error"}`}
+              <div
+                class={`btn btn-sm btn-square btn-outline cursor-default ${prefixUpdateStatus === "automatic" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +136,7 @@ const currencySymbol = currencySymbols[currency];
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-              </button>
+              </div>
             </div>
           )
         }
@@ -158,8 +150,8 @@ const currencySymbol = currencySymbols[currency];
                   : "LOA Required: Yes"
               }
             >
-              <button
-                class={`btn btn-sm btn-square btn-outline ${loaRequired === "no" ? "btn-success" : "btn-error"}`}
+              <div
+                class={`btn btn-sm btn-square btn-outline cursor-default ${loaRequired === "no" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +167,7 @@ const currencySymbol = currencySymbols[currency];
                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                   />
                 </svg>
-              </button>
+              </div>
             </div>
           )
         }
@@ -188,14 +180,16 @@ const currencySymbol = currencySymbols[currency];
         <!-- Logo and Company Name -->
         <div class="flex items-center gap-4 mb-4">
           <div
-            class="w-12 h-12 rounded-lg bg-base-100 flex items-center justify-center"
+            class="w-12 h-12 rounded-lg bg-base-100 flex items-center justify-center overflow-hidden"
           >
             {
               image ? (
-                <img
+                <Image
                   src={image}
                   alt={`${title} logo`}
-                  class="max-w-full max-h-full"
+                  width={48}
+                  height={48}
+                  class="max-w-full max-h-full object-contain"
                 />
               ) : (
                 <div class="text-2xl font-bold text-base-content/20">
@@ -213,14 +207,14 @@ const currencySymbol = currencySymbols[currency];
         {
           locations.length > 0 && (
             <div class="mb-2">
-              <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              <h2 class="text-xs font-semibold uppercase tracking-wider mb-3 text-base-content/70">
                 Locations
               </h2>
               <div class="flex flex-wrap gap-2 items-center">
                 {locations.map((location) => {
                   const { city, countryCode } = parseLocation(location);
                   return (
-                    <div class="badge badge-outline">
+                    <div class="badge badge-outline badge-sm">
                       <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
                       {city}
                     </div>
@@ -235,12 +229,12 @@ const currencySymbol = currencySymbols[currency];
         {
           services.length > 0 && (
             <div class="mb-2">
-              <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              <h2 class="text-xs font-semibold uppercase tracking-wider mb-3 text-base-content/70">
                 Services
               </h2>
               <div class="flex flex-wrap gap-2  items-center">
                 {services.map((service) => (
-                  <div class="badge badge-outline">{service}</div>
+                  <div class="badge badge-outline badge-sm">{service}</div>
                 ))}
               </div>
             </div>
@@ -251,12 +245,12 @@ const currencySymbol = currencySymbols[currency];
         {
           features.length > 0 && (
             <div class="mb-2">
-              <h2 class="text-sm font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              <h2 class="text-xs font-semibold uppercase tracking-wider mb-3 text-base-content/70">
                 Features
               </h2>
               <div class="flex flex-wrap gap-2 items-center">
                 {features.map((feature) => (
-                  <div class="badge badge-outline">{feature}</div>
+                  <div class="badge badge-outline badge-sm">{feature}</div>
                 ))}
               </div>
             </div>
@@ -267,11 +261,11 @@ const currencySymbol = currencySymbols[currency];
         {
           notes && notes.trim() && (
             <div class="mb-2">
-              <h2 class="text-sm font-semibold uppercase tracking-wider  text-base-content/70">
+              <h2 class="text-xs font-semibold uppercase tracking-wider text-base-content/70">
                 Notes
               </h2>
-              <div class="text-sm text-base-content/80 leading-relaxed">
-                {notes.split("\n").map((line, index) => (
+              <div class="text-xs text-base-content/80 leading-relaxed">
+                {notes.split("\n").map((line) => (
                   <div>{line}</div>
                 ))}
               </div>
@@ -286,30 +280,29 @@ const currencySymbol = currencySymbols[currency];
         <div class="grid grid-cols-2 gap-4 pt-2 mb-4">
           <div>
             <h2
-              class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+              class="text-xs font-semibold uppercase tracking-wider mb-2 text-base-content/70"
             >
               BGP Fee
             </h2>
             {
               bgpFee === "0" ? (
-                <div class="badge badge-success">Free BGP</div>
+                <div class="badge badge-success badge-sm">Free BGP</div>
               ) : (
-                <p class="font-semibold text-base-content">
+                <p class="text-sm font-semibold text-base-content">
                   {currencySymbol}
-                  {bgpFee} {currency} setup fee
+                  {bgpFee} {currency}
                 </p>
               )
             }
           </div>
           <div>
             <h2
-              class="text-sm font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+              class="text-xs font-semibold uppercase tracking-wider mb-2 text-base-content/70"
             >
               Pricing
             </h2>
-            <p class="font-semibold text-base-content">
-              Starting at {currencySymbol}
-              {pricing}/mo {currency}
+            <p class="text-sm font-semibold text-base-content">
+              {currencySymbol}{pricing}/mo
             </p>
           </div>
         </div>
@@ -320,10 +313,11 @@ const currencySymbol = currencySymbols[currency];
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-primary">View Provider</a
+            class="btn btn-primary btn-sm w-full">View Provider</a
           >
         </div>
       </div>
     </div>
   </div>
 </div>
+

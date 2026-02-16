@@ -25,23 +25,7 @@ const sortedProviders = baremetalProviders.sort((a, b) => a.data.title.localeCom
       {
         sortedProviders.map((entry) => (
           <div class="flex justify-center h-full">
-            <Card
-              title={entry.data.title}
-              image={entry.data.image}
-              asn={entry.data.asn}
-              tableType={entry.data.tableType}
-              locations={entry.data.locations}
-              services={entry.data.services}
-              features={entry.data.features}
-              rpkiStatus={entry.data.rpkiStatus}
-              prefixUpdateStatus={entry.data.prefixUpdateStatus}
-              loaRequired={entry.data.loaRequired}
-              notes={entry.data.notes}
-              bgpFee={entry.data.bgpFee}
-              pricing={entry.data.pricing}
-              currency={entry.data.currency}
-              url={entry.data.url}
-            />
+            <Card {...entry.data} />
           </div>
         ))
       }
