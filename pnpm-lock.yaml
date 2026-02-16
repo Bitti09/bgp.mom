@@ -1204,8 +1204,8 @@ packages:
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
 
-  '@yeskunall/astro-umami@0.0.6':
-    resolution: {integrity: sha512-fEp4jwi33CKRGJcAQSoCv61OGwBqYgmxkyVHFPdb4X7H2SOMVSH/u/6u3cfPrYMHVxw8j5NCz+LAqprxaAc1Xw==}
+  '@yeskunall/astro-umami@0.0.7':
+    resolution: {integrity: sha512-8W/At28qKyPGepwvVumgJX0VZ0F9KK4M4zNDQfUZ3iBJpAKUTAkdIXM7i7I+PFsP7rXOo/AVgcDXDOv9L03QhQ==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0 || ^5.0.0
 
