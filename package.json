@@ -20,7 +20,7 @@
     "astro": "^5.17.2",
     "daisyui": "^5.5.18",
     "flag-icons": "^7.5.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.2.0"
   },
   "devDependencies": {
     "undici": "^7.22.0",
