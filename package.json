@@ -15,7 +15,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/sitemap": "^3.7.0",
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.0",
     "@yeskunall/astro-umami": "latest",
     "astro": "^5.17.2",
     "daisyui": "^5.5.18",
