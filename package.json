@@ -14,16 +14,16 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "13.0.0-beta.8",
-    "@astrojs/sitemap": "3.6.1-beta.3",
-    "@tailwindcss/vite": "^4.1.18",
+    "@astrojs/sitemap": "^3.7.0",
+    "@tailwindcss/vite": "^4.2.0",
     "@yeskunall/astro-umami": "latest",
-    "astro": "6.0.0-beta.12",
-    "daisyui": "^5.5.18",
+    "astro": "6.0.0-beta.14",
+    "daisyui": "^5.5.19",
     "flag-icons": "^7.5.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.2.0"
   },
   "devDependencies": {
     "undici": "^7.22.0",
-    "wrangler": "^4.65.0"
+    "wrangler": "^4.67.0"
   }
 }
