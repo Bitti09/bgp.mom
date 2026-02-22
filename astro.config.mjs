@@ -5,8 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 
-import node from "@astrojs/node";
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://bgp.mom",
@@ -19,8 +17,8 @@ export default defineConfig({
     },
   },
 
-  adapter: node({
-    mode: "standalone",
+  adapter: cloudflare({
+    sessionKVBindingName: "BGP_MOM_v6_SESSION",
   }),
   integrations: [sitemap()],
 });

@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "13.0.0-beta.8",
-    "@astrojs/node": "beta",
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.2.0",
     "@yeskunall/astro-umami": "latest",
