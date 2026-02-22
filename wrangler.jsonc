@@ -14,5 +14,10 @@
   },
   "placement": {
     "mode": "smart"
-  }
+  },
+    "kv_namespaces": [
+    {
+      "binding": "BGP_MOM_v6_SESSION"
+    }
+  ]
 }

@@ -17,6 +17,8 @@ export default defineConfig({
     },
   },
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    sessionKVBindingName: "BGP_MOM_v6_SESSION",
+  }),
   integrations: [sitemap()],
-})
+});
