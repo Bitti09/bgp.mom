@@ -13,17 +13,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "13.0.0-beta.8",
-    "@astrojs/sitemap": "^3.7.0",
-    "@tailwindcss/vite": "^4.2.0",
+    "@astrojs/cloudflare": "^13.1.1",
+    "@astrojs/sitemap": "^3.7.1",
+    "@tailwindcss/vite": "^4.2.1",
     "@yeskunall/astro-umami": "latest",
-    "astro": "6.0.0-beta.14",
+    "astro": "^6.0.4",
     "daisyui": "^5.5.19",
     "flag-icons": "^7.5.0",
-    "tailwindcss": "^4.2.0"
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "undici": "^7.22.0",
-    "wrangler": "^4.67.0"
+    "undici": "^7.24.0",
+    "wrangler": "^4.72.0"
   }
 }
