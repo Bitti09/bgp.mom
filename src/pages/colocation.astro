@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import ProviderGrid from "../components/ProviderGrid.astro";
 import { getCollection } from "astro:content";
 
 const vpsEntries = await getCollection("vps");
@@ -8,7 +8,7 @@ const vpsEntries = await getCollection("vps");
 const colocationProviders = vpsEntries.filter(entry => 
   entry.data.services.some(service => service.toLowerCase().includes("colocation"))
 );
-const sortedProviders = colocationProviders.sort((a, b) => a.data.title.localeCompare(b.data.title));
+const sortedProviders = [...colocationProviders].sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="BGP.mom - Colocation Providers with BGP support">
@@ -19,17 +19,7 @@ const sortedProviders = colocationProviders.sort((a, b) => a.data.title.localeCo
       <p class="text-sm text-base-content/50 mt-2">Found {sortedProviders.length} providers</p>
     </div>
     
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/5)))] 2xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/6)))] gap-8 px-4"
-    >
-      {
-        sortedProviders.map((entry) => (
-          <div class="flex justify-center h-full">
-            <Card {...entry.data} />
-          </div>
-        ))
-      }
-    </div>
+    <ProviderGrid providers={sortedProviders} />
     
     {sortedProviders.length === 0 && (
       <div class="text-center py-12">

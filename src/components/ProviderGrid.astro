@@ -1,0 +1,21 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  providers: any[];
+}
+
+const { providers } = Astro.props;
+---
+
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/5)))] 2xl:grid-cols-[repeat(auto-fit,minmax(340px,calc(100%/6)))] gap-8 px-4"
+>
+  {
+    providers.map((entry) => (
+      <div class="flex justify-center h-full">
+        <Card {...entry.data} />
+      </div>
+    ))
+  }
+</div>
