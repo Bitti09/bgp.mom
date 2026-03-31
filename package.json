@@ -17,7 +17,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.2",
     "@yeskunall/astro-umami": "latest",
-    "astro": "^6.1.1",
+    "astro": "^6.1.2",
     "daisyui": "^5.5.19",
     "flag-icons": "^7.5.0",
     "tailwindcss": "^4.2.2"
