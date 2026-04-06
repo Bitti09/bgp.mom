@@ -23,7 +23,7 @@
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
-    "undici": "^7.24.6",
+    "undici": "^8.0.2",
     "wrangler": "^4.78.0"
   }
 }
