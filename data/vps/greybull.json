@@ -1,0 +1,17 @@
+{
+  "title": "Greybull",
+  "image": "/img/providers/greybull.svg",
+  "asn": "202585",
+  "tableType": "full",
+  "locations": ["Enschede, NL"],
+  "services": ["VPS", "Colocation", "E-Mail", "Webhosting"],
+  "features": ["BGP Communities", "BGP Community Passthrough"],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
+  "notes": "BGP setup is automated.",
+  "bgpFee": "0",
+  "pricing": "4,17",
+  "currency": "EUR",
+  "url": "https://greybull.com/"
+}
