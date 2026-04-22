@@ -1,14 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProviderGrid from "../components/ProviderGrid.astro";
-import { getCollection } from "astro:content";
-
-const vpsEntries = await getCollection("vps");
-// Filter for providers that have "IXP Access" in their services
-const ixpProviders = vpsEntries.filter(entry => 
+import { getSortedProviders } from "../utils/providers";
+const sortedProviders = await getSortedProviders(entry => 
   entry.data.services.some(service => service.toLowerCase().includes("ixp"))
 );
-const sortedProviders = [...ixpProviders].sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="BGP.mom - IXP Access Providers with BGP support">

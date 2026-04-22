@@ -20,6 +20,23 @@ interface Props {
   url: string;
 }
 
+const currencySymbols: Record<string, string> = {
+  USD: "$",
+  EUR: "€",
+  GBP: "£",
+  CHF: "CHF",
+  SEK: "SEK",
+  CZK: "CZK",
+};
+
+function parseLocation(location: string): {
+  city: string;
+  countryCode: string;
+} {
+  const [city, countryCode] = location.split(", ");
+  return { city, countryCode: countryCode || "" };
+}
+
 const {
   title,
   image,
@@ -38,40 +55,37 @@ const {
   url,
 } = Astro.props;
 
-function parseLocation(location: string): {
-  city: string;
-  countryCode: string;
-} {
-  const [city, countryCode] = location.split(", ");
-  return { city, countryCode: countryCode || "" };
-}
-
-const currencySymbols: Record<string, string> = {
-  USD: "$",
-  EUR: "€",
-  GBP: "£",
-  CHF: "CHF",
-  SEK: "SEK",
-  CZK: "CZK",
-};
-
 const tableTypeText = tableType === "full" ? "Full Table" : "Half Table";
 const currencySymbol = currencySymbols[currency] || currency;
 ---
 
-<div class="card w-[340px] bg-base-200 h-full">
+<div class="card bg-base-200 h-full w-full">
   <div class="card-body flex flex-col h-full">
     <!-- Card Header -->
     <div class="card-actions justify-between items-center mb-4">
       <!-- ASN Badge - Left -->
-      <a 
-        href={`https://bgp.tools/as/${asn}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-sm btn-outline btn-info text-left hover:btn-info transition-colors"
-      >
-        AS{asn}
-      </a>
+      <div class="flex items-center gap-1 group">
+        <a 
+          href={`https://bgp.tools/as/${asn}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-umami-event={`${title} bgp.tools visited`}
+          class="btn btn-sm btn-outline btn-info hover:btn-info transition-colors px-2 min-h-0 h-8 font-mono"
+        >
+          AS{asn}
+        </a>
+        <button
+          onclick={`navigator.clipboard.writeText('${asn}')`}
+          data-umami-event={`${title} ASN copied`}
+          class="btn btn-sm btn-square btn-ghost h-8 w-8 min-h-0 opacity-0 group-hover:opacity-100 transition-opacity"
+          title="Copy ASN"
+          aria-label="Copy ASN"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+        </button>
+      </div>
 
       <!-- Table Type - Middle -->
       <button class="btn btn-sm btn-outline no-animation cursor-default">{tableTypeText}</button>
@@ -313,8 +327,25 @@ const currencySymbol = currencySymbols[currency] || currency;
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-primary btn-sm w-full">View Provider</a
+            data-umami-event={`${title} button clicked`}
+            class="btn btn-primary btn-sm w-full gap-2"
           >
+            View Provider
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </div>

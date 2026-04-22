@@ -1,14 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProviderGrid from "../components/ProviderGrid.astro";
-import { getCollection } from "astro:content";
-
-const vpsEntries = await getCollection("vps");
-// Filter for providers that have "LIR Services" in their services
-const lirProviders = vpsEntries.filter(entry => 
+import { getSortedProviders } from "../utils/providers";
+const sortedProviders = await getSortedProviders(entry => 
   entry.data.services.some(service => service.toLowerCase().includes("lir"))
 );
-const sortedProviders = [...lirProviders].sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="BGP.mom - LIR Service Providers with BGP support">

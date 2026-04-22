@@ -1,14 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProviderGrid from "../components/ProviderGrid.astro";
-import { getCollection } from "astro:content";
-
-const vpsEntries = await getCollection("vps");
-// Filter for providers that have "Colocation" in their services
-const colocationProviders = vpsEntries.filter(entry => 
+import { getSortedProviders } from "../utils/providers";
+const sortedProviders = await getSortedProviders(entry => 
   entry.data.services.some(service => service.toLowerCase().includes("colocation"))
 );
-const sortedProviders = [...colocationProviders].sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="BGP.mom - Colocation Providers with BGP support">

@@ -16,11 +16,17 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="List of VPS Providers with BGP support" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bgp.mom" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts." />
+    <meta property="og:image" content="https://bgp.mom/og-image.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bgp.mom" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts." />
+    <meta property="twitter:image" content="https://bgp.mom/og-image.png" />
 
     <title>{title}</title>
 
