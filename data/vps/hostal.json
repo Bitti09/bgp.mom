@@ -1,0 +1,31 @@
+{
+  "title": "Host.al",
+  "image": "/img/providers/hostal.png",
+  "asn": "213683",
+  "tableType": "full",
+  "locations": [
+    "Tirana, AL",
+    "Kansas City, US",
+    "Nuremberg, DE"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "Colocation",
+    "LIR Services"
+  ],
+  "features": [
+    "Free BGP",
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
+  "notes": "BGP included with every VPS, dedicated, and colocation package. BGP community passthrough is partial/limited. Active downstream support for ASN setup, IRR, and RPKI. ICANN-accredited domain registrar (IANA #4332).",
+  "bgpFee": "0",
+  "pricing": "2.95",
+  "currency": "EUR",
+  "url": "https://host.al/"
+}
