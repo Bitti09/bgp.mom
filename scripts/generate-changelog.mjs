@@ -5,6 +5,12 @@ import path from 'path';
 const DATA_DIR = 'data/vps';
 const OUTPUT_FILE = 'src/data/changelog.json';
 
+// Skip generation in CI environments (like Cloudflare Pages) where git history is often incomplete (shallow clone)
+if (process.env.CF_PAGES || process.env.CI || process.env.GITHUB_ACTIONS) {
+    console.log('Skipping changelog generation in CI environment (using committed JSON instead).');
+    process.exit(0);
+}
+
 function getProviderTitle(filePath) {
     try {
         const fullPath = path.resolve(process.cwd(), filePath);
