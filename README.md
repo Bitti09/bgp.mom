@@ -21,14 +21,14 @@ BGP.mom is a community-driven platform that lists VPS providers offering BGP sup
 
 ### Adding a VPS Provider
 
-1. Go to the [New Provider Issue](https://github.com/BitB0y/bgp.mom/issues/new?template=add-provider.yml) page
+1. Go to the [New Provider Issue](https://github.com/Bitti09/bgp.mom/issues/new?template=add-provider.yml) page
 2. Fill out the provider information form
 3. Submit the issue
 4. Our team will review and add the provider
 
 ### Updating Provider Information
 
-1. Go to the [Update Provider Issue](https://github.com/BitB0y/bgp.mom/issues/new?template=update-provider.yml) page
+1. Go to the [Update Provider Issue](https://github.com/Bitti09/bgp.mom/issues/new?template=update-provider.yml) page
 2. Fill out the update form with the changed information
 3. Provide verification sources for the changes
 4. Submit the issue
