@@ -72,9 +72,14 @@ const { title } = Astro.props;
   <body class="min-h-screen bg-base-100 flex flex-col">
     <header class="sticky top-0 z-50">
       <div class="navbar bg-base-100 shadow-lg relative">
-        <div class="navbar-start px-4">
+        <div class="navbar-start px-6">
           <div class="dropdown static lg:relative">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open menu">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost lg:hidden"
+              aria-label="Open menu"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -116,7 +121,7 @@ const { title } = Astro.props;
               <span class="text-primary font-bold">BGP</span>
               <span class="text-base-content font-bold">.mom</span>
             </div>
-            <div class="badge badge-primary badge-sm">v0.9.0</div>
+            <div class="badge badge-primary badge-sm">v1.0.0</div>
           </a>
         </div>
 
@@ -181,7 +186,7 @@ const { title } = Astro.props;
     </header>
 
     <div class="alert alert-error alert-soft">
-      <div class="container mx-auto px-4 flex items-start gap-2">
+      <div class="w-full px-6 flex items-start gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6 shrink-0 stroke-current"
@@ -209,8 +214,10 @@ const { title } = Astro.props;
       </div>
     </div>
 
-    <main class="w-full py-8 flex-1">
-      <slot />
+    <main class="flex-1 w-full">
+      <div class="w-full px-6 py-8">
+        <slot />
+      </div>
     </main>
 
     <footer class="footer footer-center p-4 bg-base-200 text-base-content mt-8">

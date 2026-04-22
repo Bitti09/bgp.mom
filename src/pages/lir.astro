@@ -12,7 +12,6 @@ const sortedProviders = [...lirProviders].sort((a, b) => a.data.title.localeComp
 ---
 
 <Layout title="BGP.mom - LIR Service Providers with BGP support">
-  <main class="w-full py-8">
     <div class="text-center mb-8">
       <h1 class="text-4xl font-bold text-base-content mb-2">LIR Service Providers</h1>
       <p class="text-lg text-base-content/70">Local Internet Registry services for IP allocations and ASN registration</p>
@@ -26,5 +25,4 @@ const sortedProviders = [...lirProviders].sort((a, b) => a.data.title.localeComp
         <p class="text-xl text-base-content/70">No LIR service providers found.</p>
       </div>
     )}
-  </main>
 </Layout>

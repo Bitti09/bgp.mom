@@ -12,7 +12,6 @@ const sortedProviders = [...tunnelProviders].sort((a, b) => a.data.title.localeC
 ---
 
 <Layout title="BGP.mom - Tunnel Providers with BGP support">
-  <main class="w-full py-8">
     <div class="text-center mb-8">
       <h1 class="text-4xl font-bold text-base-content mb-2">Tunnel Providers</h1>
       <p class="text-lg text-base-content/70">Providers offering BGP tunnel services (GRE, IPSec, WireGuard)</p>
@@ -26,5 +25,4 @@ const sortedProviders = [...tunnelProviders].sort((a, b) => a.data.title.localeC
         <p class="text-xl text-base-content/70">No tunnel providers found.</p>
       </div>
     )}
-  </main>
 </Layout>

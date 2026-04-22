@@ -9,7 +9,6 @@ const sortedProviders = [...vpsEntries].sort((a, b) =>
 ---
 
 <Layout title="BGP.mom - List of VPS Providers with BGP support">
-  <main class="w-full py-8">
     <div class="text-center mb-8">
       <h1 class="text-4xl font-bold text-base-content mb-2">VPS Providers</h1>
       <p class="text-lg text-base-content/70">
@@ -20,5 +19,4 @@ const sortedProviders = [...vpsEntries].sort((a, b) =>
       </p>
     </div>
     <ProviderGrid providers={sortedProviders} />
-  </main>
 </Layout>
