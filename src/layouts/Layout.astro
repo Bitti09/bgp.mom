@@ -15,17 +15,24 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta charset="UTF-8" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bgp.mom" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts." />
+    <meta
+      property="og:description"
+      content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts."
+    />
     <meta property="og:image" content="https://bgp.mom/og-image.png" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://bgp.mom" />
     <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts." />
+    <meta
+      property="twitter:description"
+      content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts."
+    />
     <meta property="twitter:image" content="https://bgp.mom/og-image.png" />
 
     <title>{title}</title>
@@ -39,7 +46,6 @@ const { title } = Astro.props;
       data-sample-rate="0.5"
       data-mask-level="moderate"
       data-max-duration="1200000"></script>
-
 
     <script is:inline>
       // Helper: Get the current theme from local storage or default to light
