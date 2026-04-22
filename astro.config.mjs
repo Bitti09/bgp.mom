@@ -22,6 +22,6 @@ export default defineConfig({
   }),
   integrations: [
     sitemap(),
-    umami({ id: "e94e1dc0-f5e2-4746-97ba-313fbe5bcd99" })
+    umami({ id: "e94e1dc0-f5e2-4746-97ba-313fbe5bcd99", endpointUrl: "https://stats.bgp.mom/" })
   ],
 });
