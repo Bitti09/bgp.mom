@@ -9,7 +9,7 @@
     "Ohio, US",
     "North Carolina, US",
     "New Mexico, US",
-    "Birmingham, UK",
+    "Birmingham, GB",
     "Amsterdam, NL",
     "Toronto, CA",
     "Montreal, CA",
@@ -36,8 +36,15 @@
     "Missouri, US",
     "Michigan, US"
   ],
-  "services": ["VPS", "Colocation", "E-Mail", "Webhosting"],
-  "features": ["Downstream Support"],
+  "services": [
+    "VPS",
+    "Colocation",
+    "E-Mail",
+    "Webhosting"
+  ],
+  "features": [
+    "Downstream Support"
+  ],
   "rpkiStatus": "yes",
   "prefixUpdateStatus": "automatic",
   "loaRequired": "no",
