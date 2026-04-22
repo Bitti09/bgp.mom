@@ -15,15 +15,15 @@
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.10",
     "@astrojs/sitemap": "^3.7.2",
-    "@tailwindcss/vite": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.4",
     "@yeskunall/astro-umami": "latest",
     "astro": "^6.1.8",
     "daisyui": "^5.5.19",
     "flag-icons": "^7.5.0",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
     "undici": "^7.25.0",
-    "wrangler": "^4.83.0"
+    "wrangler": "^4.84.1"
   }
 }
