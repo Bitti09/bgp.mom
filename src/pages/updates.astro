@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+import changelogData from "../data/changelog.json";
+
+interface Change {
+  type: 'ADD' | 'EDIT' | 'DELETE' | 'RENAME' | 'UPDATE';
+  name: string;
+  filePath: string;
+}
+
+interface ChangelogEntry {
+  date: string;
+  message: string;
+  changes: Change[];
+}
+
+const changelog = (changelogData as unknown) as ChangelogEntry[];
+
+const currentMonthKey = new Date().toISOString().slice(0, 7); // "YYYY-MM"
+
+const groupedByMonth = changelog.reduce((acc, entry) => {
+  const month = entry.date.slice(0, 7);
+  if (!acc[month]) {
+    acc[month] = [];
+  }
+  acc[month].push(entry);
+  return acc;
+}, {} as Record<string, ChangelogEntry[]>);
+
+const months = Object.keys(groupedByMonth).sort((a, b) => b.localeCompare(a));
+
+const getMonthName = (monthKey: string) => {
+  return new Date(monthKey + "-01").toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+};
+
+const getStatusColor = (type: string) => {
+  switch (type) {
+    case 'ADD': return 'badge-success';
+    case 'EDIT': return 'badge-info';
+    case 'DELETE': return 'badge-error';
+    default: return 'badge-ghost';
+  }
+};
+
+const getStatusBorder = (type: string) => {
+  switch (type) {
+    case 'ADD': return 'border-l-success';
+    case 'EDIT': return 'border-l-info';
+    case 'DELETE': return 'border-l-error';
+    default: return 'border-l-base-300';
+  }
+};
+---
+
+<Layout title="BGP.mom - History of updates">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-base-content mb-4">History of updates</h1>
+      <p class="text-lg text-base-content/70">Recent additions and changes to our provider database</p>
+    </div>
+
+    <div class="space-y-8">
+      {months.map(month => {
+        const isCurrentMonth = month === currentMonthKey;
+        const entries = groupedByMonth[month];
+        
+        if (isCurrentMonth) {
+          return (
+            <div class="space-y-4">
+              <h2 class="text-2xl font-bold text-base-content/80 px-2 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Current Month ({getMonthName(month)})
+              </h2>
+              <div class="space-y-4">
+                {entries.map(entry => (
+                  entry.changes.map(change => (
+                    <div class={`bg-base-200/50 rounded-xl p-6 border border-base-300 border-l-4 ${getStatusBorder(change.type)} transition-all hover:bg-base-200 flex justify-between items-center group`}>
+                      <div>
+                        <span class="text-sm font-mono text-base-content/50 block mb-1">{entry.date}</span>
+                        <h3 class="text-xl font-semibold text-base-content">
+                          {change.type === 'ADD' ? 'Added' : change.type === 'DELETE' ? 'Removed' : 'Updated'} {change.name}
+                        </h3>
+                      </div>
+                      <div class={`badge ${getStatusColor(change.type)} badge-outline font-bold px-4 py-3`}>
+                        {change.type}
+                      </div>
+                    </div>
+                  ))
+                ))}
+              </div>
+            </div>
+          );
+        } else {
+          return (
+            <div class="collapse collapse-arrow bg-base-200/30 border border-base-300 rounded-xl">
+              <input type="checkbox" /> 
+              <div class="collapse-title text-xl font-medium py-4">
+                {getMonthName(month)}
+                <span class="ml-4 text-sm font-normal text-base-content/50">
+                  {entries.reduce((acc, e) => acc + e.changes.length, 0)} updates
+                </span>
+              </div>
+              <div class="collapse-content space-y-4 pt-4">
+                {entries.map(entry => (
+                  entry.changes.map(change => (
+                    <div class={`bg-base-100/50 rounded-lg p-4 border border-base-300 border-l-4 ${getStatusBorder(change.type)} flex justify-between items-center group`}>
+                      <div>
+                        <span class="text-xs font-mono text-base-content/40 block mb-0.5">{entry.date}</span>
+                        <h4 class="text-lg font-medium text-base-content">
+                           {change.type === 'ADD' ? 'Added' : change.type === 'DELETE' ? 'Removed' : 'Updated'} {change.name}
+                        </h4>
+                      </div>
+                      <div class={`badge ${getStatusColor(change.type)} badge-outline font-bold px-4 py-3`}>
+                        {change.type}
+                      </div>
+                    </div>
+                  ))
+                ))}
+              </div>
+            </div>
+          );
+        }
+      })}
+    </div>
+
+    {months.length === 0 && (
+      <div class="text-center py-20 bg-base-200/30 rounded-3xl border border-dashed border-base-300">
+        <p class="text-xl text-base-content/50 italic">No updates recorded yet.</p>
+      </div>
+    )}
+  </div>
+</Layout>
+
+<style>
+  /* Optional: Add some glow or shadow to match the premium feel */
+  .group:hover {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+</style>

@@ -1,0 +1,265 @@
+[
+  {
+    "date": "2026-04-22",
+    "message": "add RackGenius provider data and logo",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "RackGenius",
+        "filePath": "data/vps/rackgenius.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-22",
+    "message": "add Host.al provider data and logo",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "Host.al",
+        "filePath": "data/vps/hostal.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-22",
+    "message": "fix country flag for Flooyd location",
+    "changes": [
+      {
+        "type": "EDIT",
+        "name": "Flooyd",
+        "filePath": "data/vps/flooyd.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-22",
+    "message": "Add Flooyd provider data and logo",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "Flooyd",
+        "filePath": "data/vps/flooyd.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "message": "Aktualisieren von greybull.json",
+    "changes": [
+      {
+        "type": "EDIT",
+        "name": "Greybull",
+        "filePath": "data/vps/greybull.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-19",
+    "message": "  [Add]: Greybull Fixes #186",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "Greybull",
+        "filePath": "data/vps/greybull.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-22",
+    "message": "Update provider details for Lyratris &  update deps",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "Calibour",
+        "filePath": "data/vps/calibour.json"
+      },
+      {
+        "type": "DELETE",
+        "name": "lyratris",
+        "filePath": "data/vps/lyratris.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-16",
+    "message": "publish astro v6 beta branch",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "Akronic Network",
+        "filePath": "data/vps/akronic-network.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Bharat Datacenter",
+        "filePath": "data/vps/bharat-datacenter.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Charged IT Solutions LLC",
+        "filePath": "data/vps/charged-it-solutions-llc.json"
+      },
+      {
+        "type": "ADD",
+        "name": "CircleCityServers",
+        "filePath": "data/vps/circlecityservers.json"
+      },
+      {
+        "type": "ADD",
+        "name": "CloudMate",
+        "filePath": "data/vps/cloudmate.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Divergent Networks",
+        "filePath": "data/vps/divergent-networks.json"
+      },
+      {
+        "type": "ADD",
+        "name": "DutchIS",
+        "filePath": "data/vps/dutchis.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Elcro Digital",
+        "filePath": "data/vps/elcro-digital.json"
+      },
+      {
+        "type": "ADD",
+        "name": "F4 Networks",
+        "filePath": "data/vps/f4-networks.json"
+      },
+      {
+        "type": "ADD",
+        "name": "GamerHost.pro",
+        "filePath": "data/vps/gamerhost-pro.json"
+      },
+      {
+        "type": "ADD",
+        "name": "GetVPS",
+        "filePath": "data/vps/getvps.json"
+      },
+      {
+        "type": "ADD",
+        "name": "HostHatch",
+        "filePath": "data/vps/hosthatch.json"
+      },
+      {
+        "type": "ADD",
+        "name": "HYEHOST",
+        "filePath": "data/vps/hyehost.json"
+      },
+      {
+        "type": "ADD",
+        "name": "iFog GmbH",
+        "filePath": "data/vps/ifog-gmbh.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Karabro AB",
+        "filePath": "data/vps/karabro-ab.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Lagrange",
+        "filePath": "data/vps/lagrange.json"
+      },
+      {
+        "type": "ADD",
+        "name": "LAKENETWORKS.it",
+        "filePath": "data/vps/lakenetworks-it.json"
+      },
+      {
+        "type": "ADD",
+        "name": "LowPing NL",
+        "filePath": "data/vps/lowpingnl.json"
+      },
+      {
+        "type": "ADD",
+        "name": "lyratris",
+        "filePath": "data/vps/lyratris.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Melbicom",
+        "filePath": "data/vps/melbicom.json"
+      },
+      {
+        "type": "ADD",
+        "name": "MyHostingSpace",
+        "filePath": "data/vps/myhostingspace.json"
+      },
+      {
+        "type": "ADD",
+        "name": "MyRootPW",
+        "filePath": "data/vps/myrootpw.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Neptune Networks",
+        "filePath": "data/vps/neptune-networks.json"
+      },
+      {
+        "type": "ADD",
+        "name": "PawHost",
+        "filePath": "data/vps/pawhost.json"
+      },
+      {
+        "type": "ADD",
+        "name": "PebbleHost",
+        "filePath": "data/vps/pebblehost.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Servperso",
+        "filePath": "data/vps/servperso.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Skhron",
+        "filePath": "data/vps/skhron.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Skywolf Cloud",
+        "filePath": "data/vps/skywolf-cloud.json"
+      },
+      {
+        "type": "ADD",
+        "name": "SweHosting",
+        "filePath": "data/vps/swehosting.json"
+      },
+      {
+        "type": "ADD",
+        "name": "System36",
+        "filePath": "data/vps/system36.json"
+      },
+      {
+        "type": "ADD",
+        "name": "V.ps",
+        "filePath": "data/vps/v-ps.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Virtua Cloud",
+        "filePath": "data/vps/virtua-cloud.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Vultr",
+        "filePath": "data/vps/vultr.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Xenyth",
+        "filePath": "data/vps/xenyth.json"
+      },
+      {
+        "type": "ADD",
+        "name": "Zappie Host",
+        "filePath": "data/vps/zappie-host.json"
+      }
+    ]
+  }
+]

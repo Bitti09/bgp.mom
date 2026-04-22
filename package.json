@@ -7,8 +7,9 @@
     "workerd"
   ],
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "node scripts/generate-changelog.mjs && astro dev",
+    "build": "node scripts/generate-changelog.mjs && astro build",
+    "changelog": "node scripts/generate-changelog.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
