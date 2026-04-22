@@ -70,6 +70,7 @@ const currencySymbol = currencySymbols[currency] || currency;
           target="_blank"
           rel="noopener noreferrer"
           data-umami-event={`${title} bgp.tools visited`}
+          data-umami-event-url={`https://bgp.tools/as/${asn}`}
           class="btn btn-sm btn-outline btn-info hover:btn-info transition-colors px-2 min-h-0 h-8 font-mono"
         >
           AS{asn}
@@ -328,6 +329,7 @@ const currencySymbol = currencySymbols[currency] || currency;
             target="_blank"
             rel="noopener noreferrer"
             data-umami-event={`${title} button clicked`}
+            data-umami-event-url={url}
             class="btn btn-primary btn-sm w-full gap-2"
           >
             View Provider
