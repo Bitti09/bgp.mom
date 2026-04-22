@@ -1,0 +1,28 @@
+{
+  "title": "RackGenius",
+  "image": "/img/providers/rackgenius.png",
+  "asn": "32002",
+  "tableType": "full",
+  "locations": [
+    "Grand Rapids, US"
+  ],
+  "services": [
+    "Baremetal",
+    "VPS",
+    "Colocation",
+    "IP Transit"
+  ],
+  "features": [
+    "BGP Communities",
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "manual",
+  "loaRequired": "no",
+  "notes": "BGP fee is $25 one-time, waived for dedicated and colocation customers. Auto-update lists exported to upstreams, but requires manual ticket for one upstream. Communities: Traffic Engineering, Route Origin.",
+  "bgpFee": "25",
+  "pricing": "3.50",
+  "currency": "USD",
+  "url": "https://rackgenius.com"
+}
