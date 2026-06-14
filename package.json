@@ -14,17 +14,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.2.1",
-    "@astrojs/sitemap": "^3.7.2",
-    "@tailwindcss/vite": "^4.2.4",
+    "@astrojs/cloudflare": "^13.7.0",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.1",
     "@yeskunall/astro-umami": "latest",
-    "astro": "^6.1.9",
-    "daisyui": "^5.5.19",
+    "astro": "^6.4.6",
+    "daisyui": "^5.5.23",
     "flag-icons": "^7.5.0",
-    "tailwindcss": "^4.2.4"
+    "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
-    "undici": "^8.1.0",
-    "wrangler": "^4.84.1"
+    "undici": "^8.4.1",
+    "wrangler": "^4.100.0"
   }
 }
