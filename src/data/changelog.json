@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-06-09",
+    "message": "Delete charged-it-solutions-llc.json",
+    "changes": [
+      {
+        "type": "DELETE",
+        "name": "charged-it-solutions-llc",
+        "filePath": "data/vps/charged-it-solutions-llc.json"
+      }
+    ]
+  },
+  {
     "date": "2026-04-22",
     "message": "add RackGenius provider data and logo",
     "changes": [
@@ -97,7 +108,7 @@
       },
       {
         "type": "ADD",
-        "name": "Charged IT Solutions LLC",
+        "name": "charged-it-solutions-llc",
         "filePath": "data/vps/charged-it-solutions-llc.json"
       },
       {
