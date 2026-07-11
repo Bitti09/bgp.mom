@@ -1,41 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import "flag-icons/css/flag-icons.min.css";
+import type { BGPProvider } from "../utils/types";
+import {
+  getCurrencySymbol,
+  getTableTypeText,
+  parseLocation,
+} from "../utils/types";
 
-interface Props {
-  title: string;
-  image?: string;
-  asn: string;
-  tableType?: "full" | "half";
-  locations?: string[];
-  services?: string[];
-  features?: string[];
-  rpkiStatus?: "yes" | "no";
-  prefixUpdateStatus?: "automatic" | "manual";
-  loaRequired?: "yes" | "no";
-  notes?: string;
-  bgpFee: string;
-  pricing: string;
-  currency: "USD" | "EUR" | "GBP" | "CHF" | "SEK" | "CZK";
-  url: string;
-}
-
-const currencySymbols: Record<string, string> = {
-  USD: "$",
-  EUR: "€",
-  GBP: "£",
-  CHF: "CHF",
-  SEK: "SEK",
-  CZK: "CZK",
-};
-
-function parseLocation(location: string): {
-  city: string;
-  countryCode: string;
-} {
-  const [city, countryCode] = location.split(", ");
-  return { city, countryCode: countryCode || "" };
-}
+interface Props extends BGPProvider {}
 
 const {
   title,
@@ -55,8 +27,10 @@ const {
   url,
 } = Astro.props;
 
-const tableTypeText = tableType === "full" ? "Full Table" : "Half Table";
-const currencySymbol = currencySymbols[currency] || currency;
+const tableTypeText = getTableTypeText(tableType);
+const currencySymbol = getCurrencySymbol(currency);
+const pricingHasExplicitSuffix = /\/\s*[a-z]+/i.test(pricing);
+const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
 ---
 
 <div class="card bg-base-200 h-full w-full">
@@ -216,7 +190,7 @@ const currencySymbol = currencySymbols[currency] || currency;
                 {locations.map((location) => {
                   const { city, countryCode } = parseLocation(location);
                   return (
-                    <div class="badge badge-outline badge-sm">
+                    <div class="badge badge-outline badge-sm" data-key={`location-${location}`}>
                       <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
                       {city}
                     </div>
@@ -236,7 +210,7 @@ const currencySymbol = currencySymbols[currency] || currency;
               </h2>
               <div class="flex flex-wrap gap-2  items-center">
                 {services.map((service) => (
-                  <div class="badge badge-outline badge-sm">{service}</div>
+                  <div class="badge badge-outline badge-sm" data-key={`service-${service}`}>{service}</div>
                 ))}
               </div>
             </div>
@@ -252,7 +226,7 @@ const currencySymbol = currencySymbols[currency] || currency;
               </h2>
               <div class="flex flex-wrap gap-2 items-center">
                 {features.map((feature) => (
-                  <div class="badge badge-outline badge-sm">{feature}</div>
+                  <div class="badge badge-outline badge-sm" data-key={`feature-${feature}`}>{feature}</div>
                 ))}
               </div>
             </div>
@@ -267,8 +241,8 @@ const currencySymbol = currencySymbols[currency] || currency;
                 Notes
               </h2>
               <div class="text-xs text-base-content/80 leading-relaxed">
-                {notes.split("\n").map((line) => (
-                  <div>{line}</div>
+                {notes.split("\n").map((line, index) => (
+                  <div data-key={`note-${index}-${line}`}>{line}</div>
                 ))}
               </div>
             </div>
@@ -304,7 +278,7 @@ const currencySymbol = currencySymbols[currency] || currency;
               Pricing
             </h2>
             <p class="text-sm font-semibold text-base-content">
-              {currencySymbol}{pricing}/mo
+              {currencySymbol}{pricing}{pricingSuffix}
             </p>
           </div>
         </div>
