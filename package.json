@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "^4.3.2",
     "@yeskunall/astro-umami": "latest",
     "astro": "^7.0.7",
-    "daisyui": "^5.6.10",
+    "daisyui": "^5.6.17",
     "flag-icons": "^7.5.0",
     "tailwindcss": "^4.3.2",
     "typescript": "^7.0.2"
