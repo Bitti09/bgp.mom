@@ -1,0 +1,40 @@
+{
+  "title": "Phylex",
+  "image": "/img/providers/phylexlogo.svg",
+  "asn": "213905",
+  "tableType": "full",
+  "locations": [
+    "Frankfurt, DE"
+  ],
+  "services": [
+    "VPS",
+    "Dedicated Servers",
+    "BGP Tunnels",
+    "IP Transit",
+    "Server as a Router",
+    "IP Subnet/Prefix rent"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream ASN Support",
+    "Automatic Prefix Lists",
+    "AS-SET Support",
+    "IRR Filtering",
+    "RPKI Filtering",
+    "IPv4",
+    "IPv6",
+    "Full Table",
+    "Default Route",
+    "GRE Tunnels",
+    "WireGuard Tunnels",
+    "Private Peering"
+  ],
+  "rpkiStatus": "no",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "yes",
+  "notes": "BGP sessions are available over GRE, WireGuard, or direct interconnection where available.\n\nIPv4 and IPv6 are supported. Customers may receive a full table, partial table, or default route depending on their requirements.\n\nAutomatic prefix filters can be generated from an ASN or AS-SET using IRR and RPKI data. Downstream ASN support and BGP community passthrough are available.\n\nSmall-scale sessions start at €5/month with a €5 one-time tunnel setup fee. Larger or advanced configurations start from €20/month.\n\nSettlement-free peering or free upstream connectivity may be available on a case-by-case basis.\n\nAll announced prefixes must be properly authorized through valid ROAs, IRR route objects, an LOA, or another acceptable form of authorization.\n\nPhylex may reject unauthorized, RPKI-invalid, incorrectly registered, abusive, or technically unsafe announcements.\n\nCustom routing policies, redundant sessions, multiple tunnels, private interconnections, and non-standard configurations can be discussed individually.\n\nAvailability, final pricing, and technical requirements depend on the location, number of prefixes, expected traffic, routing policy, and connection type.",
+  "bgpFee": "5",
+  "pricing": "4.29",
+  "currency": "EUR",
+  "url": "https://phylex.net"
+}
