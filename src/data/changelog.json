@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-03",
+    "message": "[Add]: Phylex Platforms  #234",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "Phylex",
+        "filePath": "data/vps/phylex.json"
+      }
+    ]
+  },
+  {
     "date": "2026-06-09",
     "message": "Delete charged-it-solutions-llc.json",
     "changes": [
