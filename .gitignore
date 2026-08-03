@@ -24,3 +24,4 @@ pnpm-debug.log*
 .idea/
 .wrangler/
 transform-data.mjs
+.dirac-cache/symbol-index.db
