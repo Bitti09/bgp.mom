@@ -55,8 +55,8 @@ const getStatusBorder = (type: string) => {
 <Layout title="BGP.mom - History of updates">
   <div class="max-w-4xl mx-auto px-4 py-8">
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-base-content mb-4">History of updates</h1>
-      <p class="text-lg text-base-content/70">Recent additions and changes to our provider database</p>
+      <h1 class="text-2xl sm:text-4xl font-bold text-base-content mb-4">History of updates</h1>
+      <p class="text-base sm:text-lg text-base-content/70">Recent additions and changes to our provider database</p>
     </div>
 
     <div class="space-y-8">
@@ -74,7 +74,7 @@ const getStatusBorder = (type: string) => {
               <div class="space-y-4">
                 {entries.map(entry => (
                   entry.changes.map(change => (
-                    <div class={`bg-base-200/50 rounded-xl p-6 border border-base-300 border-l-4 ${getStatusBorder(change.type)} transition-all hover:bg-base-200 flex justify-between items-center group`}>
+                    <div class={`bg-base-200/50 rounded-xl p-4 sm:p-6 border border-base-300 border-l-4 ${getStatusBorder(change.type)} transition-all hover:bg-base-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 group`}>
                       <div>
                         <span class="text-sm font-mono text-base-content/50 block mb-1">{entry.date}</span>
                         <h3 class="text-xl font-semibold text-base-content">
@@ -103,7 +103,7 @@ const getStatusBorder = (type: string) => {
               <div class="collapse-content space-y-4 pt-4">
                 {entries.map(entry => (
                   entry.changes.map(change => (
-                    <div class={`bg-base-100/50 rounded-lg p-4 border border-base-300 border-l-4 ${getStatusBorder(change.type)} flex justify-between items-center group`}>
+                    <div class={`bg-base-100/50 rounded-lg p-3 sm:p-4 border border-base-300 border-l-4 ${getStatusBorder(change.type)} flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 group`}>
                       <div>
                         <span class="text-xs font-mono text-base-content/40 block mb-0.5">{entry.date}</span>
                         <h4 class="text-lg font-medium text-base-content">

@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-08-03",
+    "message": "Fix image path for V.ps and add logo_light.svg",
+    "changes": [
+      {
+        "type": "EDIT",
+        "name": "V.ps",
+        "filePath": "data/vps/v-ps.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-03",
     "message": "[Add]: Phylex Platforms  #234",
     "changes": [
       {

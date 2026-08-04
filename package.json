@@ -16,17 +16,21 @@
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/cloudflare": "^14.1.7",
+    "@astrojs/react": "^6.0.2",
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.3",
-    "@yeskunall/astro-umami": "latest",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "astro": "^7.1.6",
-    "daisyui": "^5.7.14",
+    "daisyui": "^5.7.16",
     "flag-icons": "^7.5.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2"
   },
   "devDependencies": {
-    "undici": "^8.9.0",
+    "undici": "^8.10.0",
     "wrangler": "^4.118.0"
   },
   "pnpm": {

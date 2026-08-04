@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import ExpandableNotes from "./ExpandableNotes.tsx";
 import type { BGPProvider } from "../utils/types";
 import {
   getCurrencySymbol,
@@ -31,14 +32,20 @@ const tableTypeText = getTableTypeText(tableType);
 const currencySymbol = getCurrencySymbol(currency);
 const pricingHasExplicitSuffix = /\/\s*[a-z]+/i.test(pricing);
 const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
+const noteLines = notes
+  ? notes
+      .trim()
+      .split("\n")
+      .filter((l) => l !== "")
+  : [];
 ---
 
 <div class="card bg-base-200 h-full w-full">
-  <div class="card-body flex flex-col h-full">
+  <div class="card-body flex flex-col h-full p-4 sm:p-6">
     <!-- Card Header -->
-    <div class="card-actions justify-between items-center mb-4">
+    <div class="card-actions justify-between items-center mb-4 gap-2 flex-wrap">
       <!-- ASN Badge - Left -->
-      <a 
+      <a
         href={`https://bgp.tools/as/${asn}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -50,7 +57,9 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
       </a>
 
       <!-- Table Type - Middle -->
-      <button class="btn btn-sm btn-outline no-animation cursor-default">{tableTypeText}</button>
+      <button class="btn btn-sm btn-soft no-animation cursor-default"
+        >{tableTypeText}</button
+      >
 
       <!-- Status Badges - Right -->
       <div class="flex items-center gap-2">
@@ -65,7 +74,7 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
               }
             >
               <div
-                class={`btn btn-sm btn-square btn-outline cursor-default ${rpkiStatus === "yes" ? "btn-success" : "btn-error"}`}
+                class={`btn btn-sm btn-square btn-soft cursor-default ${rpkiStatus === "yes" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +105,7 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
               }
             >
               <div
-                class={`btn btn-sm btn-square btn-outline cursor-default ${prefixUpdateStatus === "automatic" ? "btn-success" : "btn-error"}`}
+                class={`btn btn-sm btn-square btn-soft cursor-default ${prefixUpdateStatus === "automatic" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -121,13 +130,11 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
             <div
               class={`tooltip tooltip-bottom ${loaRequired === "no" ? "tooltip-success" : "tooltip-error"}`}
               data-tip={
-                loaRequired === "no"
-                  ? "LOA Required: No"
-                  : "LOA Required: Yes"
+                loaRequired === "no" ? "LOA Required: No" : "LOA Required: Yes"
               }
             >
               <div
-                class={`btn btn-sm btn-square btn-outline cursor-default ${loaRequired === "no" ? "btn-success" : "btn-error"}`}
+                class={`btn btn-sm btn-square btn-soft cursor-default ${loaRequired === "no" ? "btn-success" : "btn-error"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +197,10 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
                 {locations.map((location) => {
                   const { city, countryCode } = parseLocation(location);
                   return (
-                    <div class="badge badge-outline badge-sm" data-key={`location-${location}`}>
+                    <div
+                      class="badge badge-soft badge-sm"
+                      data-key={`location-${location}`}
+                    >
                       <span class={`fi fi-${countryCode.toLowerCase()} mr-1`} />
                       {city}
                     </div>
@@ -210,7 +220,12 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
               </h2>
               <div class="flex flex-wrap gap-2  items-center">
                 {services.map((service) => (
-                  <div class="badge badge-outline badge-sm" data-key={`service-${service}`}>{service}</div>
+                  <div
+                    class="badge badge-soft badge-sm"
+                    data-key={`service-${service}`}
+                  >
+                    {service}
+                  </div>
                 ))}
               </div>
             </div>
@@ -226,7 +241,12 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
               </h2>
               <div class="flex flex-wrap gap-2 items-center">
                 {features.map((feature) => (
-                  <div class="badge badge-outline badge-sm" data-key={`feature-${feature}`}>{feature}</div>
+                  <div
+                    class="badge badge-soft badge-sm"
+                    data-key={`feature-${feature}`}
+                  >
+                    {feature}
+                  </div>
                 ))}
               </div>
             </div>
@@ -235,16 +255,12 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
 
         <!-- Notes -->
         {
-          notes && notes.trim() && (
+          noteLines.length > 0 && (
             <div class="mb-2">
               <h2 class="text-xs font-semibold uppercase tracking-wider text-base-content/70">
                 Notes
               </h2>
-              <div class="text-xs text-base-content/80 leading-relaxed">
-                {notes.split("\n").map((line, index) => (
-                  <div data-key={`note-${index}-${line}`}>{line}</div>
-                ))}
-              </div>
+              <ExpandableNotes lines={noteLines} client:load />
             </div>
           )
         }
@@ -306,7 +322,7 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
+              ></path>
             </svg>
           </a>
         </div>
@@ -314,4 +330,3 @@ const pricingSuffix = pricingHasExplicitSuffix ? "" : "/mo";
     </div>
   </div>
 </div>
-

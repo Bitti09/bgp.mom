@@ -1,8 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-import umami from "@yeskunall/astro-umami";
 import cloudflare from "@astrojs/cloudflare";
+import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -20,8 +20,5 @@ export default defineConfig({
   adapter: cloudflare({
     sessionKVBindingName: "BGP_MOM_v6_SESSION",
   }),
-  integrations: [
-    sitemap(),
-    umami({ id: "e94e1dc0-f5e2-4746-97ba-313fbe5bcd99", endpointUrl: "https://stats.bgp.mom/" })
-  ],
+  integrations: [react(), sitemap()],
 });
