@@ -20,6 +20,15 @@ body:
       required: true
 
   - type: input
+    id: logo
+    attributes:
+      label: Provider Logo URL
+      description: Link to a high-quality logo (preferably dark-mode friendly)
+      placeholder: "https://example.com/logo.png"
+    validations:
+      required: false
+
+  - type: input
     id: asn
     attributes:
       label: ASN
@@ -84,7 +93,7 @@ body:
     id: locations
     attributes:
       label: Locations
-      description: List the locations in "City, CC" format (comma-separated)
+      description: List the locations in "City, CC" format (semicolon-separated)
       placeholder: "Amsterdam, NL; New York, US; Hong Kong, HK; London, GB"
     validations:
       required: true
@@ -146,8 +155,8 @@ body:
     id: notes
     attributes:
       label: Notes
-      description: Additional notes about the provider's BGP offering (optional)
-      placeholder: "Special features, network access, or other relevant information..."
+      description: Additional notes about the provider's BGP offering (e.g., IPv6 support, specific routing options like Full Table + Default)
+      placeholder: "Special features, IPv6 support, network access, or other relevant information..."
     validations:
       required: false
 

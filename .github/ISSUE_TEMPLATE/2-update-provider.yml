@@ -19,6 +19,15 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: logo
+    attributes:
+      label: Provider Logo URL
+      description: Updated link to a high-quality logo (if changing)
+      placeholder: "https://example.com/logo.png"
+    validations:
+      required: false
+
   - type: dropdown
     id: update-type
     attributes:
@@ -32,6 +41,7 @@ body:
         - Service Change
         - ASN Change
         - URL Change
+        - Logo Change
         - RPKI Filtering Change
         - Table Type Change
         - LOA Status Change
@@ -161,7 +171,7 @@ body:
     id: notes
     attributes:
       label: Notes
-      description: Updated notes about the provider (if changing)
+      description: Updated notes (e.g., IPv6 support, specific routing options like Full Table + Default) (if changing)
       placeholder: "Updated information about the provider's BGP offering..."
 
   - type: textarea
