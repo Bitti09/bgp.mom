@@ -5,11 +5,14 @@ import { getSortedProviders } from "../utils/providers";
 const sortedProviders = await getSortedProviders();
 ---
 
-<Layout title="BGP.mom - List of VPS Providers with BGP support">
+<Layout 
+  title="BGP VPS Hosting & VPS with BGP Sessions | BGP.mom"
+  description="Compare the best BGP VPS hosting providers. A community-curated directory for anyone looking for a VPS with BGP session support."
+>
     <div class="text-center mb-8">
-      <h1 class="text-2xl sm:text-4xl font-bold text-base-content mb-2">VPS Providers</h1>
+      <h1 class="text-2xl sm:text-4xl font-bold text-base-content mb-2">BGP VPS Hosting</h1>
       <p class="text-base sm:text-lg text-base-content/70">
-        Providers offering VPS Server with BGP support
+        Providers offering VPS with BGP sessions
       </p>
       <p class="text-sm text-base-content/50 mt-2">
         Found {sortedProviders.length} providers
