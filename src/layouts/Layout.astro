@@ -20,10 +20,11 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bgp.mom" />
+    <meta name="description" content="A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit." />
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
-      content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts."
+      content="A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit."
     />
     <meta property="og:image" content="https://bgp.mom/og-image.png" />
 
@@ -32,7 +33,7 @@ const { title } = Astro.props;
     <meta property="twitter:title" content={title} />
     <meta
       property="twitter:description"
-      content="Find affordable VPS, Dedicated, and Colocation providers with BGP support for hobbyists and network enthusiasts."
+      content="A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit."
     />
     <meta property="twitter:image" content="https://bgp.mom/og-image.png" />
 
@@ -49,7 +50,7 @@ const { title } = Astro.props;
       data-max-duration="1200000"></script>
 
     <script is:inline>
-      // Helper: Get the current theme from local storage or default to light
+      // Helper: Get the current theme from local storage or default to dark
       const getTheme = () => {
         if (
           typeof localStorage !== "undefined" &&
@@ -57,7 +58,7 @@ const { title } = Astro.props;
         ) {
           return localStorage.getItem("theme");
         }
-        return "light";
+        return "dark";
       };
 
       // Helper: Apply the theme to the HTML tag and save it
@@ -209,11 +210,34 @@ const { title } = Astro.props;
       </div>
     </header>
 
-    <div class="alert alert-error alert-soft">
+    <!-- Info Banner -->
+    <div class="alert alert-info alert-soft rounded-none border-x-0 border-t-0">
       <div class="w-full px-2 sm:px-4 md:px-6 flex items-start gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 shrink-0 stroke-current"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="h-5 w-5 shrink-0 stroke-current mt-0.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        <p class="text-sm">
+          A community-curated directory of BGP-enabled network providers for projects of all sizes. Want to add a provider? <a href="https://github.com/Bitti09/bgp.mom/issues" class="underline font-medium hover:text-info">Open an issue on GitHub</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Security Warning Banner -->
+    <div class="alert alert-warning alert-soft rounded-none border-x-0 border-b-0">
+      <div class="w-full px-2 sm:px-4 md:px-6 flex items-start gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 shrink-0 stroke-current mt-0.5"
           fill="none"
           viewBox="0 0 24 24"
         >
@@ -221,19 +245,11 @@ const { title } = Astro.props;
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
           ></path>
         </svg>
         <p class="text-sm">
-          List of recommended providers for newbies/hobbyists. Want to be added?
-          <a href="https://github.com/Bitti09/bgp.mom/issues" class="underline"
-            >Open issue on GitHub</a
-          >.
-          <span class="block font-bold mt-1">
-            Please note: This project does not initiate communication via
-            support tickets or live chat. Any individual claiming to be an
-            'auditor' for us is fraudulent.
-          </span>
+          <strong>Security Notice:</strong> This project does not initiate communication via support tickets or live chat. Any individual claiming to be an 'auditor' for us is fraudulent.
         </p>
       </div>
     </div>

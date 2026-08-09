@@ -51,7 +51,7 @@ const noteLines = notes
         rel="noopener noreferrer"
         data-umami-event={`${title} bgp.tools visited`}
         data-umami-event-url={`https://bgp.tools/as/${asn}`}
-        class="btn btn-sm btn-outline btn-info hover:btn-info transition-colors px-2 min-h-0 h-8 font-mono"
+        class="btn btn-sm bg-base-100 hover:bg-base-300 border-base-300 transition-colors px-2 min-h-0 h-8 font-mono text-base-content/80"
       >
         AS{asn}
       </a>
@@ -190,7 +190,7 @@ const noteLines = notes
         {
           locations.length > 0 && (
             <div class="mb-2">
-              <h2 class="text-xs font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              <h2 class="text-[10px] font-bold uppercase tracking-widest mb-2 text-base-content/50">
                 Locations
               </h2>
               <div class="flex flex-wrap gap-2 items-center">
@@ -215,7 +215,7 @@ const noteLines = notes
         {
           services.length > 0 && (
             <div class="mb-2">
-              <h2 class="text-xs font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              <h2 class="text-[10px] font-bold uppercase tracking-widest mb-2 text-base-content/50">
                 Services
               </h2>
               <div class="flex flex-wrap gap-2  items-center">
@@ -236,13 +236,13 @@ const noteLines = notes
         {
           features.length > 0 && (
             <div class="mb-2">
-              <h2 class="text-xs font-semibold uppercase tracking-wider mb-3 text-base-content/70">
+              <h2 class="text-[10px] font-bold uppercase tracking-widest mb-2 text-base-content/50">
                 Features
               </h2>
               <div class="flex flex-wrap gap-2 items-center">
                 {features.map((feature) => (
                   <div
-                    class="badge badge-soft badge-sm"
+                    class="badge badge-outline border-base-content/20 text-base-content/70 badge-sm"
                     data-key={`feature-${feature}`}
                   >
                     {feature}
@@ -257,7 +257,7 @@ const noteLines = notes
         {
           noteLines.length > 0 && (
             <div class="mb-2">
-              <h2 class="text-xs font-semibold uppercase tracking-wider text-base-content/70">
+              <h2 class="text-[10px] font-bold uppercase tracking-widest mb-1 text-base-content/50">
                 Notes
               </h2>
               <ExpandableNotes lines={noteLines} client:load />
@@ -272,7 +272,7 @@ const noteLines = notes
         <div class="grid grid-cols-2 gap-4 pt-2 mb-4">
           <div>
             <h2
-              class="text-xs font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-base-content/50"
             >
               BGP Fee
             </h2>
@@ -280,21 +280,22 @@ const noteLines = notes
               bgpFee === "0" ? (
                 <div class="badge badge-success badge-sm">Free BGP</div>
               ) : (
-                <p class="text-sm font-semibold text-base-content">
-                  {currencySymbol}
-                  {bgpFee} {currency}
+                <p class="text-base font-bold text-base-content">
+                  {currencySymbol}{bgpFee}
+                  <span class="text-xs font-normal text-base-content/60 ml-1">{currency}</span>
                 </p>
               )
             }
           </div>
           <div>
             <h2
-              class="text-xs font-semibold uppercase tracking-wider mb-2 text-base-content/70"
+              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-base-content/50"
             >
               Pricing
             </h2>
-            <p class="text-sm font-semibold text-base-content">
-              {currencySymbol}{pricing}{pricingSuffix}
+            <p class="text-base font-bold text-base-content">
+              {currencySymbol}{pricing}
+              {pricingSuffix && <span class="text-xs font-normal text-base-content/60">{pricingSuffix}</span>}
             </p>
           </div>
         </div>
@@ -307,7 +308,7 @@ const noteLines = notes
             rel="noopener noreferrer"
             data-umami-event={`${title} button clicked`}
             data-umami-event-url={url}
-            class="btn btn-primary btn-sm w-full gap-2"
+            class="btn btn-primary btn-sm w-full gap-2 shadow-md shadow-primary/20"
           >
             View Provider
             <svg

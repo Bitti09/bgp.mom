@@ -1,0 +1,25 @@
+{
+  "title": "Africloud",
+  "image": "/img/providers/africloud.png",
+  "asn": "209179",
+  "tableType": "full",
+  "locations": [
+    "Lisbon, PT",
+    "Johannesburg, ZA"
+  ],
+  "services": [
+    "VPS"
+  ],
+  "features": [
+    "BGP Community Passthrough",
+    "Downstream Support"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "yes",
+  "notes": "IPv6 Support available. Full Table + Default routing options. No downstream ASNs yet.",
+  "bgpFee": "0",
+  "pricing": "10",
+  "currency": "USD",
+  "url": "https://africloud.com"
+}
