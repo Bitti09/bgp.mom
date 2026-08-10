@@ -7,24 +7,27 @@ import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bgp.mom" />
-    <meta name="description" content="A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit." />
+    <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
-      content="A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit."
+      content={description}
     />
     <meta property="og:image" content="https://bgp.mom/og-image.png" />
 
@@ -33,7 +36,7 @@ const { title } = Astro.props;
     <meta property="twitter:title" content={title} />
     <meta
       property="twitter:description"
-      content="A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit."
+      content={description}
     />
     <meta property="twitter:image" content="https://bgp.mom/og-image.png" />
 

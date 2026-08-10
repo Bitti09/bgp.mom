@@ -7,10 +7,13 @@ const sortedProviders = await getSortedProviders(entry =>
 );
 ---
 
-<Layout title="BGP.mom - Tunnel Providers with BGP support">
+<Layout 
+  title="BGP Tunnels & Free BGP Tunnel Providers | BGP.mom"
+  description="Looking for a BGP tunnel? Find and compare providers offering remote BGP sessions via GRE or WireGuard, including free BGP tunnel options."
+>
     <div class="text-center mb-8">
-      <h1 class="text-2xl sm:text-4xl font-bold text-base-content mb-2">Tunnel Providers</h1>
-      <p class="text-base sm:text-lg text-base-content/70">Providers offering BGP tunnel services (GRE, IPSec, WireGuard)</p>
+      <h1 class="text-2xl sm:text-4xl font-bold text-base-content mb-2">BGP Tunnel Providers</h1>
+      <p class="text-base sm:text-lg text-base-content/70">Providers offering a BGP tunnel (GRE, IPSec, WireGuard)</p>
       <p class="text-sm text-base-content/50 mt-2">Found {sortedProviders.length} providers</p>
     </div>
     
