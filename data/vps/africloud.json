@@ -5,19 +5,21 @@
   "tableType": "full",
   "locations": [
     "Lisbon, PT",
-    "Johannesburg, ZA"
+    "Johannesburg, ZA",
+    "Lagos, NG"
   ],
   "services": [
     "VPS"
   ],
   "features": [
+    "BGP Communities",
     "BGP Community Passthrough",
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
   "prefixUpdateStatus": "automatic",
   "loaRequired": "yes",
-  "notes": "IPv6 Support available. Full Table + Default routing options. No downstream ASNs yet.",
+  "notes": "IPv6 Support available. Full Table + Default routing options. Peering at NAPAfrica Johannesburg, IXPN Lagos, DE-CIX Lisbon and DE-CIX Madrid.",
   "bgpFee": "0",
   "pricing": "10",
   "currency": "USD",
