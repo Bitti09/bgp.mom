@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-19",
+    "message": "Update africloud.json with new location and notes. Fixes #242",
+    "changes": [
+      {
+        "type": "EDIT",
+        "name": "Africloud",
+        "filePath": "data/vps/africloud.json"
+      }
+    ]
+  },
+  {
     "date": "2026-08-09",
     "message": "feat: UI improvements and new Africloud provider",
     "changes": [
