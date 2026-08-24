@@ -36,8 +36,8 @@ importers:
         specifier: ^7.2.3
         version: 7.2.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@25.0.1)(jiti@2.7.0)(yaml@2.9.0)
       daisyui:
-        specifier: ^5.7.18
-        version: 5.7.18
+        specifier: ^5.7.20
+        version: 5.7.20
       flag-icons:
         specifier: ^7.5.0
         version: 7.5.0
@@ -1544,8 +1544,8 @@ packages:
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
-  daisyui@5.7.18:
-    resolution: {integrity: sha512-ucODxcoGsL5oqMMiO5SzX++cAuNiko4S3XipKtEtq4c1t8tpeetcCBJSVe1t+C/q2oXgRv/wYz5yu1rXE5Cl1A==}
+  daisyui@5.7.20:
+    resolution: {integrity: sha512-qoL9qXXo/K/MzcteD1SvZOSeBaL8F9qBJvwX3KEpiVHQLzIEtGkNl/ZznSI7J0d+qnQJa2dAAFzTFDAx9df1rw==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -3992,7 +3992,7 @@ snapshots:
 
   csstype@3.2.3: {}
 
-  daisyui@5.7.18: {}
+  daisyui@5.7.20: {}
 
   debug@4.4.3:
     dependencies:
