@@ -4,7 +4,8 @@
   "asn": "213905",
   "tableType": "full",
   "locations": [
-    "Frankfurt, DE"
+    "Frankfurt, DE",
+    "Amsterdam, NL"
   ],
   "services": [
     "VPS",
