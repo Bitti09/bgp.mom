@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-26",
+    "message": "chore(data): add Amsterdam, NL to phylex locations Fixes  #249",
+    "changes": [
+      {
+        "type": "EDIT",
+        "name": "Phylex",
+        "filePath": "data/vps/phylex.json"
+      }
+    ]
+  },
+  {
     "date": "2026-08-19",
     "message": "Update africloud.json with new location and notes. Fixes #242",
     "changes": [
