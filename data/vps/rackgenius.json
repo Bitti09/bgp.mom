@@ -4,6 +4,7 @@
   "asn": "32002",
   "tableType": "full",
   "locations": [
+    "Detroit, US",
     "Grand Rapids, US"
   ],
   "services": [
@@ -18,7 +19,7 @@
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
-  "prefixUpdateStatus": "manual",
+  "prefixUpdateStatus": "automatic",
   "loaRequired": "no",
   "notes": "BGP fee is $25 one-time, waived for dedicated and colocation customers. Auto-update lists exported to upstreams, but requires manual ticket for one upstream. Communities: Traffic Engineering, Route Origin.",
   "bgpFee": "25",
