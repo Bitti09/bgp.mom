@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-29",
+    "message": "chore(data): update rackgenius location and prefix update status Fixes #250",
+    "changes": [
+      {
+        "type": "EDIT",
+        "name": "RackGenius",
+        "filePath": "data/vps/rackgenius.json"
+      }
+    ]
+  },
+  {
     "date": "2026-08-26",
     "message": "chore(data): add Amsterdam, NL to phylex locations Fixes  #249",
     "changes": [

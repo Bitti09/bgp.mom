@@ -1,0 +1,28 @@
+{
+  "title": "BGP Network LLC",
+  "image": "/img/providers/bgp-network-llc.jpg",
+  "asn": "214329",
+  "tableType": "full",
+  "locations": [
+    "Kansas City, US",
+    "Amsterdam, NL",
+    "Frankfurt, DE"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "Colocation",
+    "IXP Access"
+  ],
+  "features": [
+    "Downstream Support"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
+  "notes": "IPv6 support, specific routing options like Full Table + Default, announced prefixes via [DE-CIX Frankfurt, NL-ix, KCIX, SIX Seattle, LONAP]",
+  "bgpFee": "0",
+  "pricing": "16",
+  "currency": "USD",
+  "url": "https://bgp.sa"
+}
