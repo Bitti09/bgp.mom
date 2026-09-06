@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-06",
+    "message": "feat(data): add bgp-network-llc provider information Fixes #258",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "BGP Network LLC",
+        "filePath": "data/vps/bgp-network-llc.json"
+      }
+    ]
+  },
+  {
     "date": "2026-08-29",
     "message": "chore(data): update rackgenius location and prefix update status Fixes #250",
     "changes": [
