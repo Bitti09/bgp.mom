@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "undici": "^8.10.2",
-    "wrangler": "^4.129.0"
+    "wrangler": "^4.129.1"
   },
   "pnpm": {
     "overrides": {
