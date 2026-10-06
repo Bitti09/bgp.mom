@@ -1,14 +1,19 @@
 {
   "title": "LAKENETWORKS.it",
+  "image": "/img/providers/lakenetworks.png",
   "asn": "6517",
   "tableType": "full",
   "locations": [
-    "Como, IT"
+    "Milan, IT",
+    "Como, IT",
+    "Kansas City, US"
   ],
   "services": [
     "VPS",
+    "Baremetal",
     "Colocation",
     "IP Transit",
+    "IXP Access",
     "Tunnels"
   ],
   "features": [
@@ -19,9 +24,9 @@
   "rpkiStatus": "yes",
   "prefixUpdateStatus": "automatic",
   "loaRequired": "no",
-  "notes": "Open a ticket to request a BGP session with us. Traffic Engineering (Prepends / Do not announce) available via BGP communities.",
+  "notes": "BGP setup is automated for Milan and Como locations. BGP provisioning in Kansas City, US is currently handled manually via support ticket. Traffic engineering options are available via BGP communities, including route announcement control and AS-path prepending.",
   "bgpFee": "0",
   "pricing": "3.50",
-  "currency": "USD",
+  "currency": "EUR",
   "url": "https://www.lakenetworks.it"
 }

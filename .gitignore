@@ -25,3 +25,6 @@ pnpm-debug.log*
 .wrangler/
 transform-data.mjs
 .dirac-cache/symbol-index.db
+
+# openchamber screenshots
+.openchamber/

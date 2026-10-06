@@ -15,27 +15,22 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/cloudflare": "^14.3.0",
-    "@astrojs/react": "^6.0.5",
+    "@astrojs/cloudflare": "^14.3.3",
+    "@astrojs/react": "^7.0.0",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "astro": "^7.3.1",
-    "daisyui": "^5.7.28",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^7.3.5",
+    "daisyui": "^5.7.47",
     "flag-icons": "^7.5.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2"
   },
   "devDependencies": {
-    "undici": "^8.10.2",
-    "wrangler": "^4.129.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": "0.28.1"
-    }
+    "undici": "^8.11.2",
+    "wrangler": "^4.147.0"
   }
 }
