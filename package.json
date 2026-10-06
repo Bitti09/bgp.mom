@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/cloudflare": "^14.3.3",
+    "@astrojs/cloudflare": ">=14.3.4",
     "@astrojs/react": "^7.0.0",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "undici": "^8.11.2",
-    "wrangler": "^4.147.0"
+    "wrangler": ">=4.148"
   }
 }

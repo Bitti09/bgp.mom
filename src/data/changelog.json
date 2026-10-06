@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-10-06",
+    "message": "chore: update deps and LAKENETWORKS provider info",
+    "changes": [
+      {
+        "type": "EDIT",
+        "name": "LAKENETWORKS.it",
+        "filePath": "data/vps/lakenetworks-it.json"
+      }
+    ]
+  },
+  {
     "date": "2026-09-06",
     "message": "feat(data): add bgp-network-llc provider information Fixes #258",
     "changes": [
