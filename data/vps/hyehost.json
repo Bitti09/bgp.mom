@@ -1,27 +1,29 @@
 {
   "title": "HYEHOST",
-  "image": "/img/providers/hyehost.png",
+  "image": "/img/providers/hyehost.webp",
   "asn": "47272",
   "tableType": "full",
   "locations": [
-    "Fremont, US",
-    "Kansas City, US",
-    "Telford, GB"
+    "Ashburn, US",
+    "Wolverhampton, GB",
+    "Auckland, NZ"
   ],
   "services": [
     "VPS",
-    "IXP Access"
+    "Baremetal",
+    "IP Transit",
+    "Tunnels",
+    "Webhosting"
   ],
   "features": [
-    "BGP Community Passthrough",
     "Downstream Support"
   ],
   "rpkiStatus": "yes",
   "prefixUpdateStatus": "automatic",
   "loaRequired": "no",
-  "notes": "Can provide access to IX exchanges FREMIX.",
+  "notes": "Offers different pricing based on IPv6-only or dual-stack. They offer a free 50Mbps IPv6-only tier. Customer can choose between default route, default + local routes, and full table.",
   "bgpFee": "0",
-  "pricing": "3.99",
+  "pricing": "2.00",
   "currency": "USD",
-  "url": "https://hyehost.org/"
+  "url": "https://hyehost.org/ip-transit"
 }
