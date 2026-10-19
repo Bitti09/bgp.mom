@@ -23,7 +23,7 @@
     "@types/react-dom": "^19.3.0",
     "astro": "^7.3.8",
     "daisyui": "^5.7.47",
-    "flag-icons": "^7.5.0",
+    "flag-icons": "^7.6.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "tailwindcss": "^4.3.3",
