@@ -8,6 +8,7 @@ export const CURRENCIES = [
   "CHF",
   "SEK",
   "CZK",
+  "RUB",
 ] as const;
 
 /**
@@ -40,6 +41,7 @@ export const CURRENCY_SYMBOLS: Record<string, string> = {
   CHF: "CHF",
   SEK: "SEK",
   CZK: "CZK",
+  RUB: "₽",
 };
 
 /**
@@ -59,7 +61,7 @@ export interface BGPProvider {
   notes?: string;
   bgpFee: string;
   pricing: string;
-  currency: "USD" | "EUR" | "GBP" | "CHF" | "SEK" | "CZK";
+  currency: "USD" | "EUR" | "GBP" | "CHF" | "SEK" | "CZK" | "RUB";
   url: string;
 }
 

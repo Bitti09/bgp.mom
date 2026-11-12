@@ -1,0 +1,29 @@
+{
+  "title": "Kyonix",
+  "image": "/img/providers/kyonix.svg",
+  "asn": "210457",
+  "tableType": "full",
+  "locations": [
+    "Germany, DE",
+    "Finland, FI"
+  ],
+  "services": [
+    "VPS",
+    "Baremetal",
+    "IP Transit",
+    "Tunnels"
+  ],
+  "features": [
+    "BGP Communities",
+    "Downstream Support",
+    "GRE Tunnels"
+  ],
+  "rpkiStatus": "no",
+  "prefixUpdateStatus": "manual",
+  "loaRequired": "no",
+  "notes": "Monthly price is an estimate taken from the cheapest VPS plan on the provider's homepage; BGP itself is free, so any eligible VPS, dedicated server or IP transit service is enough to get a session.\n\nBring Your Own ASN is supported, with IPv4 and IPv6 prefix announcements. Customers can receive default routes or the full BGP tables.\n\nSessions are available over GRE tunnels or direct connections. IP transit is sold both as part of a server and as a standalone service. BGP communities are available on request.\n\nAutomated prefix filtering and advanced BGP management features are planned but not available yet.",
+  "bgpFee": "0",
+  "pricing": "492",
+  "currency": "RUB",
+  "url": "https://kyonix.com"
+}

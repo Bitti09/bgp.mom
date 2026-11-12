@@ -5,7 +5,15 @@ import { z } from "astro/zod";
 /**
  * Supported currency codes for provider pricing.
  */
-const CURRENCIES = ["USD", "EUR", "GBP", "CHF", "SEK", "CZK"] as const;
+const CURRENCIES = [
+  "USD",
+  "EUR",
+  "GBP",
+  "CHF",
+  "SEK",
+  "CZK",
+  "RUB",
+] as const;
 
 /**
  * Schema for BGP provider data.

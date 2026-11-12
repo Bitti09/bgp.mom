@@ -147,6 +147,7 @@ body:
         - CHF
         - SEK
         - CZK
+        - RUB
       default: 0
     validations:
       required: true
