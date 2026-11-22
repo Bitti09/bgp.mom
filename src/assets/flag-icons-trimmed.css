@@ -1,0 +1,137 @@
+.fib, .fi {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.fi {
+  position: relative;
+  display: inline-block;
+  width: 1.333333em;
+  line-height: 1em;
+}
+.fi:before {
+  content: " ";
+}
+.fi.fis {
+  width: 1em;
+}
+
+.fi-xx {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/xx.svg);
+}
+.fi-xx.fis {
+  background-image: url(../../node_modules/flag-icons/flags/1x1/xx.svg);
+}
+
+.fi-ae {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/ae.svg);
+}
+.fi-al {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/al.svg);
+}
+.fi-at {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/at.svg);
+}
+.fi-au {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/au.svg);
+}
+.fi-bg {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/bg.svg);
+}
+.fi-br {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/br.svg);
+}
+.fi-ca {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/ca.svg);
+}
+.fi-ch {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/ch.svg);
+}
+.fi-cl {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/cl.svg);
+}
+.fi-cz {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/cz.svg);
+}
+.fi-de {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/de.svg);
+}
+.fi-ee {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/ee.svg);
+}
+.fi-es {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/es.svg);
+}
+.fi-fi {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/fi.svg);
+}
+.fi-fr {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/fr.svg);
+}
+.fi-gb {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/gb.svg);
+}
+.fi-hk {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/hk.svg);
+}
+.fi-il {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/il.svg);
+}
+.fi-in {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/in.svg);
+}
+.fi-it {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/it.svg);
+}
+.fi-jp {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/jp.svg);
+}
+.fi-kr {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/kr.svg);
+}
+.fi-lt {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/lt.svg);
+}
+.fi-lu {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/lu.svg);
+}
+.fi-lv {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/lv.svg);
+}
+.fi-mx {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/mx.svg);
+}
+.fi-ng {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/ng.svg);
+}
+.fi-nl {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/nl.svg);
+}
+.fi-no {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/no.svg);
+}
+.fi-nz {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/nz.svg);
+}
+.fi-pl {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/pl.svg);
+}
+.fi-pt {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/pt.svg);
+}
+.fi-ru {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/ru.svg);
+}
+.fi-se {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/se.svg);
+}
+.fi-sg {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/sg.svg);
+}
+.fi-us {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/us.svg);
+}
+.fi-za {
+  background-image: url(../../node_modules/flag-icons/flags/4x3/za.svg);
+}

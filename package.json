@@ -7,9 +7,10 @@
     "workerd"
   ],
   "scripts": {
-    "dev": "node scripts/generate-changelog.mjs && astro dev",
-    "build": "node scripts/generate-changelog.mjs && astro build",
+    "dev": "node scripts/generate-changelog.mjs && node scripts/generate-flag-css.mjs && astro dev",
+    "build": "node scripts/generate-changelog.mjs && node scripts/generate-flag-css.mjs && astro build",
     "changelog": "node scripts/generate-changelog.mjs",
+    "flags": "node scripts/generate-flag-css.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

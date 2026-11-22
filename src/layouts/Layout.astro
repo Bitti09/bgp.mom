@@ -1,7 +1,8 @@
 ---
 import "../assets/app.css";
-// Modern import: Let Vite handle the CSS bundling
-import "flag-icons/css/flag-icons.min.css";
+// Trimmed flag-icons: only the countries referenced by provider data.
+// Regenerate with `pnpm flags` after adding providers in new countries.
+import "../assets/flag-icons-trimmed.css";
 
 interface Props {
   title: string;

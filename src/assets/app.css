@@ -1,4 +1,15 @@
 @import "tailwindcss";
 @plugin "daisyui" {
     themes: dark --default, light --prefersdark;
+    /* Only the components the site actually renders. Add a name here when
+       introducing new DaisyUI markup. */
+    include: alert, badge, button, card, checkbox, collapse, divider, dropdown, footer, link, list, menu, navbar, swap, tooltip, typography;
+}
+
+/* DaisyUI's dark --color-primary-content (oklch 96% .018 272, a slightly
+   blue off-white) is only 4.12:1 against the dark primary — just under the
+   WCAG AA 4.5:1 floor. Pure white lifts it to 4.66:1 while keeping primary
+   itself bright enough (3.40:1) to read as text on the dark base. */
+[data-theme="dark"] {
+  --color-primary-content: oklch(100% 0 0);
 }
