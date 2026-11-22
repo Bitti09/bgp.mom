@@ -304,4 +304,14 @@ const isActive = (href: string) =>
   .menu .disabled:hover {
     background: none;
   }
+  /* DaisyUI v5's default --menu-active-bg uses --color-neutral, which is
+     nearly identical to the navbar's bg-base-100 in the dark theme.
+     Override with the primary color so the current page is always visible. */
+  .menu li > a.menu-active,
+  .menu li > a[aria-current="page"] {
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+    font-weight: 600;
+    border-radius: var(--radius-field, 0.5rem);
+  }
 </style>
