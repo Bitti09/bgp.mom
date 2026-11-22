@@ -121,17 +121,14 @@ const isActive = (href: string) =>
               class="menu menu-md dropdown-content mt-3 z-1 p-2 shadow bg-base-200 rounded-box w-64"
             >
               {navItems.map((item) => (
-                <li>
-                  <a
-                    href={item.href}
-                    class={isActive(item.href) ? "active" : ""}
-                  >
+                <li class={isActive(item.href) ? "active" : undefined}>
+                  <a href={item.href}>
                     {item.label}
                   </a>
                 </li>
               ))}
               <li class="divider"></li>
-              <li><a href="/policy" class={currentPath.startsWith("/policy") ? "active" : ""}>Policy</a></li>
+              <li class={currentPath.startsWith("/policy") ? "active" : undefined}><a href="/policy">Policy</a></li>
               <li>
                 <a
                   href="https://github.com/Bitti09/bgp.mom"
@@ -154,16 +151,13 @@ const isActive = (href: string) =>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal">
             {navItems.map((item) => (
-              <li>
-                <a
-                  href={item.href}
-                  class={isActive(item.href) ? "active" : ""}
-                >
+              <li class={isActive(item.href) ? "active" : undefined}>
+                <a href={item.href}>
                   {item.label}
                 </a>
               </li>
             ))}
-            <li><a href="/policy" class={currentPath.startsWith("/policy") ? "active" : ""}>Policy</a></li>
+            <li class={currentPath.startsWith("/policy") ? "active" : undefined}><a href="/policy">Policy</a></li>
           </ul>
         </div>
 
