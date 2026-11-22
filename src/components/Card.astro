@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import ExpandableNotes from "./ExpandableNotes.tsx";
+import ExpandableNotes from "./ExpandableNotes.astro";
 import type { BGPProvider } from "../utils/types";
 import {
   getCurrencySymbol,
@@ -260,7 +260,7 @@ const noteLines = notes
               <h2 class="text-[10px] font-bold uppercase tracking-widest mb-1 text-base-content/50">
                 Notes
               </h2>
-              <ExpandableNotes lines={noteLines} client:load />
+              <ExpandableNotes lines={noteLines} />
             </div>
           )
         }

@@ -3,8 +3,6 @@ import "../assets/app.css";
 // Modern import: Let Vite handle the CSS bundling
 import "flag-icons/css/flag-icons.min.css";
 
-import { ClientRouter } from "astro:transitions";
-
 interface Props {
   title: string;
   description?: string;
@@ -42,8 +40,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <title>{title}</title>
 
-    <ClientRouter />
-
     <script
       defer
       src="https://stats.bgp.mom/recorder.js"
@@ -70,17 +66,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         localStorage.setItem("theme", theme);
       };
 
-      // 1. Initial Load: Run immediately to prevent FOUC (Flash of Unstyled Content)
+      // Apply theme immediately to prevent FOUC
       setTheme(getTheme());
 
-      // 2. Navigation Fix: Re-apply theme after the HTML swap
-      // The router resets the <html> tag attributes, so we must restore them here.
-      document.addEventListener("astro:after-swap", () => {
-        setTheme(getTheme());
-      });
-
-      // 3. UI Sync: Update the checkbox state on every page load (initial + navigation)
-      document.addEventListener("astro:page-load", () => {
+      // Sync the checkbox state after DOM is ready
+      document.addEventListener("DOMContentLoaded", () => {
         const themeToggle = document.querySelector(".theme-controller");
         if (themeToggle) {
           themeToggle.checked = getTheme() === "dark";

@@ -1,5 +1,27 @@
 [
   {
+    "date": "2026-11-22",
+    "message": "feat: add NovaNode provider (closes #289)",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "NovaNode",
+        "filePath": "data/vps/novanode.json"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-12",
+    "message": "feat(data): add Kyonix provider information",
+    "changes": [
+      {
+        "type": "ADD",
+        "name": "Kyonix",
+        "filePath": "data/vps/kyonix.json"
+      }
+    ]
+  },
+  {
     "date": "2026-10-10",
     "message": "feat(data): update HYEHOST provider information Fixes #267",
     "changes": [

@@ -1,0 +1,44 @@
+---
+interface Props {
+  lines: string[];
+  maxVisibleLines?: number;
+}
+
+const { lines, maxVisibleLines = 4 } = Astro.props;
+const needsClamp = lines.length > maxVisibleLines;
+---
+
+{needsClamp ? (
+  <details class="expandable-notes">
+    <summary class="text-xs text-base-content/80 leading-relaxed cursor-pointer">
+      {lines.slice(0, maxVisibleLines).map((line) => (
+        <div>{line}</div>
+      ))}
+      <div class="text-base-content/40 mt-0.5">…</div>
+    </summary>
+    <div class="text-xs text-base-content/80 leading-relaxed mt-1">
+      {lines.map((line) => (
+        <div>{line}</div>
+      ))}
+    </div>
+  </details>
+) : (
+  <div class="text-xs text-base-content/80 leading-relaxed">
+    {lines.map((line) => (
+      <div>{line}</div>
+    ))}
+  </div>
+)}
+
+<style>
+  .expandable-notes summary {
+    display: block;
+    list-style: none;
+  }
+  .expandable-notes summary::-webkit-details-marker {
+    display: none;
+  }
+  .expandable-notes[open] summary {
+    display: none;
+  }
+</style>

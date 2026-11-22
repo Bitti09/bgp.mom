@@ -2,23 +2,17 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import cloudflare from "@astrojs/cloudflare";
-import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://bgp.mom",
-  output: "server",
+  output: "static",
 
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      minify: false,
-    },
   },
 
-  adapter: cloudflare({
-    sessionKVBindingName: "BGP_MOM_v6_SESSION",
-  }),
-  integrations: [react(), sitemap()],
+  adapter: cloudflare(),
+  integrations: [sitemap()],
 });

@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProviderGrid from "../components/ProviderGrid.astro";
+import { getSortedProviders } from "../utils/providers";
+import { CATEGORIES } from "../utils/categories";
+
+export function getStaticPaths() {
+  return Object.keys(CATEGORIES).map((category) => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+const config = CATEGORIES[category]!;
+
+const sortedProviders = await getSortedProviders(config.filter);
+---
+
+<Layout title={config.title} description={config.description}>
+  <div class="text-center mb-8">
+    <h1 class="text-2xl sm:text-4xl font-bold text-base-content mb-2">
+      {config.heading}
+    </h1>
+    <p class="text-base sm:text-lg text-base-content/70">
+      {config.subheading}
+    </p>
+    <p class="text-sm text-base-content/50 mt-2">
+      Found {sortedProviders.length} providers
+    </p>
+  </div>
+
+  <ProviderGrid providers={sortedProviders} />
+
+  {sortedProviders.length === 0 && (
+    <div class="text-center py-12">
+      <p class="text-xl text-base-content/70">{config.emptyText}</p>
+    </div>
+  )}
+</Layout>
