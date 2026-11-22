@@ -1,0 +1,28 @@
+{
+  "title": "NovaNode",
+  "image": "/img/providers/novanode.png",
+  "asn": "199839",
+  "tableType": "full",
+  "locations": [
+    "Bettembourg, LU"
+  ],
+  "services": [
+    "VPS",
+    "Dedicated",
+    "Colo",
+    "Transit",
+    "Tunnel",
+    "Other"
+  ],
+  "features": [
+    "BGP Community Passthrough"
+  ],
+  "rpkiStatus": "yes",
+  "prefixUpdateStatus": "automatic",
+  "loaRequired": "no",
+  "notes": "Can provide connections to LU-CIX, BNIX, France-IX, MegaIX, NL-ix.\nDirect connections possible to Telia/Arelion, GTT, Cogent, Colt/Lumen.\nTelco service FttH/FttO with BGP in LU/BE/NL/FR.\nBGP for some services at no extra cost, for some a fee may be added.",
+  "bgpFee": "0",
+  "pricing": "0",
+  "currency": "EUR",
+  "url": "https://novanode.eu"
+}
