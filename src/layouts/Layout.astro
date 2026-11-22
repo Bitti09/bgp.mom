@@ -10,6 +10,21 @@ interface Props {
 
 const { title, description = "A community-maintained directory of BGP-enabled providers including VPS, Dedicated Servers, Colocation, and IP Transit." } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/dedicated", label: "Dedicated" },
+  { href: "/tunnels", label: "Tunnels" },
+  { href: "/colocation", label: "Colocation" },
+  { href: "/transit", label: "Transit" },
+  { href: "/ixp", label: "IXP" },
+  { href: "/lir", label: "LIR" },
+  { href: "/updates", label: "Updates" },
+];
+
+const isActive = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
 ---
 
 <!doctype html>
@@ -105,16 +120,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
               tabindex="0"
               class="menu menu-md dropdown-content mt-3 z-1 p-2 shadow bg-base-200 rounded-box w-64"
             >
-              <li><a href="/">Home</a></li>
-              <li><a href="/dedicated">Dedicated</a></li>
-              <li><a href="/tunnels">Tunnels</a></li>
-              <li><a href="/colocation">Colocation</a></li>
-              <li><a href="/transit">Transit</a></li>
-              <li><a href="/ixp">IXP</a></li>
-              <li><a href="/lir">LIR</a></li>
-              <li><a href="/updates">Updates</a></li>
+              {navItems.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class={isActive(item.href) ? "active" : ""}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
               <li class="divider"></li>
-              <li><a href="/policy">Policy</a></li>
+              <li><a href="/policy" class={currentPath.startsWith("/policy") ? "active" : ""}>Policy</a></li>
               <li>
                 <a
                   href="https://github.com/Bitti09/bgp.mom"
@@ -136,15 +153,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal">
-            <li><a href="/">Home</a></li>
-            <li><a href="/dedicated">Dedicated</a></li>
-            <li><a href="/tunnels">Tunnels</a></li>
-            <li><a href="/colocation">Colocation</a></li>
-            <li><a href="/transit"><span>Transit</span></a></li>
-            <li><a href="/ixp"><span>IXP</span></a></li>
-            <li><a href="/lir"><span>LIR</span></a></li>
-            <li><a href="/updates"><span>Updates</span></a></li>
-            <li><a href="/policy">Policy</a></li>
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class={isActive(item.href) ? "active" : ""}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            <li><a href="/policy" class={currentPath.startsWith("/policy") ? "active" : ""}>Policy</a></li>
           </ul>
         </div>
 
